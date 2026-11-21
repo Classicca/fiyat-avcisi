@@ -1,0 +1,21 @@
+{
+  "generated_at": 1795291387,
+  "products": [],
+  "schema": 1,
+  "status": {
+    "app": "Fiyat Avcısı",
+    "configured": false,
+    "demo": false,
+    "keyboard_max_price": 1100,
+    "last_attempt": null,
+    "last_error": "",
+    "last_success": null,
+    "mouse_max_price": 1000,
+    "product_count": 0,
+    "public_site": true,
+    "scan_interval_minutes": null,
+    "scanning": false,
+    "stale": false,
+    "warning": ""
+  }
+}

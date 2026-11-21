@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1114">
+  <meta name="description" content="Fiyat Avcısı: 1.100 TL altı gaming klavyeler ve 1.000 TL altı gaming mouse fırsatları. Otomatik güncellenir, arama yapman gerekmez.">
+  <title>Fiyat Avcısı · Uygun Gaming Klavye ve Mouse</title>
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar" aria-label="Fiyat Avcısı">
+      <a class="brand" href="./" aria-label="Fiyat Avcısı ana sayfa">
+        <div class="brand-mark"><span class="mark-slash"></span><span class="mark-dot"></span></div>
+        <div><strong>fiyat<span>avcısı</span></strong><small>AKILLI FIRSAT RADARI</small></div>
+      </a>
+      <div class="sidebar-section-label">TAKİP EDİLEN</div>
+      <div class="category-active"><span class="category-emoji">⌨</span><span>Gaming klavyeler</span><span class="category-dot"></span></div>
+      <div class="category-active"><span class="category-emoji">🖱</span><span>Gaming mouse</span><span class="category-dot"></span></div>
+      <div class="sidebar-spacer"></div>
+      <div class="sidebar-foot"><span class="dot-lime"></span> FİYAT AVCISI <span>V2.0</span></div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div class="breadcrumbs"><span>FIRSAT RADARI</span><span class="breadcrumb-sep">/</span><strong>KLAVYE + MOUSE</strong></div>
+        <div class="topbar-right">
+          <div class="status-pill" id="livePill"><span class="pulse"></span><span id="liveLabel">VERİLER YÜKLENİYOR</span></div>
+          <button id="refreshButton" class="refresh-button" type="button" aria-label="Listeyi yenile" title="Listeyi yenile"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7v5h-5M4 17v-5h5"/><path d="M5.7 9a7 7 0 0 1 12.1-2L20 12M4 12l2.2 5A7 7 0 0 0 18.3 15"/></svg></button>
+        </div>
+      </header>
+      <div class="content">
+        <section class="hero" aria-labelledby="heroTitle">
+          <div class="hero-grid"></div>
+          <div class="hero-glow"></div>
+          <div class="hero-copy">
+            <div class="eyebrow"><span class="eyebrow-dot"></span> OTOMATİK FIRSAT TAKİBİ</div>
+            <h1 id="heroTitle">Fırsatlar<br><em>aranıyor.</em></h1>
+            <p id="heroSubtitle">Gaming klavye ve mouse fırsatları tek ekranda.</p>
+            <div class="scan-time" id="lastScan">Henüz kontrol edilmedi</div>
+          </div>
+          <div class="budget-card budget-limits" aria-label="Klavye üst sınırı 1.100 Türk lirası, mouse üst sınırı 1.000 Türk lirası">
+            <span class="budget-label">FİYAT SINIRLARI</span>
+            <div class="budget-line"><span>⌨ Klavye</span><strong>1.100 <small>TL</small></strong></div>
+            <div class="budget-line"><span>🖱 Gaming mouse</span><strong>1.000 <small>TL</small></strong></div>
+            <div class="budget-desc"><span class="limit-dot"></span><span>Daha pahalı ürünler görünmez.</span></div>
+          </div>
+        </section>
+
+        <div class="banner hidden" id="demoBanner" role="status"><span class="banner-symbol">ⓘ</span><div><strong>Örnek görünüm.</strong><span> Bu ürünler gerçek değildir; yalnızca tasarımı göstermek içindir.</span></div></div>
+
+        <section class="setup-panel hidden" id="setupPanel" aria-labelledby="setupTitle">
+          <div class="setup-icon">⌁</div>
+          <div class="setup-body">
+            <div class="setup-tag">TEK SEFERLİK KURULUM</div>
+            <h2 id="setupTitle">Otomatik taramayı başlat</h2>
+            <p>Gerçek fiyatları gösterebilmek için bir kez SerpApi anahtarını eklemen gerekiyor. Sonrasında site ürünleri kendisi takip edecek.</p>
+            <form id="setupForm" class="setup-form">
+              <label class="sr-only" for="apiKey">SerpApi API anahtarı</label>
+              <input type="password" id="apiKey" placeholder="SerpApi API anahtarı" autocomplete="off" minlength="16" required>
+              <button type="submit" id="saveKeyButton">Takibi başlat <span>↗</span></button>
+            </form>
+            <p class="setup-help"><a href="https://serpapi.com/users/sign_up" target="_blank" rel="noopener noreferrer">API anahtarı al ↗</a><span>·</span> Servisin kullanım kotası olabilir.</p>
+            <p class="setup-error hidden" id="setupError" role="alert"></p>
+          </div>
+        </section>
+
+        <div class="banner banner-error hidden" id="errorBanner" role="alert"><span class="banner-symbol">!</span><div><strong>Son taramada sorun oluştu.</strong><span id="errorText"></span><small>Varsa önceki ürünler gösteriliyor.</small></div></div>
+        <div class="banner banner-warn hidden" id="warnBanner" role="status"><span class="banner-symbol">!</span><div><strong>Bazı sonuçlar alınamadı.</strong><span id="warnText"></span></div></div>
+
+        <section class="results" aria-labelledby="resultsTitle">
+          <div class="results-header">
+            <div><div class="section-kicker">ÜRÜN RADARI <span class="line-small"></span></div><h2 id="resultsTitle">Uygun ürünler <span class="result-count" id="resultCount">0</span></h2></div>
+            <div class="connectivity-tabs" role="group" aria-label="Kablolu veya kablosuz ürün filtresi" id="connectivityFilter">
+              <button type="button" data-connection="all" class="connection-btn selected" aria-pressed="true">Tümü</button>
+              <button type="button" data-connection="wired" class="connection-btn" aria-pressed="false">Kablolu</button>
+              <button type="button" data-connection="wireless" class="connection-btn" aria-pressed="false">Kablosuz</button>
+            </div>
+          </div>
+
+          <section class="category-results" aria-labelledby="keyboardHeading">
+            <div class="category-heading"><h3 id="keyboardHeading"><span class="category-head-icon">⌨</span> Gaming klavyeler <span class="category-count" id="keyboardCount">0</span></h3><span>En fazla 1.100 TL</span></div>
+            <div id="keyboardProducts" class="product-grid" aria-live="polite"><div class="loading"><div class="loading-spinner"></div>Ürünler kontrol ediliyor...</div></div>
+          </section>
+
+          <section class="category-results" aria-labelledby="mouseHeading">
+            <div class="category-heading"><h3 id="mouseHeading"><span class="category-head-icon">🖱</span> Gaming mouse <span class="category-count" id="mouseCount">0</span></h3><span>En fazla 1.000 TL</span></div>
+            <div id="mouseProducts" class="product-grid" aria-live="polite"><div class="loading"><div class="loading-spinner"></div>Ürünler kontrol ediliyor...</div></div>
+          </section>
+          <div class="results-footer"><span class="foot-asterisk">*</span> Satın almadan önce ürünün özelliklerini ve mağazadaki güncel fiyatı kontrol et.</div>
+        </section>
+      </div>
+      <footer class="footer"><span>© <span id="year"></span> Fiyat Avcısı</span></footer>
+    </main>
+  </div>
+  <div id="toast" class="toast hidden" role="status"></div>
+</body>
+</html>
