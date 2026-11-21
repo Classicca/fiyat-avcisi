@@ -1,12 +1,2817 @@
 {
   "active": {
-    "keyboard": [],
-    "mouse": []
+    "keyboard": [
+      "ec88fdb7219bf7e968ac16f0",
+      "2b9fca56d9e0beff133d9b0e",
+      "38d0a23ee6e815964ab7d0a5",
+      "77428210b8ad625d38b97d64",
+      "baa0130b23b5224aead3e7fa",
+      "cbdeb400a4b373dc73e110d4",
+      "d9996f36b08aeb425fc24009",
+      "dccf8dc7f252e77e5239456c",
+      "0a87b68eb34662e7e00f5664",
+      "4cf03cda3bb40b49c0aa984a",
+      "9c848dc3249c693e1124062d",
+      "42bf792b6e730e7eac426a4e",
+      "f1a2e206d1c11de809f43b47",
+      "2329e248f4ae32909b0dc863",
+      "ed6ebe4356417fc431534c7b",
+      "51d36fc7e01117a255cca06e",
+      "9b1ab5c52a6669f8d8c22a77",
+      "12831f035a1f7418d72848fd",
+      "56ae9f95300cfe82cb9edc85",
+      "3b31a2055d71bf960d6d6e4d",
+      "bacd8c477682bdf6c357527e",
+      "01b38d3f38dc78837e32e16e",
+      "ba60fcb3b6d3f9f1520fbfed",
+      "4617779399ab1b9c8ceb98ee",
+      "d32012dba3690bc800d2bd31",
+      "2cbe1e82aaae01c855991675",
+      "5f774e9d439fe318072efcf9",
+      "cb965f4f7c0e0d613075cd49",
+      "8cca46a03494365481618acd",
+      "d94d8065e6518ebbd85218ed",
+      "39e6356e4cbdab859a22c89b",
+      "d6365b3c2ca03d2bf6b977cd",
+      "ae74c68de4d2ffb0919fddca",
+      "cb8db1e256767a24ffe5d538",
+      "b68e146a6b5c99d5eb26c88b",
+      "6d9e71ac8962c5b7b5e2a729",
+      "bc12f201c10f7b660ca52376",
+      "515fc4e601f96970ef4da562",
+      "47a1936c4255731ed94cded5",
+      "89699fd8419572824633806b",
+      "95bc4395100866f8e314d527",
+      "1e5fca3c7ae5632cf90811b5",
+      "19b62a7281e0b51f99f037c7",
+      "322e4e4a0550e22310336b74",
+      "a29402d9955c00f21d5c0def"
+    ],
+    "mouse": [
+      "465f1a355ca6b6138661cf4a",
+      "395cca6966c6ebba4c016c93",
+      "a3d84adf5ff64cf6a21aacc1",
+      "1d8406a5a31ae04921d95eb7",
+      "7e1e1cf4c212f867d8995ac2",
+      "ba3dce620302675e01047214",
+      "1c91a995776dd372ad10c03f",
+      "5f154cf787a7c417f9c7fb1a",
+      "89bf7a69f01a283b03770ee3",
+      "1c0975d4a9af98cf0933dd47",
+      "4e4a65a7c1e3d485a84e66dc",
+      "4877656767e7af8f73b6cebc",
+      "5ce4800bbf69b3bfc744f3d5",
+      "994efbeaf195d24e235c538d",
+      "dcd280f951413386ac85f81f",
+      "7bc9151f05d1efdbe2facf5e",
+      "60869714ff0b987a2d34b762",
+      "343d42766216f802d5770fe0",
+      "36666e151f9ffd2cae82f471",
+      "d5ee3f215f5d33e63595b42b",
+      "7a0d5c8879fc9418ba37d472",
+      "c8c33bec4cd35e068528766a",
+      "0982dfdafd2674a0772b6bfd",
+      "37ef73f2ea1edbefaaee0607",
+      "3d0c074ef9f36a9977f775ac",
+      "9a299a526282bd9884ac6c6f",
+      "a9f186e3a05c4e5ce35b6abd",
+      "6652488c5330303b9e73c581",
+      "aaf0fd8658e83464d110ac26",
+      "3f7b61e60012e1566540529f",
+      "57e65e3cc4e45a5e616614c7",
+      "3c7cd894e6bca2fe1a67205d",
+      "f10a6fad5fc6b060cb268481",
+      "54a2c619906e6ff828e0442b",
+      "9ded6200f07b5495af74f340",
+      "7f5b1c9e983082dbe9cf576d",
+      "0cd2af4c4a23785b8fe0934b",
+      "b78005cd3ffdcb9a3207c6a5",
+      "14d3665d423a156be443e502",
+      "04c0f6f0a7f50783080c1d03",
+      "6a026c48484c7a433febb868",
+      "60dcfcd945f3291a6900f594",
+      "d206ad34116ee5198bdd1f1a",
+      "3242e21c3307261bacaf0746",
+      "f44409c75138d6cd5737161e",
+      "7493ec051b725dea23360493",
+      "4824f6111486124f5b452de6",
+      "a856eb42783e1d5ecc6fe527",
+      "3de428f90401522170d9d3cb",
+      "8c7a06022838c99c68652016",
+      "7fd7e9435b9fa0810948bff0",
+      "35fc737a9aeeeec187ae25bd",
+      "d8a5d617cdcaa344ce9f7298",
+      "03c9f003faf4c3702bccad52",
+      "e168da86cc09a7a0e708a161",
+      "ededec670438df2c7cb4992d",
+      "0ebd2d89be7373b85e292ff5",
+      "47c73272dc1f437730b8fc27",
+      "dd4fa8d9a312c4ac19f06acc",
+      "9d00e8e00b80d3c115b37636",
+      "8fd67d3a70833a89a5220552",
+      "311a3dd3695a740d77b30611",
+      "34459b4dbdc4b57d11a7c087",
+      "1df616b936fdca221e600433",
+      "d4177af51b10f1aa0a42910c",
+      "84d7438d31976ae3acf7613c",
+      "6cc69bf3a0dfce35be5c5768"
+    ]
   },
-  "last_attempt": 1795301224,
-  "last_error": "Canlı tarama için GitHub Actions API anahtarı henüz eklenmedi.",
-  "last_success": null,
+  "last_attempt": 1795301734,
+  "last_completed_queries": 4,
+  "last_error": "",
+  "last_raw_count": 160,
+  "last_success": 1795301734,
   "last_warning": "",
-  "products": {},
+  "products": {
+    "01b38d3f38dc78837e32e16e": {
+      "category": "keyboard",
+      "connectivity": "wireless",
+      "first_seen": 1795301734,
+      "highest_price": 2449.0,
+      "history": [
+        [
+          1795301734,
+          2449.0
+        ]
+      ],
+      "id": "01b38d3f38dc78837e32e16e",
+      "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRAPYMy7W75A80XKJuDUIjdsXS0oSIeVaHkKD7haFGQamHSOt00wL4ZNjYIMhL45T3sdLUhCVgfymIZVJAIoWKnw4VAN3FO80xmhIv3TIkveAyzWbebVEpo",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablosuz gaming klavye&prds=catalogid:4241233625668335388,productid:11868556570458016549,headlineOfferDocid:14687602926463488676,imageDocid:12514942363271773056,rds:PC_4132884931782998065|PROD_PC_4132884931782998065,gpcid:15078717870370381888,mid:576462916511677795,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 2449.0,
+      "original_price": null,
+      "price": 2449.0,
+      "store": "Teknostore",
+      "title": "Aula F87 Mekanik RGB TKL GrayWood V3 Switch Kablosuz Makrolu Hot Swap Klavye"
+    },
+    "03c9f003faf4c3702bccad52": {
+      "category": "mouse",
+      "connectivity": "wireless",
+      "first_seen": 1795301734,
+      "highest_price": 4259.0,
+      "history": [
+        [
+          1795301734,
+          4259.0
+        ]
+      ],
+      "id": "03c9f003faf4c3702bccad52",
+      "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQsxbVnWsgewRltIBdmP4L-tzmOTBvZ6bfa8X_fJPOewXWEpcvQDicJk8aWwptjJ_PiZZUHgro0UHoPNVzanhtpTybkvLS9THmbbT8d6_fMObmWyUj7l4p7Lw",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablosuz gaming mouse&prds=catalogid:16863350700482867295,productid:5324936731570401395,headlineOfferDocid:2891058942195962230,imageDocid:9847162985175189473,rds:PC_5655509073674337681|PROD_PC_5655509073674337681,gpcid:5387431478606528869,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 4259.0,
+      "original_price": null,
+      "price": 4259.0,
+      "store": "incehesap.com",
+      "title": "ASUS ROG Harpe Ace Mini Kablosuz Beyaz Gaming Mouse"
+    },
+    "04c0f6f0a7f50783080c1d03": {
+      "category": "mouse",
+      "connectivity": "both",
+      "first_seen": 1795301734,
+      "highest_price": 1890.0,
+      "history": [
+        [
+          1795301734,
+          1890.0
+        ]
+      ],
+      "id": "04c0f6f0a7f50783080c1d03",
+      "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcT4ATKc286gYgZsEev2QWuDcDg4nVctindYF7ajYoLJZFVnAIMhzexFRg4b3SIx9pfM96sv4sWZq1odT3PWwxGu_OSlmuQY7Q",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablosuz gaming mouse&prds=catalogid:17837250806516241407,productid:9617576984085028991,headlineOfferDocid:15282067733313570955,imageDocid:4022780540796961482,rds:PC_4930406069137628041|PROD_PC_4930406069137628041,gpcid:4872266769447757281,mid:576462917371999538,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 1890.0,
+      "original_price": null,
+      "price": 1890.0,
+      "store": "Hepsiburada",
+      "title": "ATTACK SHARK X11 SE Kablosuz Gaming Mouse – PixArt PAW3311 Sensör, 22000 DPI, BT/2.4G/Kablolu Üçlü Mod, 65 Saat Pil Ömrü, Ofis ve Oyun Kullanımı İçin"
+    },
+    "0982dfdafd2674a0772b6bfd": {
+      "category": "mouse",
+      "connectivity": "wired",
+      "first_seen": 1795301734,
+      "highest_price": 1998.99,
+      "history": [
+        [
+          1795301734,
+          1998.99
+        ]
+      ],
+      "id": "0982dfdafd2674a0772b6bfd",
+      "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTsjoGTllsxTVh2GR2qtfZl4FYWsOrnCqBWaT2I30Nbjr5HC6aVzv56-LhtPBNdmK6ZEyfTHfOcTDWzlB9hDH_JejjzjCzc",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablolu gaming mouse&prds=catalogid:8559409079765536526,productid:7881160298041727399,headlineOfferDocid:1599645465533115348,imageDocid:7492206462706740742,rds:PC_17708739805308767415|PROD_PC_17708739805308767415,gpcid:17708739805308767415,mid:576462769596126091,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 1998.99,
+      "original_price": null,
+      "price": 1998.99,
+      "store": "Hepsiburada",
+      "title": "Redragon M987-K RGB 12400DPI 7 Tuş 55gr Kablolu Oyuncu Mouse"
+    },
+    "0a87b68eb34662e7e00f5664": {
+      "category": "keyboard",
+      "connectivity": "wireless",
+      "first_seen": 1795301734,
+      "highest_price": 2918.0,
+      "history": [
+        [
+          1795301734,
+          2918.0
+        ]
+      ],
+      "id": "0a87b68eb34662e7e00f5664",
+      "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTOPMjp_VxPPz-48sAxpCzM_SBIFTedHlIma5B6IlTZWUB5zQZEKiREX_4EmiScV48Jz_aXybimRG6IdCx4bkAXOo46-Rn6ajG0ZqJtvLkRsR_pB8rOyMcc",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablosuz gaming klavye&prds=catalogid:7030507167756168005,productid:5127474682858467452,headlineOfferDocid:3898066971823657767,imageDocid:13204551419419315825,rds:PC_11633953963191109064|PROD_PC_11633953963191109064,gpcid:11633953963191109064,mid:576462808437697740,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 2918.0,
+      "original_price": 3229.0,
+      "price": 2918.0,
+      "store": "Trendyol",
+      "title": "MCHOSE G75 Pro %75 Matcha Latte Switch Hotswap RGB İngilizce Kablosuz Mekanik Oyuncu Klavyesi Siyah-Pembe"
+    },
+    "0cd2af4c4a23785b8fe0934b": {
+      "category": "mouse",
+      "connectivity": "wireless",
+      "first_seen": 1795301734,
+      "highest_price": 1799.0,
+      "history": [
+        [
+          1795301734,
+          1799.0
+        ]
+      ],
+      "id": "0cd2af4c4a23785b8fe0934b",
+      "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRoMHLLRB7OVjZRQps0ksCZ1Z5aqiyPAJIsdSlfDJ-e7J6wuCGO8yyiF7Upl7ec5us5gh_rBB2Aa1ccuBK8CSh312RX4j_Ukg9gVF8LEwtgws4koRDwrq15OA",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablosuz gaming mouse&prds=catalogid:14148859025413624812,productid:3163641438797677728,headlineOfferDocid:13822401589030195352,imageDocid:9872449517087497861,rds:PC_6183535469545441820|PROD_PC_6183535469545441820,gpcid:6183535469545441820,mid:576462536297240924,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 1799.0,
+      "original_price": null,
+      "price": 1799.0,
+      "store": "idefix",
+      "title": "SteelSeries Rival 3 Wireless Gen 2 Gaming Mouse"
+    },
+    "0ebd2d89be7373b85e292ff5": {
+      "category": "mouse",
+      "connectivity": "wireless",
+      "first_seen": 1795301734,
+      "highest_price": 3081.67,
+      "history": [
+        [
+          1795301734,
+          3081.67
+        ]
+      ],
+      "id": "0ebd2d89be7373b85e292ff5",
+      "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQ4wbLOwvYLWLiOo36odJEUkE0-SA-zbqpwTiV52g9qZHjlwgvuVnF2_71RceRT9xarwWAOF0DdhJ-fC3RuQEyDa8a2DpXy8tNZWjT8GUE",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablosuz gaming mouse&prds=catalogid:13845168694482205665,productid:11452718876388240739,headlineOfferDocid:10096350180249878407,imageDocid:13526090497280886215,rds:PC_12074498722567537779|PROD_PC_12074498722567537779,gpcid:12074498722567537779,mid:576462834716695247,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 3081.67,
+      "original_price": null,
+      "price": 3081.67,
+      "store": "Amerikasepetim",
+      "title": "SteelSeries CS2 Dragon Lore Counter-Strike Wireless Gaming Mouse"
+    },
+    "12831f035a1f7418d72848fd": {
+      "category": "keyboard",
+      "connectivity": "wireless",
+      "first_seen": 1795301734,
+      "highest_price": 1375.0,
+      "history": [
+        [
+          1795301734,
+          1375.0
+        ]
+      ],
+      "id": "12831f035a1f7418d72848fd",
+      "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcR7T-i81HxXtXHDUFPTe2xuEaKoLWTNvCzIB6ua0EIHRa-5dlwfcMS2DwADMj6zCZpGhhOh3UWZhgHpXJPu85IvSHtrdIxsr_ybxS2kRQbG8CGAhHzwL54ZaQ",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablosuz gaming klavye&prds=catalogid:4514901663960190869,productid:9466777958532131047,headlineOfferDocid:6764102915638716342,imageDocid:4649369457624410776,gpcid:9104645291919128261,mid:576462893037363499,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 1375.0,
+      "original_price": null,
+      "price": 1375.0,
+      "store": "MediaMarkt Pazaryeri",
+      "title": "Torima Oyuncu Klavyesi Rgb Işıklı Dijital Ekranlı 3 Modlu Mekanik Hisli Kablosuz Klavye Tk14"
+    },
+    "14d3665d423a156be443e502": {
+      "category": "mouse",
+      "connectivity": "wireless",
+      "first_seen": 1795301734,
+      "highest_price": 999.0,
+      "history": [
+        [
+          1795301734,
+          999.0
+        ]
+      ],
+      "id": "14d3665d423a156be443e502",
+      "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRRyy6LwhK4yaboHqy5-fuSwsvEnH2QMYg4nuo9vXI0LCwH4-MlZ2wIbh1a-5cBSq89ZE8YCplDmOCHKt-AYxZnSJqY7UaKPH9RA_YkfYIYxfs3iFU5IW9gDw",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablosuz gaming mouse&prds=catalogid:5515199637454804580,productid:2181609918696929547,headlineOfferDocid:6539916791341021613,imageDocid:282184565261917891,rds:PC_16594683890941931136|PROD_PC_16594683890941931136,gpcid:16594683890941931136,mid:576462556125094188,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 999.0,
+      "original_price": 1003.0,
+      "price": 999.0,
+      "store": "OverGame",
+      "title": "MSI FORGE GM340 W Kablosuz Gaming Mouse"
+    },
+    "19b62a7281e0b51f99f037c7": {
+      "category": "keyboard",
+      "connectivity": "unknown",
+      "first_seen": 1795301734,
+      "highest_price": 4631.4,
+      "history": [
+        [
+          1795301734,
+          4631.4
+        ]
+      ],
+      "id": "19b62a7281e0b51f99f037c7",
+      "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRaRHxLaMVyisH8GCAHKLFldlayZWaZupl9oZQIqccu-UfojeMsINFqfkl1_D7eOIQekcbnwCjGUg9wn5r27OTSTyJ-c2Ra",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablolu gaming klavye&prds=productid:2300737642235055356,headlineOfferDocid:2300737642235055356,imageDocid:8496148147425503031,rds:PC_303597668416828583|PROD_PC_303597668416828583,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 4631.4,
+      "original_price": null,
+      "price": 4631.4,
+      "store": "Hepsiburada",
+      "title": "Game Power Ogre Rgb 60M Blue Switch Türkçe Q USB Mekanik Gaming Klavye"
+    },
+    "1c0975d4a9af98cf0933dd47": {
+      "category": "mouse",
+      "connectivity": "wired",
+      "first_seen": 1795301734,
+      "highest_price": 1490.0,
+      "history": [
+        [
+          1795301734,
+          1490.0
+        ]
+      ],
+      "id": "1c0975d4a9af98cf0933dd47",
+      "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSGOQPlmptpwinHbbR3xylsyPbA2r6B4Mwz5lAkW73u52ssXWrgpyLrn8mEiUtdmMuk-zpFBPqV92CSvRRtvmvCtRo_dZ3cJszI4cJQFOo",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablolu gaming mouse&prds=catalogid:9647020987931071371,productid:1472807015840873780,headlineOfferDocid:12958874326018537200,imageDocid:14390561954139143374,rds:PC_4012595580558867715|PROD_PC_4012595580558867715,gpcid:4012595580558867715,mid:576462828915581165,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 1490.0,
+      "original_price": null,
+      "price": 1490.0,
+      "store": "Koçtaş",
+      "title": "GLORIOUS Model O Eternal Kablolu Gaming Mouse"
+    },
+    "1c91a995776dd372ad10c03f": {
+      "category": "mouse",
+      "connectivity": "unknown",
+      "first_seen": 1795301734,
+      "highest_price": 252.47,
+      "history": [
+        [
+          1795301734,
+          252.47
+        ]
+      ],
+      "id": "1c91a995776dd372ad10c03f",
+      "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQ6ddu2qi0X_8N-mawi7DE4uCRx3nTcSqttIMqhpkYz52mVe2MBUdPiDpI5jHqcEi2fd5_WzyW3jV4FHNP8OzztxKuiYA1YkDEDOLqjcnsOn4ACB-1F1Oii",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablolu gaming mouse&prds=catalogid:9552031926880077644,productid:3678045231733777488,headlineOfferDocid:9409855819385404048,imageDocid:11680416923569530139,gpcid:11839682707057586860,mid:576462521440739266,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 252.47,
+      "original_price": null,
+      "price": 252.47,
+      "store": "Serhat Bilgisayar San. ve Tic.Ltd.Şti.",
+      "title": "Everest SM-G97 GANK Usb Siyah Rainbow Aydınlatmalı Gaming Oyuncu Mouse"
+    },
+    "1d8406a5a31ae04921d95eb7": {
+      "category": "mouse",
+      "connectivity": "unknown",
+      "first_seen": 1795301734,
+      "highest_price": 1999.0,
+      "history": [
+        [
+          1795301734,
+          1999.0
+        ]
+      ],
+      "id": "1d8406a5a31ae04921d95eb7",
+      "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRCIkOMp600ZQBQr4JNe-LtfL9hJUtIIIDUiXN4hYVfg0rmsx4fb2w_oU5khJmYjYO_TBc2TvO1xtfHoTbweMxv7PEETOct3A",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablolu gaming mouse&prds=catalogid:14792717756775167174,productid:15401537047215412880,headlineOfferDocid:231781463534685794,imageDocid:5225555458710902017,rds:PC_11975382949242507700|PROD_PC_11975382949242507700,gpcid:11975382949242507700,mid:576462699778660171,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 1999.0,
+      "original_price": null,
+      "price": 1999.0,
+      "store": "Hepsiburada",
+      "title": "A4-Tech Bloody W90 Pro 16K CPI Optik Rgb Siyah Gaming Mouse"
+    },
+    "1df616b936fdca221e600433": {
+      "category": "mouse",
+      "connectivity": "wireless",
+      "first_seen": 1795301734,
+      "highest_price": 1803.99,
+      "history": [
+        [
+          1795301734,
+          1803.99
+        ]
+      ],
+      "id": "1df616b936fdca221e600433",
+      "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQCqgAMf3zafB7NYrAqHnR9G_s7YFUX-YnG5P0lKBMV1xyclW7YzDHp7gmO6y6WXlLboyz-Ax7iWtZPyIzVIQzK6mc6iehN74kykDLviolSubL0nMS0Wigs",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablosuz gaming mouse&prds=catalogid:3643782945614728713,productid:2370145938437922576,headlineOfferDocid:18010812130317666141,imageDocid:8494551991510389560,rds:PC_1300481818463300978|PROD_PC_1300481818463300978,gpcid:1300481818463300978,mid:576462874578510020,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 1803.99,
+      "original_price": null,
+      "price": 1803.99,
+      "store": "Amazon.com.tr - Amazon.com.tr – pazaryeri",
+      "title": "RK Royal Kludge M30 1K Hz Kablosuz Gaming Mouse"
+    },
+    "1e5fca3c7ae5632cf90811b5": {
+      "category": "keyboard",
+      "connectivity": "wired",
+      "first_seen": 1795301734,
+      "highest_price": 2851.0,
+      "history": [
+        [
+          1795301734,
+          2851.0
+        ]
+      ],
+      "id": "1e5fca3c7ae5632cf90811b5",
+      "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSYbHLv9kyHkdQKrbIt4Kh_Ij4BzKBvQ_txVhLGyHF6BhL99C9Db5NU4qna0_ZJYJet1a6hjzoE6nGQ3LtPxuVS7vmqzFPJNwVcvHrJgjhCw3mVAJUQ7hxCpA",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablolu gaming klavye&prds=productid:8908789379502370007,headlineOfferDocid:8908789379502370007,imageDocid:10504426891747721451,rds:PC_9010399873377531875|PROD_PC_9010399873377531875,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 2851.0,
+      "original_price": null,
+      "price": 2851.0,
+      "store": "PttAVM.com",
+      "title": "Logitech G213 Prodigy 920-008094 Rgb Kablolu Oyuncu Klavyesi"
+    },
+    "2329e248f4ae32909b0dc863": {
+      "category": "keyboard",
+      "connectivity": "wireless",
+      "first_seen": 1795301734,
+      "highest_price": 3199.0,
+      "history": [
+        [
+          1795301734,
+          3199.0
+        ]
+      ],
+      "id": "2329e248f4ae32909b0dc863",
+      "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcS_g4Mb32UgBifHU04KU7Lko5EQE7lydujn4FZkQyjsnJxIGlHYXiz5teFPFf3dwgZ12U9KJUCZ472kYs-qHQsP5EQa1jxu5TFKD0cqQQusqlSENjGMqXjIGw",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablosuz gaming klavye&prds=catalogid:3993320662347453910,productid:451234320830325589,headlineOfferDocid:6671238195339155248,imageDocid:340717747871210894,gpcid:15350889623185883287,mid:576462917289957868,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 3199.0,
+      "original_price": 3314.0,
+      "price": 3199.0,
+      "store": "Amazon.com.tr",
+      "title": "Aula F75 Max Mekanik Gaming Oyuncu Klavyesi TKL RGB GrayWood V4 Switch Kablosuz Makrolu Hot Swap Türkçe Q"
+    },
+    "2b9fca56d9e0beff133d9b0e": {
+      "category": "keyboard",
+      "connectivity": "wireless",
+      "first_seen": 1795301734,
+      "highest_price": 1249.0,
+      "history": [
+        [
+          1795301734,
+          1249.0
+        ]
+      ],
+      "id": "2b9fca56d9e0beff133d9b0e",
+      "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTcJ1JB0VbUtPjC7C-JmnFqyi6Lejs9oeR-03H2K4d-MaVLqra-RfuIrUrcZj3PnTanQ-HBrJOoLp-vRzO5_MDUWkZzg_IaGw",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablosuz gaming klavye&prds=catalogid:14169342643678410710,productid:13407029861576188405,headlineOfferDocid:2249377008497605177,imageDocid:6653350475456188254,gpcid:6905058002080390993,mid:576462848191892837,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 1249.0,
+      "original_price": 1349.0,
+      "price": 1249.0,
+      "store": "Hepsiburada",
+      "title": "Everest KB-85 SILENT PRO Kablosuz Bej-Pembe-Turuncu SESSİZ RGB Wireless 2.4Ghz Q Oyuncu Klavyesi"
+    },
+    "2cbe1e82aaae01c855991675": {
+      "category": "keyboard",
+      "connectivity": "unknown",
+      "first_seen": 1795301734,
+      "highest_price": 4479.35,
+      "history": [
+        [
+          1795301734,
+          4479.35
+        ]
+      ],
+      "id": "2cbe1e82aaae01c855991675",
+      "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTkUQ2U1cZh1-i41wXY9sYF-wXJ46jn4qRGujUy7QQcI4d5cNLYSo2lCtbuncjh8PHVcflFGnSW00WH2VhPZsB8ArhABD4PYiDcay9yGOCgkFxO1tpBD-Bjkg",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablolu gaming klavye&prds=productid:13988040573991007749,headlineOfferDocid:13988040573991007749,imageDocid:14437528644004804690,rds:PC_10873119469371923081|PROD_PC_10873119469371923081,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 4479.35,
+      "original_price": null,
+      "price": 4479.35,
+      "store": "Techno Plus Kıbrıs",
+      "title": "Steelseries Apex 3 Tkl Rgb Aydinlatmali Suya Dayanikli Sessiz Türkçe Q Gaming Oyuncu Klavyesi - Lavender"
+    },
+    "311a3dd3695a740d77b30611": {
+      "category": "mouse",
+      "connectivity": "wireless",
+      "first_seen": 1795301734,
+      "highest_price": 1999.0,
+      "history": [
+        [
+          1795301734,
+          1999.0
+        ]
+      ],
+      "id": "311a3dd3695a740d77b30611",
+      "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcS-1bfaKB5q63p2r3cYB49JA3RZJYpM0lBUqXPOSGGRzCr97qQaENHFceZB1aDf5JqxWxDMxv2Y5r-yJVrZ05tQupBTIArgQg",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablosuz gaming mouse&prds=catalogid:13821149888986894146,productid:1234502093703607270,headlineOfferDocid:16952496624041505427,imageDocid:7536807653128278054,rds:PC_12713195929483558452|PROD_PC_12713195929483558452,gpcid:12713195929483558452,mid:576462568016367754,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 1999.0,
+      "original_price": null,
+      "price": 1999.0,
+      "store": "Hepsiburada",
+      "title": "Pusat Reflex Ultra 16000 dpi 400 Ips Yüksek Performanslı Kablosuz Rgb Oyuncu Mouse"
+    },
+    "322e4e4a0550e22310336b74": {
+      "category": "keyboard",
+      "connectivity": "wired",
+      "first_seen": 1795301734,
+      "highest_price": 2575.08,
+      "history": [
+        [
+          1795301734,
+          2575.08
+        ]
+      ],
+      "id": "322e4e4a0550e22310336b74",
+      "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcT9KiSJI5gbrxwuBArxGNL3quzAtsI5yh8vf9YfbgeXVgWbSK7NWf663pcmhqOpIWm5a7P5OsX_Juvqjg6iQFQNLW0Sx5TdXgPQgwKUaHZPJti_vOq_rC8N",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablolu gaming klavye&prds=productid:513410868218585833,headlineOfferDocid:513410868218585833,imageDocid:1940049375209390409,rds:PC_9010399873377531875|PROD_PC_9010399873377531875,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 2575.08,
+      "original_price": null,
+      "price": 2575.08,
+      "store": "n11",
+      "title": "Logitech G213 Gaming Kablolu Klavye 920-008094 Siyah"
+    },
+    "3242e21c3307261bacaf0746": {
+      "category": "mouse",
+      "connectivity": "wireless",
+      "first_seen": 1795301734,
+      "highest_price": 2619.0,
+      "history": [
+        [
+          1795301734,
+          2619.0
+        ]
+      ],
+      "id": "3242e21c3307261bacaf0746",
+      "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcStq4U42A0YUQAwMXy8BTdJ2YlqBrFYOcm5_WG0E230uAnlaQDfY077tDZAOPl8uL8d3nC03W8QH7Ri_f9a1_jcaTLAX1v6vGn7gW-RGXrLFkTkFXNrCjSaDg",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablosuz gaming mouse&prds=catalogid:14945692315676586819,productid:9569504403797715747,headlineOfferDocid:6662159653549132639,imageDocid:14800858581459569175,rds:PC_1435213234496028430|PROD_PC_1435213234496028430,gpcid:1435213234496028430,mid:576462600992300206,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 2619.0,
+      "original_price": null,
+      "price": 2619.0,
+      "store": "Vatan Bilgisayar",
+      "title": "ASUS TUF GAMING M4 Wireless Gaming Mouse"
+    },
+    "343d42766216f802d5770fe0": {
+      "category": "mouse",
+      "connectivity": "wired",
+      "first_seen": 1795301734,
+      "highest_price": 1563.07,
+      "history": [
+        [
+          1795301734,
+          1563.07
+        ]
+      ],
+      "id": "343d42766216f802d5770fe0",
+      "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSVunA1uOuoTHnJYHyneu2wJL2_a0TZR2xA_Q71JHaThFoCv1gJ2ZCWwpjQop2uMd_flPYWEh6xM2f2K7eersrGFJqhSN9I",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablolu gaming mouse&prds=catalogid:12122310542476224227,productid:2053211516502276286,headlineOfferDocid:11053198498139207944,imageDocid:13575131397957622017,rds:PC_16882188740602024409|PROD_PC_16882188740602024409,gpcid:14729263547319577488,mid:576462737167817024,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 1563.07,
+      "original_price": null,
+      "price": 1563.07,
+      "store": "PttAVM.com",
+      "title": "Logitech G203 Lightsync Siyah 910-005796 Kablolu Oyuncu Mouse"
+    },
+    "34459b4dbdc4b57d11a7c087": {
+      "category": "mouse",
+      "connectivity": "wireless",
+      "first_seen": 1795301734,
+      "highest_price": 599.0,
+      "history": [
+        [
+          1795301734,
+          599.0
+        ]
+      ],
+      "id": "34459b4dbdc4b57d11a7c087",
+      "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTsB8D4dIJrSg3C6T7H3T8hR_ISdeJkUZCCXP7_rY_ez-G3YquY1O3jx0nQXje8IyLHqE3KOlPExa5y5wftTfIV-rzqO5WScQe0FGOnPQ17DzVc2Oy5jSf_Ow",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablosuz gaming mouse&prds=catalogid:10491212184858040431,productid:2607231000911496685,headlineOfferDocid:14175099239836923763,imageDocid:9333430555422039609,rds:PC_5952861810868474950|PROD_PC_5952861810868474950,gpcid:5952861810868474950,mid:576462673127602878,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 599.0,
+      "original_price": null,
+      "price": 599.0,
+      "store": "Trendyol",
+      "title": "Everest SM-W76 X-HURRY 2.4ghz Siyah 6d Şarjlı Kablosuz Gaming Oyuncu Mouse"
+    },
+    "35fc737a9aeeeec187ae25bd": {
+      "category": "mouse",
+      "connectivity": "both",
+      "first_seen": 1795301734,
+      "highest_price": 2699.0,
+      "history": [
+        [
+          1795301734,
+          2699.0
+        ]
+      ],
+      "id": "35fc737a9aeeeec187ae25bd",
+      "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTJp7efJ4TyaRy3cL0C034MVrw96K0vIn401jg1TWWuBpLBSwf41nvCgoeMt8e_HYLblbG-_KXqN71TAqxRSUKq63Aq-rRPNTNkx5WzK9X2BJ8LmhYNnDASgQ",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablosuz gaming mouse&prds=catalogid:11940212498239361089,productid:12435590367125149492,headlineOfferDocid:13065161600872478945,imageDocid:18026840794258159608,gpcid:5983214935949713253,mid:576462567985876278,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 2699.0,
+      "original_price": 3149.0,
+      "price": 2699.0,
+      "store": "Beast eSpor",
+      "title": "Beast One Pro 8k Hz Kablosuz / Kablolu 750 İps Oyuncu Mouse"
+    },
+    "36666e151f9ffd2cae82f471": {
+      "category": "mouse",
+      "connectivity": "wired",
+      "first_seen": 1795301734,
+      "highest_price": 1074.12,
+      "history": [
+        [
+          1795301734,
+          1074.12
+        ]
+      ],
+      "id": "36666e151f9ffd2cae82f471",
+      "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcT5lwmoFJIpRZ1aYty9nz7jNwO2ligiA77l_A0KuTd0YryK39uN1likEpAmP8LDBo3RagmdCstGfBlSd8jLFLWiwkV0LLnq",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablolu gaming mouse&prds=catalogid:9586879971499684289,productid:8396252290747290998,headlineOfferDocid:1451209971503403201,imageDocid:8822396828228774252,rds:PC_732940034520674440|PROD_PC_732940034520674440,gpcid:732940034520674440,mid:576462606052168736,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 1074.12,
+      "original_price": 1282.0,
+      "price": 1074.12,
+      "store": "Hepsiburada",
+      "title": "Bloody W90 Max 10.000 CPI 10 Tuş Optik RGB Siyah Kablolu Gaming Mouse"
+    },
+    "37ef73f2ea1edbefaaee0607": {
+      "category": "mouse",
+      "connectivity": "wired",
+      "first_seen": 1795301734,
+      "highest_price": 714.0,
+      "history": [
+        [
+          1795301734,
+          714.0
+        ]
+      ],
+      "id": "37ef73f2ea1edbefaaee0607",
+      "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRuEY9R-E4CeCVhFPYQZvmwoy1ZDlmBE4X5mhXRszW0vwp0jrFH4llXyh1ZWtH3uQht9LTK1YQAFxTkxUVyrdvKDlU0UegheA",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablolu gaming mouse&prds=catalogid:18105994040358951715,productid:120234917503533358,headlineOfferDocid:4507302353816323333,imageDocid:12248123609926253304,rds:PC_9480080781393609523|PROD_PC_9480080781393609523,gpcid:9480080781393609523,mid:576462822852667108,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 714.0,
+      "original_price": null,
+      "price": 714.0,
+      "store": "Hepsiburada",
+      "title": "Lenovo Lecoo MG1101 6400 dpi 8 Tuşlu Kablolu RGB Led Aydınlatmalı Gaming Mouse"
+    },
+    "38d0a23ee6e815964ab7d0a5": {
+      "category": "keyboard",
+      "connectivity": "wireless",
+      "first_seen": 1795301734,
+      "highest_price": 2639.0,
+      "history": [
+        [
+          1795301734,
+          2639.0
+        ]
+      ],
+      "id": "38d0a23ee6e815964ab7d0a5",
+      "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRtQhwFXXdfTnPtSW_tHfWqCsFi2i5O7xdaL5HR4SzYNBmWkKwqEkXsLlmwg6pEnk8Qplt3aD6WwfiMlIqGQUaJnN69GzIx9ahbUazPq3g7Ty4kNBCjQpgEIQ",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablosuz gaming klavye&prds=catalogid:14190544545591134341,productid:8818334107315453723,headlineOfferDocid:14127903188384557192,imageDocid:3595483300060002609,rds:PC_15446876285233392161|PROD_PC_15446876285233392161,gpcid:15446876285233392161,mid:576462566253835098,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 2639.0,
+      "original_price": null,
+      "price": 2639.0,
+      "store": "Teknostore",
+      "title": "Aula F87 PRO Mekanik RGB TKL GrayWood V4 Switch Kablosuz Makrolu Hot Swap Klavye"
+    },
+    "395cca6966c6ebba4c016c93": {
+      "category": "mouse",
+      "connectivity": "wired",
+      "first_seen": 1795301734,
+      "highest_price": 3199.0,
+      "history": [
+        [
+          1795301734,
+          3199.0
+        ]
+      ],
+      "id": "395cca6966c6ebba4c016c93",
+      "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQJV4yuq__Jw6peXjnkNVv4FWDwWb4UsAGsewBpAybPuMzxpcVk5N7QeiJkO25JEZhmxyA2OWzIxpf9qoG_5UDNwAlbZr-WRSxl1xigW_euEASVsUyfU0I4bg",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablolu gaming mouse&prds=catalogid:14211097704711181669,productid:9056823963787003208,headlineOfferDocid:4411351147650747714,imageDocid:15371075080418930532,rds:PC_17122645437937531695|PROD_PC_17122645437937531695,gpcid:11314713218157494394,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 3199.0,
+      "original_price": 4199.0,
+      "price": 3199.0,
+      "store": "Beymen",
+      "title": "Logitech G G502 X Kablolu Oyuncu Mouse"
+    },
+    "39e6356e4cbdab859a22c89b": {
+      "category": "keyboard",
+      "connectivity": "unknown",
+      "first_seen": 1795301734,
+      "highest_price": 2599.0,
+      "history": [
+        [
+          1795301734,
+          2599.0
+        ]
+      ],
+      "id": "39e6356e4cbdab859a22c89b",
+      "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSo54FQStXIRKGOqoOm09cV8r7Dx14I0zFvsBcxngCJ-Xou08HIxz1aQW8YRSj1ZHq9cd4LysAEsuHhARd_st9Ha6A24Mj5Qdgj0zSHNyiJ3Zo7ewqPun0PLQ",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablolu gaming klavye&prds=catalogid:14125765923278948967,productid:15759417514774469333,headlineOfferDocid:14812594652941590165,imageDocid:6585462695678570768,gpcid:5588820816726920090,mid:576462882014784794,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 2599.0,
+      "original_price": null,
+      "price": 2599.0,
+      "store": "Amazon.com.tr - Amazon.com.tr – pazaryeri",
+      "title": "Inca Ikg-457 Empousa Hot Swap Red Switch Makro Mekanik Klavye"
+    },
+    "3b31a2055d71bf960d6d6e4d": {
+      "category": "keyboard",
+      "connectivity": "both",
+      "first_seen": 1795301734,
+      "highest_price": 2989.0,
+      "history": [
+        [
+          1795301734,
+          2989.0
+        ]
+      ],
+      "id": "3b31a2055d71bf960d6d6e4d",
+      "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcS1zfxXWL0uD5P4Kt5VnMjJfKAbN9npoNSjpHh5moVrsqAahVNXoUT_UQN7uy_M08KVUvkAt6hauBXRocKY7hRdSZ-s8KrX",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablosuz gaming klavye&prds=catalogid:5997107841871384853,productid:1117785304468421638,headlineOfferDocid:6828810712550361815,imageDocid:11840935682215869122,gpcid:11845966720021609408,mid:576462876034452852,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 2989.0,
+      "original_price": null,
+      "price": 2989.0,
+      "store": "Hepsiburada",
+      "title": "Blueforce Aura Kablolu Kablosuz Bluetooth Gasket Gaming Mekanik Klavye Hot Swap Beyaz"
+    },
+    "3c7cd894e6bca2fe1a67205d": {
+      "category": "mouse",
+      "connectivity": "wired",
+      "first_seen": 1795301734,
+      "highest_price": 1041.82,
+      "history": [
+        [
+          1795301734,
+          1041.82
+        ]
+      ],
+      "id": "3c7cd894e6bca2fe1a67205d",
+      "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcT6jTH5UHppRLwfCKE0ZsFog0TqB6PLRU2LhlfgNftuy3G2jf624zEfeVHkdKaba5rfhj1f-1HhIoxVBz0zpS0RQUR2KxG75Q",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablolu gaming mouse&prds=catalogid:15761862236155879223,productid:11604934929739763561,headlineOfferDocid:14111589289932926593,imageDocid:10545714379037977872,gpcid:2444293679307957271,mid:576462537660999214,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 1041.82,
+      "original_price": null,
+      "price": 1041.82,
+      "store": "Hepsiburada",
+      "title": "Nodar G402 Gaming Mouse Kablolu 7200 dpi 7 Tuş 1000Hz Rgb Oyuncu Mouse Siyah"
+    },
+    "3d0c074ef9f36a9977f775ac": {
+      "category": "mouse",
+      "connectivity": "wired",
+      "first_seen": 1795301734,
+      "highest_price": 1659.61,
+      "history": [
+        [
+          1795301734,
+          1659.61
+        ]
+      ],
+      "id": "3d0c074ef9f36a9977f775ac",
+      "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQ_Up4UXT2RiM7q0o6loxsIhKxJxY3BJjmneLs27oEZTXWedyz4YczdkIQc3RjecsSCGtXgh2V8v_6MP-RYVuf8rwotsZjLUA",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablolu gaming mouse&prds=catalogid:11509475932867315284,productid:5051112604559191010,headlineOfferDocid:520218565638131781,imageDocid:8734557575851640485,rds:PC_12970524200605089175|PROD_PC_12970524200605089175,gpcid:12970524200605089175,mid:576462422288648096,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 1659.61,
+      "original_price": null,
+      "price": 1659.61,
+      "store": "Hepsiburada",
+      "title": "MSI GameNote MS1002 Kablolu RGB Gaming Mouse Siyah"
+    },
+    "3de428f90401522170d9d3cb": {
+      "category": "mouse",
+      "connectivity": "wireless",
+      "first_seen": 1795301734,
+      "highest_price": 1234.05,
+      "history": [
+        [
+          1795301734,
+          1234.05
+        ]
+      ],
+      "id": "3de428f90401522170d9d3cb",
+      "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQuxECnHyA2IEMEw0LAuCQ9B8NmvvNl0hZZpoUhKaZqpY8Y7taFdS_I2jmbo39JjbQB2mKSnh5jzxY49mhdvP5muoFnuJJHqBTX7sWG_xI1eEZoFL-C-08HWw",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablosuz gaming mouse&prds=catalogid:3947377569986785358,productid:8880805275099570317,headlineOfferDocid:11512151063699173786,imageDocid:13340865731528646070,gpcid:2087862492707289571,mid:576462576461864902,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 1234.05,
+      "original_price": null,
+      "price": 1234.05,
+      "store": "hawkchair.com",
+      "title": "Hawk Gaming HM160 1K Hz PAW3311 12000DPI LCD Ekranlı Tri-Mode Kablosuz/Bluetooth Beyaz Gaming Mouse"
+    },
+    "3f7b61e60012e1566540529f": {
+      "category": "mouse",
+      "connectivity": "wired",
+      "first_seen": 1795301734,
+      "highest_price": 181.0,
+      "history": [
+        [
+          1795301734,
+          181.0
+        ]
+      ],
+      "id": "3f7b61e60012e1566540529f",
+      "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSEFB5MJtsUItjHZc2cc_AoM0TlpHNslrhzaK4YOMlO5Tpgz7EWuQpfqR7yaZJjffoDtb4P5KhZKcf15z7gZ0JOeqtc8t_febmMobbFmlDSdDqMiGYIDshTTg",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablolu gaming mouse&prds=productid:14283361605013778162,headlineOfferDocid:14283361605013778162,imageDocid:6969744257932790876,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 181.0,
+      "original_price": null,
+      "price": 181.0,
+      "store": "Trendyol",
+      "title": "Concord Wired Optik Rgb Isikli 1200 Dpi Kablolu Gaming Oyuncu Mouse"
+    },
+    "42bf792b6e730e7eac426a4e": {
+      "category": "keyboard",
+      "connectivity": "wireless",
+      "first_seen": 1795301734,
+      "highest_price": 3372.41,
+      "history": [
+        [
+          1795301734,
+          3372.41
+        ]
+      ],
+      "id": "42bf792b6e730e7eac426a4e",
+      "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTEKZgBkr5MtGqhz6-6LKjaEkfxZd83zU8OGS4yxd0SE3SLDpU1CUMogaxAXYAxGCPoRiJLOYYIYTxN5H-DHph-96NBBqMJA0_UmDqqv7OJcX4_ilezNHuB6w",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablosuz gaming klavye&prds=catalogid:12210946335598710893,productid:13294262877102623249,headlineOfferDocid:4311886158665832068,imageDocid:2191581933916510865,gpcid:16722193754325108980,mid:576462576368706867,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 3372.41,
+      "original_price": null,
+      "price": 3372.41,
+      "store": "pazarama.com",
+      "title": "AJAZZ Ak820 V2 Ekranlı Kablosuz Mekanik Oyun Klavyesi-10.000 Mah Batarya"
+    },
+    "4617779399ab1b9c8ceb98ee": {
+      "category": "keyboard",
+      "connectivity": "unknown",
+      "first_seen": 1795301734,
+      "highest_price": 3199.0,
+      "history": [
+        [
+          1795301734,
+          3199.0
+        ]
+      ],
+      "id": "4617779399ab1b9c8ceb98ee",
+      "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSuHweC4X_gt1q71cv9rEJyyaOAeC9cErSWPcm0M_0dfZYb5r_Yv8StWYHzILE9OCmYv8wkAn6Iwok7Nth6u2f9Cbm6kCtxCLuR7TqviD3HH5LenrStgzUTUQ",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablolu gaming klavye&prds=catalogid:6656312614362667126,productid:10713038515232075665,headlineOfferDocid:4453569423083031289,imageDocid:17390747825212125222,gpcid:9128042935694168877,mid:576462551025623952,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 3199.0,
+      "original_price": null,
+      "price": 3199.0,
+      "store": "Trendyol",
+      "title": "Inca Ikg-458 Empousa Red Switch Software Anti-Ghost Rgb Mekanik Klavye"
+    },
+    "465f1a355ca6b6138661cf4a": {
+      "category": "mouse",
+      "connectivity": "wired",
+      "first_seen": 1795301734,
+      "highest_price": 3289.0,
+      "history": [
+        [
+          1795301734,
+          3289.0
+        ]
+      ],
+      "id": "465f1a355ca6b6138661cf4a",
+      "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRA30YP3OUXXrOnJO4R4EQYlaKFDc9WxdS7IgshRnmd60EhiKbWzdFWYGDv1Cas_MMkjMX8axnO-_N4K_KodYDhbuqYzPbD9G2k4-Xw5RpoH7AYkDCbsXqN",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablolu gaming mouse&prds=catalogid:10704893361353785226,productid:2611665052233876161,headlineOfferDocid:3611681270866490207,imageDocid:13700519424541288087,rds:PC_7357680509086333640|PROD_PC_7357680509086333640,gpcid:7357680509086333640,mid:576462897963043126,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 3289.0,
+      "original_price": 3802.0,
+      "price": 3289.0,
+      "store": "Koçtaş",
+      "title": "Logitech G G502 X Kablolu Oyuncu Mouse"
+    },
+    "47a1936c4255731ed94cded5": {
+      "category": "keyboard",
+      "connectivity": "unknown",
+      "first_seen": 1795301734,
+      "highest_price": 4199.0,
+      "history": [
+        [
+          1795301734,
+          4199.0
+        ]
+      ],
+      "id": "47a1936c4255731ed94cded5",
+      "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTOojGuS1qCGMFPRnWI8BNtmdEujwdwa1iNFCn2MjzMYsZK3yS-toCei-TvanPR7xMt5pcUU3fANWAEWq3-Q_4nB-sdv9M5PhKxw1k2aDpjy0Unm9gnyU9coQ",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablolu gaming klavye&prds=productid:13752390428038200993,headlineOfferDocid:13752390428038200993,imageDocid:8753924599414821615,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 4199.0,
+      "original_price": null,
+      "price": 4199.0,
+      "store": "incehesap.com",
+      "title": "YUNZII YZ87 Mekanik Klavye White Line"
+    },
+    "47c73272dc1f437730b8fc27": {
+      "category": "mouse",
+      "connectivity": "wireless",
+      "first_seen": 1795301734,
+      "highest_price": 778.05,
+      "history": [
+        [
+          1795301734,
+          778.05
+        ]
+      ],
+      "id": "47c73272dc1f437730b8fc27",
+      "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSgoArVL4KEoRQQqMm2FnvxBeHUBUg8h7-NumZQSM82jdD40uyNfFT4JAHuQCNep2ueUGO2pnhNhlKRZLKD-rX7l3EiciXQdHn_4cPBhCeW7qafYPczKgoEbw",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablosuz gaming mouse&prds=catalogid:12882296396797373677,productid:254619535925117452,headlineOfferDocid:13567905214581855375,imageDocid:18086742225729897913,gpcid:7704191518841127727,mid:576462915888351976,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 778.05,
+      "original_price": 819.0,
+      "price": 778.05,
+      "store": "Trendyol",
+      "title": "Upway Kablosuz Sessiz RGB LED Isikli sarjli Ergonomik 2400DPI Gaming Mouse Siyah"
+    },
+    "4824f6111486124f5b452de6": {
+      "category": "mouse",
+      "connectivity": "unknown",
+      "first_seen": 1795301734,
+      "highest_price": 1099.0,
+      "history": [
+        [
+          1795301734,
+          1099.0
+        ]
+      ],
+      "id": "4824f6111486124f5b452de6",
+      "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQRVlFX6Zjo3Xl0cHQz9HF4EbQyFi03_qZ3QC4L-U7J80UZfHc6fY90_DGJ4XzW2xvGDONOVlWLhxFBwjHx3yhWS_KqQlVqrw",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablosuz gaming mouse&prds=catalogid:16390986396258203006,productid:14918865347389875236,headlineOfferDocid:17956457603234737871,imageDocid:13646299661467045417,rds:PC_5631212243636706893|PROD_PC_5631212243636706893,gpcid:13852727127283735910,mid:576462576459376006,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 1099.0,
+      "original_price": 1429.0,
+      "price": 1099.0,
+      "store": "Hepsiburada",
+      "title": "Rampage Tilion 24000 dpi Gaming Oyuncu Mouse"
+    },
+    "4877656767e7af8f73b6cebc": {
+      "category": "mouse",
+      "connectivity": "wired",
+      "first_seen": 1795301734,
+      "highest_price": 178.0,
+      "history": [
+        [
+          1795301734,
+          178.0
+        ]
+      ],
+      "id": "4877656767e7af8f73b6cebc",
+      "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQGwvTHWM6v-IZdcxa8ZpMz4vVBBENMWnthzZriwYqPFckPFL_olbzDv9Z-rRExSMxCqGmzlaElYarhH4Xm1Z_frRQPG1dBKb_KeX7IcNPE00NBlNwdZ4rv",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablolu gaming mouse&prds=productid:16015154180842178077,headlineOfferDocid:16015154180842178077,imageDocid:10238914540074398646,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 178.0,
+      "original_price": null,
+      "price": 178.0,
+      "store": "Trendyol",
+      "title": "Concord Oyuncu Mouse Usb Kablolu Gaming Rgb Isikli Fare 1200dpi Siyah Mat Doku Ele Oturur"
+    },
+    "4cf03cda3bb40b49c0aa984a": {
+      "category": "keyboard",
+      "connectivity": "wireless",
+      "first_seen": 1795301734,
+      "highest_price": 2953.55,
+      "history": [
+        [
+          1795301734,
+          2953.55
+        ]
+      ],
+      "id": "4cf03cda3bb40b49c0aa984a",
+      "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSoyvR_rjW-h7E8pTnU4hrpCMCPsYlIR1CHfin7EIrqOK7VfJthih-nYCskbhUpBZlyvLR3a2sUFL8k2IISOwArVJJaJvc88zXlGjOt3X9DTolePPFm2Thr",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablosuz gaming klavye&prds=catalogid:719304694450272792,productid:17066208171309478539,headlineOfferDocid:3328020808485126145,imageDocid:7680038629158509209,gpcid:337892630837642502,mid:576462868656411303,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 2953.55,
+      "original_price": null,
+      "price": 2953.55,
+      "store": "Amazon.com.tr - Amazon.com.tr – pazaryeri",
+      "title": "Coverzone Ajazz Ak680 Max %68 Manyetik Switch 3000mah Batarya 8k Polling Rate Kablosuz Rgb Klavye"
+    },
+    "4e4a65a7c1e3d485a84e66dc": {
+      "category": "mouse",
+      "connectivity": "wired",
+      "first_seen": 1795301734,
+      "highest_price": 655.0,
+      "history": [
+        [
+          1795301734,
+          655.0
+        ]
+      ],
+      "id": "4e4a65a7c1e3d485a84e66dc",
+      "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcS3_At5gyfjggm-mIUFokj6DdnqhMIFgkaiGXSxOkQBZKGzUl8I3cJwUCj-me8mhYaQKUQR41fz3KMb9q51HQLb0Ja3Ev1RjA",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablolu gaming mouse&prds=catalogid:17156536716770623668,productid:960582641165406410,headlineOfferDocid:14519118460740456371,imageDocid:17630751696460822735,gpcid:13579085876543347888,mid:576462894458647690,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 655.0,
+      "original_price": null,
+      "price": 655.0,
+      "store": "Amazon",
+      "title": "Sonia Sn-x6 Kablolu Optik Oyuncu Mouse"
+    },
+    "515fc4e601f96970ef4da562": {
+      "category": "keyboard",
+      "connectivity": "unknown",
+      "first_seen": 1795301734,
+      "highest_price": 1279.0,
+      "history": [
+        [
+          1795301734,
+          1279.0
+        ]
+      ],
+      "id": "515fc4e601f96970ef4da562",
+      "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTuG02uwz8yK-V-xh2cE0ujR0tPEimvK_M_hYnPHSNflIjERELEotUu2H2euzuIAJf5ypksgcdAbjbzNsK99huYbWcZdSqUWw7vk48LT9VaD9UPjF9aWC-o",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablolu gaming klavye&prds=productid:2748442571851671599,headlineOfferDocid:2748442571851671599,imageDocid:7743419945617542779,rds:PC_14387935807426364670|PROD_PC_14387935807426364670,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 1279.0,
+      "original_price": null,
+      "price": 1279.0,
+      "store": "PttAVM.com",
+      "title": "Rampage Kb-R63 Stage Rainbow Rgb Aydınlatmalı Makrolu Gaming Oyuncu Klavyesi Turkuaz"
+    },
+    "51d36fc7e01117a255cca06e": {
+      "category": "keyboard",
+      "connectivity": "wireless",
+      "first_seen": 1795301734,
+      "highest_price": 2399.0,
+      "history": [
+        [
+          1795301734,
+          2399.0
+        ]
+      ],
+      "id": "51d36fc7e01117a255cca06e",
+      "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRYqkFz0pux1XxMau-_-OR15pWeQ3ys1_Bx-6DwNL7Jvxss--GOCTLgp1qDs6RMeQqNnKN9EvuJlbDwCV_-WdQ1hw8VZQEV1Io5bCpxoGpwaorct3jS2zXzcA",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablosuz gaming klavye&prds=catalogid:748790517968570793,productid:12798837747583838773,headlineOfferDocid:751893115175498578,imageDocid:17756980658531560346,gpcid:5227260192565459821,mid:576462892334939099,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 2399.0,
+      "original_price": null,
+      "price": 2399.0,
+      "store": "idefix",
+      "title": "GamePower Nama RGB Mekanik Kablosuz Hot Swap Gaming Klavye"
+    },
+    "54a2c619906e6ff828e0442b": {
+      "category": "mouse",
+      "connectivity": "wireless",
+      "first_seen": 1795301734,
+      "highest_price": 1705.2,
+      "history": [
+        [
+          1795301734,
+          1705.2
+        ]
+      ],
+      "id": "54a2c619906e6ff828e0442b",
+      "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcS1KkBWgesGnZi4nRA8uyyxFUADfCGOiIuglAYod_zdTtpiUa-StawNItTTvoHlT5ybIA6G31ZwfmJ0fB1qAw9kprn0v--_5sNQWyILo9CJzcG-Fm-FOhHZfJ0",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablosuz gaming mouse&prds=catalogid:12701142054043715206,productid:8382419854057342126,headlineOfferDocid:5337265834466117364,imageDocid:4990546863404530553,rds:PC_11726742512173545336|PROD_PC_11726742512173545336,gpcid:11726742512173545336,mid:576462916280062706,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 1705.2,
+      "original_price": null,
+      "price": 1705.2,
+      "store": "Trendyol",
+      "title": "Logitech G305 Lightspeed Kablosuz Oyuncu Mouse 910-005283"
+    },
+    "56ae9f95300cfe82cb9edc85": {
+      "category": "keyboard",
+      "connectivity": "wireless",
+      "first_seen": 1795301734,
+      "highest_price": 2699.0,
+      "history": [
+        [
+          1795301734,
+          2699.0
+        ]
+      ],
+      "id": "56ae9f95300cfe82cb9edc85",
+      "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSne--12VMnCBW3w0aeKOsb83TNyKflQHEnt-RUwLq18sx3P6liHIqnBQAEeALzl8LAhSVpBrYoGGATDV6NF10pyqZ3SmH0LMFGsfZ61aTosuKbnkl6BTld",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablosuz gaming klavye&prds=catalogid:3546529420499208538,productid:13483994399363007038,headlineOfferDocid:5838622901763046,imageDocid:1574727297050110525,gpcid:3292086769896614596,mid:576462568159468664,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 2699.0,
+      "original_price": 2999.0,
+      "price": 2699.0,
+      "store": "Amazon.com.tr - Amazon.com.tr – pazaryeri",
+      "title": "AIGO S99 Sky Realm Red Switch Mekanik Kablosuz Gaming Klavye (İngilizce)"
+    },
+    "57e65e3cc4e45a5e616614c7": {
+      "category": "mouse",
+      "connectivity": "wired",
+      "first_seen": 1795301734,
+      "highest_price": 239.35,
+      "history": [
+        [
+          1795301734,
+          239.35
+        ]
+      ],
+      "id": "57e65e3cc4e45a5e616614c7",
+      "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQHtMf04orOkGI71UzgrVQlnL7L31co0e5Yk3tG5JWfofLMyq6vz0hkO0lAXWdxMVMmmEfA2fCDPIj-aENwAWNwwcrbqOqs-yGRzJta2fR1fG1qfhfFMhTe",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablolu gaming mouse&prds=catalogid:6288101781966469318,productid:11069248723330318913,headlineOfferDocid:1645382755803325963,imageDocid:12049349480412251781,rds:PC_1354648118381884548|PROD_PC_1354648118381884548,gpcid:1354648118381884548,mid:576462681762396223,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 239.35,
+      "original_price": null,
+      "price": 239.35,
+      "store": "Teknoloji Outlet",
+      "title": "Hadron Hdx3257 Kablolu Rgb Ledli 1600 dpi Oyuncu Mouse"
+    },
+    "5ce4800bbf69b3bfc744f3d5": {
+      "category": "mouse",
+      "connectivity": "wired",
+      "first_seen": 1795301734,
+      "highest_price": 155.0,
+      "history": [
+        [
+          1795301734,
+          155.0
+        ]
+      ],
+      "id": "5ce4800bbf69b3bfc744f3d5",
+      "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTKngjoS8QnVi0zt1FjTIUB5RuLsrkV5yoEHKW8XzqPBl427AKpy9wsxMW7yz8D8G305x8eGIkSC1cDM4hOoVaCkqOD-JrD7hV93tQfvYH0L4sN9Pt6KVbQ",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablolu gaming mouse&prds=catalogid:2865272810026662658,productid:1688005842082230797,headlineOfferDocid:16772045758151624953,imageDocid:10568597492885884886,gpcid:8385528763460121373,mid:576462756539393892,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 155.0,
+      "original_price": null,
+      "price": 155.0,
+      "store": "PttAVM.com",
+      "title": "Polygold Pg-883 Işıklı Kablolu Oyuncu Mouse"
+    },
+    "5f154cf787a7c417f9c7fb1a": {
+      "category": "mouse",
+      "connectivity": "wired",
+      "first_seen": 1795301734,
+      "highest_price": 185.0,
+      "history": [
+        [
+          1795301734,
+          185.0
+        ]
+      ],
+      "id": "5f154cf787a7c417f9c7fb1a",
+      "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTQ44IgxImvodNBPsmLfeFZq3P8JdH7l1txZNO14PDEnv5LtI4cp_xT6N3GLk8-HllmPiSL5m2qsw54DAunZedCsHkjCpbSFOK1n9hOTqqRLswlgHBJSY9iHg",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablolu gaming mouse&prds=productid:17106132161659460801,headlineOfferDocid:17106132161659460801,imageDocid:16706244326672725789,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 185.0,
+      "original_price": null,
+      "price": 185.0,
+      "store": "Trendyol",
+      "title": "Uzak Store Oyun Mouse Kablolu Usb Optik Oyuncu Mause Ergonomik Led Isikli Gaming"
+    },
+    "5f774e9d439fe318072efcf9": {
+      "category": "keyboard",
+      "connectivity": "unknown",
+      "first_seen": 1795301734,
+      "highest_price": 742.63,
+      "history": [
+        [
+          1795301734,
+          742.63
+        ]
+      ],
+      "id": "5f774e9d439fe318072efcf9",
+      "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSUsrTYjUgMW2DLsRNBLwb5bOOyJOgzUQDm8AIxxQuKEXF0UCIgEkZV46qvmb5zDMZYFCMYnJtYgf3HieuaYiR6wdbErYRLtum9Sp58VKDqsc0O2evtgpsQ",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablolu gaming klavye&prds=catalogid:212564131308675674,productid:1713198853761314248,headlineOfferDocid:2315589535719379217,imageDocid:18355713181459237332,rds:PC_708784771662346354|PROD_PC_708784771662346354,gpcid:708784771662346354,mid:576462546657080243,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 742.63,
+      "original_price": null,
+      "price": 742.63,
+      "store": "MB Teknoloji",
+      "title": "INCA IKG-448 RAINBOW GAMING MEKANIK HISLI KLAVYE & MOUSE SET"
+    },
+    "60869714ff0b987a2d34b762": {
+      "category": "mouse",
+      "connectivity": "unknown",
+      "first_seen": 1795301734,
+      "highest_price": 1999.0,
+      "history": [
+        [
+          1795301734,
+          1999.0
+        ]
+      ],
+      "id": "60869714ff0b987a2d34b762",
+      "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQ6QOQ3CwKhIC53ML2-kLKUUoqjOOiSBxkEL8oho9xX2Y0PQMpbIndMantzaSxZf6V3RNxaGDJ55ALIYC4iLbPB02b2W8UjolQX6a0tCHBy_-mW0LhXR1vqww",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablolu gaming mouse&prds=catalogid:17580812136598665460,productid:8183140107619968801,headlineOfferDocid:11703676998782077739,imageDocid:2780332028788888892,rds:PC_2367198758432492942|PROD_PC_2367198758432492942,gpcid:14755072577569517426,mid:576462896618269515,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 1999.0,
+      "original_price": null,
+      "price": 1999.0,
+      "store": "n11",
+      "title": "SteelSeries Aerox 3 Mouse"
+    },
+    "60dcfcd945f3291a6900f594": {
+      "category": "mouse",
+      "connectivity": "wireless",
+      "first_seen": 1795301734,
+      "highest_price": 2129.0,
+      "history": [
+        [
+          1795301734,
+          2129.0
+        ]
+      ],
+      "id": "60dcfcd945f3291a6900f594",
+      "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcR3BVbD7If-wfzpgzrhZ2XnbNSLTAoBeqw2BBnuhgxmjf36h_jsxySMTFtyenADVzxSCpAT0MAfwuijMBa1BEZqX6OYUr3LYpMrKX5iM82e_ommY_qFW9Ru3Q",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablosuz gaming mouse&prds=catalogid:10940106044727315099,productid:11618789480301673115,headlineOfferDocid:7182225321002278599,imageDocid:7321111446817931896,rds:PC_12394495023361572874|PROD_PC_12394495023361572874,gpcid:12394495023361572874,mid:576462892658896869,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 2129.0,
+      "original_price": null,
+      "price": 2129.0,
+      "store": "Turkcell Pasaj",
+      "title": "Razer Basilisk V3 X Hyperspeed Kablosuz Mouse"
+    },
+    "6652488c5330303b9e73c581": {
+      "category": "mouse",
+      "connectivity": "wired",
+      "first_seen": 1795301734,
+      "highest_price": 299.0,
+      "history": [
+        [
+          1795301734,
+          299.0
+        ]
+      ],
+      "id": "6652488c5330303b9e73c581",
+      "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRqSsznA497tk56EgqQfsJk-UMk71OBnom9RHj5iLoVu7ptXNA9m7cGBLJEozkW_iWD4KSZCHFvTPvx0Cup7q4BXNQd8NqFYIgr2nuSYYZl_0o6sGFEcD34dQ",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablolu gaming mouse&prds=catalogid:17184373205378738018,productid:16682219649260016350,headlineOfferDocid:3627836250410764971,imageDocid:354921906507614391,gpcid:7021920290418977411,mid:576462781652135764,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 299.0,
+      "original_price": null,
+      "price": 299.0,
+      "store": "Amazon",
+      "title": "Hello Hl-4725 Kablolu Oyuncu Gamıng Mouse"
+    },
+    "6a026c48484c7a433febb868": {
+      "category": "mouse",
+      "connectivity": "wireless",
+      "first_seen": 1795301734,
+      "highest_price": 1049.0,
+      "history": [
+        [
+          1795301734,
+          1049.0
+        ]
+      ],
+      "id": "6a026c48484c7a433febb868",
+      "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTgCQevv33FP-lGLCiCgLSV9ZjowBXvpvhw4mK-6LWf8nUdLTDopm9aFYMsrap_CswE3x3nLQL3fQY5V34rvtSBjgHFPjtxWa-I7jRaz3TzJCcz0xXyIk8V",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablosuz gaming mouse&prds=catalogid:16456592185555553107,productid:8744069954500954140,headlineOfferDocid:15094897119176713721,imageDocid:15357202357066631748,gpcid:4512200703515204401,mid:576462914773465176,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 1049.0,
+      "original_price": 1399.0,
+      "price": 1049.0,
+      "store": "incehesap.com",
+      "title": "GamePower Kodex RGB 12.000DPI PAW3311 Kablosuz Siyah Gaming Mouse"
+    },
+    "6cc69bf3a0dfce35be5c5768": {
+      "category": "mouse",
+      "connectivity": "both",
+      "first_seen": 1795301734,
+      "highest_price": 3299.0,
+      "history": [
+        [
+          1795301734,
+          3299.0
+        ]
+      ],
+      "id": "6cc69bf3a0dfce35be5c5768",
+      "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcR_F82HU0BImbVwgI0FDhSatTtUGUf-1GlMBAJSvjCvnNJL9nbW15K4q7T64z3p8YldYI-6vCEamtkVKjnVENN9U_qLIMDYE0t-kA35mveFQAEXkdUZ3-c77g",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablosuz gaming mouse&prds=catalogid:5364498043383508437,productid:14935968661874913372,headlineOfferDocid:7572261307962085092,imageDocid:13988435592229735382,rds:PC_12168780293081011943|PROD_PC_12168780293081011943,gpcid:12168780293081011943,mid:576462814266413524,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 3299.0,
+      "original_price": null,
+      "price": 3299.0,
+      "store": "Rampage",
+      "title": "Rampage Blitz Ultimate 8K BT+Wired+2.4G Kablosuz Paw3950 Nordic 52840 MCU Gaming Oyuncu Mouse"
+    },
+    "6d9e71ac8962c5b7b5e2a729": {
+      "category": "keyboard",
+      "connectivity": "unknown",
+      "first_seen": 1795301734,
+      "highest_price": 550.0,
+      "history": [
+        [
+          1795301734,
+          550.0
+        ]
+      ],
+      "id": "6d9e71ac8962c5b7b5e2a729",
+      "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRtHI24A-yDmC231eMKKht8trNEftMbOqOWVlBixwup4ZesKHvxjTnmtRazggZOu0zRnCKnz1kA-5eNkIaWkIiL9KSEqHCZbdOW6ejwLGRkAIA4pKOEtQqyAA",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablolu gaming klavye&prds=catalogid:6815488765552126612,productid:7535684920409714565,headlineOfferDocid:16676986232654697331,imageDocid:10361266055667214129,rds:PC_12933719224742903686|PROD_PC_12933719224742903686,gpcid:12933719224742903686,mid:576462305091170017,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 550.0,
+      "original_price": 746.0,
+      "price": 550.0,
+      "store": "Bilfon Bilişim",
+      "title": "INCA IKG-446 Rainbow Efect Mekanik Hisli Gamer Klavye"
+    },
+    "7493ec051b725dea23360493": {
+      "category": "mouse",
+      "connectivity": "wireless",
+      "first_seen": 1795301734,
+      "highest_price": 3849.0,
+      "history": [
+        [
+          1795301734,
+          3849.0
+        ]
+      ],
+      "id": "7493ec051b725dea23360493",
+      "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQmwDfvjpmt-0LSngKZDE0FKRCcfHxIfeNFT2T_wQIVhkwLwwX9CdGD_UfceWpqPprKi42SpIEeEUDTn7SLR_zM-8QlWdiRsKSO1_Ca6uQ0df_-KWPmKr5bJ2A",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablosuz gaming mouse&prds=catalogid:3259856831055066456,productid:764438412367518261,headlineOfferDocid:12104722293038022956,imageDocid:4339620118397716913,rds:PC_10285185817168624996|PROD_PC_10285185817168624996,gpcid:10285185817168624996,mid:576462913840126021,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 3849.0,
+      "original_price": null,
+      "price": 3849.0,
+      "store": "Trendyol",
+      "title": "Steelseries Aerox 3 Wireless Ghost Edition Gaming Mouse"
+    },
+    "77428210b8ad625d38b97d64": {
+      "category": "keyboard",
+      "connectivity": "wireless",
+      "first_seen": 1795301734,
+      "highest_price": 1263.0,
+      "history": [
+        [
+          1795301734,
+          1263.0
+        ]
+      ],
+      "id": "77428210b8ad625d38b97d64",
+      "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRbW8P6J6RFN1PEbj24aVEyXN8DJ_6h-jqPVa12OLG6A5HoehS0ZOSM18sBfrBXhXHXE40XbQGhhYU10Mg0MBktDkJoXzQXW43wXnWSlFB8pRem5jhaedLPMQ",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablosuz gaming klavye&prds=catalogid:13187965859218438306,productid:17977381519884858182,headlineOfferDocid:4470069217136011315,imageDocid:3110922781699521615,rds:PC_14507170442196650002|PROD_PC_14507170442196650002,gpcid:14507170442196650002,mid:576462917239903371,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 1263.0,
+      "original_price": 1269.0,
+      "price": 1263.0,
+      "store": "Trendyol",
+      "title": "Aula S99 Pro Retro RGB Gaming 3 Modlu Bluetooth/2.4GHz/USB-C Kablosuz Makrolu Türkçe Q Klavye"
+    },
+    "7a0d5c8879fc9418ba37d472": {
+      "category": "mouse",
+      "connectivity": "wired",
+      "first_seen": 1795301734,
+      "highest_price": 1289.29,
+      "history": [
+        [
+          1795301734,
+          1289.29
+        ]
+      ],
+      "id": "7a0d5c8879fc9418ba37d472",
+      "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSvIgVYTBwldTrO36XinTadTe0P5uHjaP_G3GFdkW6a6Ld7m7BVTm4EhQTa1nuPP3FUK80-4YDzk6X0o6hTKR3YlOaqR-8bPlxuYNQaaNI",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablolu gaming mouse&prds=catalogid:843991787592648694,productid:17255829087830693342,headlineOfferDocid:487623025690125539,imageDocid:17375059563686867915,gpcid:4540991067223977191,mid:576462820170859285,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 1289.29,
+      "original_price": null,
+      "price": 1289.29,
+      "store": "ciceksepeti.com",
+      "title": "Lenovo Lecoo MS107 3200 dpi 7 Tuşlu Kablolu RGB Led Aydınlatmalı Gaming Oyuncu Mouse"
+    },
+    "7bc9151f05d1efdbe2facf5e": {
+      "category": "mouse",
+      "connectivity": "wired",
+      "first_seen": 1795301734,
+      "highest_price": 1418.63,
+      "history": [
+        [
+          1795301734,
+          1418.63
+        ]
+      ],
+      "id": "7bc9151f05d1efdbe2facf5e",
+      "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRqHN3hmvLxMIpm1JhB1eSa6C82LFJI64CV7YuL3oZ1_72N_i-IsYfsxO6v68Pha8OBbv5TQDU1vyprnb6QRLyCnzgbMrXOgg",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablolu gaming mouse&prds=catalogid:10913321061989000954,productid:14938172451650444170,headlineOfferDocid:13369277358600673429,imageDocid:12444530472469835220,gpcid:952232255154560418,mid:576462834954483143,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 1418.63,
+      "original_price": null,
+      "price": 1418.63,
+      "store": "Hepsiburada",
+      "title": "Lenovo Lecoo MS109 Kablolu RGB Gaming Oyuncu Mouse"
+    },
+    "7e1e1cf4c212f867d8995ac2": {
+      "category": "mouse",
+      "connectivity": "wired",
+      "first_seen": 1795301734,
+      "highest_price": 2990.0,
+      "history": [
+        [
+          1795301734,
+          2990.0
+        ]
+      ],
+      "id": "7e1e1cf4c212f867d8995ac2",
+      "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQU1-VNevZLc9ZgAMeUkqKIW5eyhabyyOTQ63Dk6Wtb2aPkv0zVZRqc1j-fGUKzA0b_3Bvz5YPQ_os7WGI4FIzRp4B83qeR7pCKLpO17YSDTjbU7VUiFg0b",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablolu gaming mouse&prds=catalogid:5570112518336950721,productid:6489355185992688933,headlineOfferDocid:14207188816445551661,imageDocid:15510547742135934215,rds:PC_9226430843261717043|PROD_PC_9226430843261717043,gpcid:9226430843261717043,mid:576462917252460409,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 2990.0,
+      "original_price": null,
+      "price": 2990.0,
+      "store": "n11",
+      "title": "Razer Deathadder V3 Kablolu Mouse"
+    },
+    "7f5b1c9e983082dbe9cf576d": {
+      "category": "mouse",
+      "connectivity": "wireless",
+      "first_seen": 1795301734,
+      "highest_price": 1694.42,
+      "history": [
+        [
+          1795301734,
+          1694.42
+        ]
+      ],
+      "id": "7f5b1c9e983082dbe9cf576d",
+      "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSn-KBYU140E6EkNXiJ8PeqQwwsJMpwG3A4lrUMNFTlZWIzaflpetggEne-LXisHXUSioTYUYRDZWhkOV49-YI6ouvrY8cvcOJbHjBQN3409EQcOTeFVuLZrP0",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablosuz gaming mouse&prds=catalogid:13891756338725512005,productid:3252120439960206712,headlineOfferDocid:16981116531441064401,imageDocid:14972291302599160889,rds:PC_12586976264663916353|PROD_PC_12586976264663916353,gpcid:12586976264663916353,mid:576462916999220698,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 1694.42,
+      "original_price": null,
+      "price": 1694.42,
+      "store": "Trendyol",
+      "title": "Logitech G305 LIGHTSPEED Beyaz Kablosuz Oyuncu Mouse"
+    },
+    "7fd7e9435b9fa0810948bff0": {
+      "category": "mouse",
+      "connectivity": "wireless",
+      "first_seen": 1795301734,
+      "highest_price": 3850.42,
+      "history": [
+        [
+          1795301734,
+          3850.42
+        ]
+      ],
+      "id": "7fd7e9435b9fa0810948bff0",
+      "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQtis386ICS_8qOVJvM998B_HFQN5QW_J-LHNO6Mf7aOYgor1zsT_rErbXC7cr_tV2S51koWjypdUfL-gxliQLLM3h_awGVog",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablosuz gaming mouse&prds=catalogid:12484888957151576541,productid:8342729853942726189,headlineOfferDocid:2553727988415584976,imageDocid:15731439259028084273,rds:PC_9354113733883400448|PROD_PC_9354113733883400448,gpcid:9354113733883400448,mid:576462912442935312,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 3850.42,
+      "original_price": 3895.0,
+      "price": 3850.42,
+      "store": "Amazon",
+      "title": "Razer DEATHADDER V3 PRO Kablosuz Mouse"
+    },
+    "84d7438d31976ae3acf7613c": {
+      "category": "mouse",
+      "connectivity": "wireless",
+      "first_seen": 1795301734,
+      "highest_price": 2715.03,
+      "history": [
+        [
+          1795301734,
+          2715.03
+        ]
+      ],
+      "id": "84d7438d31976ae3acf7613c",
+      "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRGM-NuCh2RRwn5oqPbaWqOrwpvyPaU69IklzUnVRkd51n4M799B_-sdLOGsaYbsmK7ocAS5zWcUlF8e7Ma4-cyS3xlvGjuiYK5NbqiQT1kPwVXcLCnEXd0yA",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablosuz gaming mouse&prds=catalogid:7281701710394245907,productid:17365791640486954088,headlineOfferDocid:7574270075379478536,imageDocid:18350502133008987472,rds:PC_9549014113220511815|PROD_PC_9549014113220511815,gpcid:9549014113220511815,mid:576462912395678080,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 2715.03,
+      "original_price": null,
+      "price": 2715.03,
+      "store": "trendyol.com",
+      "title": "MSI Versa 300 8K Kablosuz Gaming Mouse"
+    },
+    "89699fd8419572824633806b": {
+      "category": "keyboard",
+      "connectivity": "wired",
+      "first_seen": 1795301734,
+      "highest_price": 3721.9,
+      "history": [
+        [
+          1795301734,
+          3721.9
+        ]
+      ],
+      "id": "89699fd8419572824633806b",
+      "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQrdlLupO8sil0PpKsgMseZwpsa1o4FlqRMMcIqAJIki8Mkh9xnuri-DM8BNoa1end9CwLtzZY8ZwmiYGnB8ekwbleDpyaU0SL4xzbK_jHXM9jx_1gvQuYn",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablolu gaming klavye&prds=productid:12336440874618166382,headlineOfferDocid:12336440874618166382,imageDocid:1445721800172986148,rds:PC_9010399873377531875|PROD_PC_9010399873377531875,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 3721.9,
+      "original_price": null,
+      "price": 3721.9,
+      "store": "PttAVM.com",
+      "title": "G213 Prodigy Rgb Kablolu Oyuncu Klavyesi 920-008094"
+    },
+    "89bf7a69f01a283b03770ee3": {
+      "category": "mouse",
+      "connectivity": "wired",
+      "first_seen": 1795301734,
+      "highest_price": 430.53,
+      "history": [
+        [
+          1795301734,
+          430.53
+        ]
+      ],
+      "id": "89bf7a69f01a283b03770ee3",
+      "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQO1h2FuseQXq8f6tiiWNRNaeikydl-Dh_x5pV_y9FdWboY4HnXiJK--cpaD_SE_Zj6or3yJ_nv_htlbA4ulPWrGpgSGWWOH6U81XWG8ugQ5vujB5K8-EU7",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablolu gaming mouse&prds=catalogid:12067015266031263793,productid:16448546300153968365,headlineOfferDocid:680295191020236102,imageDocid:8455797915490253525,gpcid:12080773827056177836,mid:576462563316372769,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 430.53,
+      "original_price": null,
+      "price": 430.53,
+      "store": "ciceksepeti.com",
+      "title": "Hello HL-4729 Kablolu Oyuncu Gaming Mouse"
+    },
+    "8c7a06022838c99c68652016": {
+      "category": "mouse",
+      "connectivity": "wireless",
+      "first_seen": 1795301734,
+      "highest_price": 1079.12,
+      "history": [
+        [
+          1795301734,
+          1079.12
+        ]
+      ],
+      "id": "8c7a06022838c99c68652016",
+      "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSXJe5t-vfzCjhUxb0PzhqQ9WmEQyrrGGRY6y7e8ycVIPnK8HafiUxufKQdewALG2wyNOrXs-28rbjA-RoxBRopZotHs5uMhA",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablosuz gaming mouse&prds=catalogid:10576715247026913855,productid:6858183977720703892,headlineOfferDocid:5092620284021401647,imageDocid:15094503738788677128,rds:PC_6122435010698112879|PROD_PC_6122435010698112879,gpcid:6122435010698112879,mid:576462801701439311,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 1079.12,
+      "original_price": 1148.0,
+      "price": 1079.12,
+      "store": "Hepsiburada",
+      "title": "GameBooster M18 Inferno 2.4ghz Kablosuz RGB Aydınlatmalı Profesyonel Gaming Mouse"
+    },
+    "8cca46a03494365481618acd": {
+      "category": "keyboard",
+      "connectivity": "unknown",
+      "first_seen": 1795301734,
+      "highest_price": 3533.85,
+      "history": [
+        [
+          1795301734,
+          3533.85
+        ]
+      ],
+      "id": "8cca46a03494365481618acd",
+      "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTLgXCzJpmo8H1fOKoTn5nYIDcrxZdVYIQE7ob0TF_3GIE7xzRm4uy-j7F5koInyCNxMFxAY4Z5CJrXTQlsgebH3iTAwB6P",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablolu gaming klavye&prds=productid:18318038134535863832,headlineOfferDocid:18318038134535863832,imageDocid:3670576394811832703,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 3533.85,
+      "original_price": null,
+      "price": 3533.85,
+      "store": "Hepsiburada",
+      "title": "Rampage KB-277 Omnı Siyah Örgülü Type C Rgb 6 Farklı Aydınlatma Modu Q Mini Gaming Oyuncu Klavyesi"
+    },
+    "8fd67d3a70833a89a5220552": {
+      "category": "mouse",
+      "connectivity": "wireless",
+      "first_seen": 1795301734,
+      "highest_price": 2499.0,
+      "history": [
+        [
+          1795301734,
+          2499.0
+        ]
+      ],
+      "id": "8fd67d3a70833a89a5220552",
+      "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcS_KdyJ5t4O_yild2HPNaoAhdKEvo3Ck1-XE--4fhZr1u9HARHYQGToHTjnHvwoMXaKAcGDqH6XRTIgJjapFOkRbFwk-hETHOsEGi7Enls5-Zy4aIUQTiYQDmlY",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablosuz gaming mouse&prds=catalogid:194252428989799491,productid:8151888375309009941,headlineOfferDocid:15792157861789366753,imageDocid:5844130011963071059,rds:PC_7945397967276688716|PROD_PC_7945397967276688716,gpcid:7945397967276688716,mid:576462784149555392,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 2499.0,
+      "original_price": null,
+      "price": 2499.0,
+      "store": "Trendyol",
+      "title": "Glorious Model D 2 Kablosuz Mat Oyuncu Mouse"
+    },
+    "95bc4395100866f8e314d527": {
+      "category": "keyboard",
+      "connectivity": "wired",
+      "first_seen": 1795301734,
+      "highest_price": 3040.4,
+      "history": [
+        [
+          1795301734,
+          3040.4
+        ]
+      ],
+      "id": "95bc4395100866f8e314d527",
+      "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSVejIlhhZaRGExmseGRB7unqnyIbFrgBHq7GAVdWGFwsAZ2_ewN9s8YsMCvp-YRxBMogKFNFVYhgxhtTxo_esSRTfm8rJrYX7NOpisYkcalmT8D2Gvu73bUw",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablolu gaming klavye&prds=productid:11766054475843624109,headlineOfferDocid:11766054475843624109,imageDocid:16845721664422076997,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 3040.4,
+      "original_price": null,
+      "price": 3040.4,
+      "store": "ciceksepeti.com",
+      "title": "Inca Ikg-449 Kablolu Usb Q Trk Siyah Gaming Klavye"
+    },
+    "994efbeaf195d24e235c538d": {
+      "category": "mouse",
+      "connectivity": "wired",
+      "first_seen": 1795301734,
+      "highest_price": 1098.62,
+      "history": [
+        [
+          1795301734,
+          1098.62
+        ]
+      ],
+      "id": "994efbeaf195d24e235c538d",
+      "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcR0-LHz5Ky-L1HKgprbfEEIfi6kGDdIqmJ0wemAJ3ruwlDLsj-DTwO2LvZ56cNLe9ZsZzTz43mSVG_ASmvPuhI7W5ir7HwjJgxTkGbXScY7Lo9G2IKJY0Mb6MI",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablolu gaming mouse&prds=catalogid:17804595505466587270,productid:3850957322038502558,headlineOfferDocid:15297747881448496629,imageDocid:2352276604167386421,gpcid:16337938498178285333,mid:576462555444620507,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 1098.62,
+      "original_price": null,
+      "price": 1098.62,
+      "store": "n11",
+      "title": "Nodar G502 Gaming Mouse Kablolu 7200 dpi 6 Tuş Rgb Oyuncu Mouse Siyah"
+    },
+    "9a299a526282bd9884ac6c6f": {
+      "category": "mouse",
+      "connectivity": "unknown",
+      "first_seen": 1795301734,
+      "highest_price": 499.0,
+      "history": [
+        [
+          1795301734,
+          499.0
+        ]
+      ],
+      "id": "9a299a526282bd9884ac6c6f",
+      "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRX-ePhIt4SUrhUczcj3oMiFHgnIMaDrl_drV_Sig9eNbWPP9UgNlNaIyAumcZO-zbrkWZ8H26WMEuNFNwSsRgsf8yTf-KK",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablolu gaming mouse&prds=catalogid:13624665738301911832,productid:2475957126044541561,headlineOfferDocid:3355612118418223932,imageDocid:14515718080600268346,gpcid:12301308658906966330,mid:576462917160202353,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 499.0,
+      "original_price": null,
+      "price": 499.0,
+      "store": "Hepsiburada",
+      "title": "Hadron G360 Rgb 6 Buttons Usb 3600 Dpı Oyuncu Mouse"
+    },
+    "9b1ab5c52a6669f8d8c22a77": {
+      "category": "keyboard",
+      "connectivity": "wireless",
+      "first_seen": 1795301734,
+      "highest_price": 1199.0,
+      "history": [
+        [
+          1795301734,
+          1199.0
+        ]
+      ],
+      "id": "9b1ab5c52a6669f8d8c22a77",
+      "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSIrFk4S40I39_ofjfGnlc9x3e0r-oSa9TQPy7bJzJSpW27nRpvU6FZeVHVbRwkFvQMQbEE6W8v3cbqV7M63PZGl2tOd0KLaQ",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablosuz gaming klavye&prds=catalogid:10156372660492490532,productid:8181959966294202732,headlineOfferDocid:16064385220162772464,imageDocid:4981338831262250817,gpcid:7072338883871045234,mid:576462912404468770,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 1199.0,
+      "original_price": null,
+      "price": 1199.0,
+      "store": "Hepsiburada",
+      "title": "Atasoft K68 Red Switch Kablosuz Bluetooth Mekanik Oyuncu Klavyesi Hotswapp Oyun Klavyesi"
+    },
+    "9c848dc3249c693e1124062d": {
+      "category": "keyboard",
+      "connectivity": "wireless",
+      "first_seen": 1795301734,
+      "highest_price": 899.0,
+      "history": [
+        [
+          1795301734,
+          899.0
+        ]
+      ],
+      "id": "9c848dc3249c693e1124062d",
+      "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRdK7Kx_Dr114THVIUAep4E-it48jo1rLEG1EoxACAVgBoN06QPcImANhV5d1R-a_lHu4mOM7KJu9gzWNcSgbaxwbNlEyeLb8XcW8Q7UfAzzvo5nRnRdUAH",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablosuz gaming klavye&prds=catalogid:14617820008221372023,productid:6945873758841122780,headlineOfferDocid:17096141872298728614,imageDocid:15293259577791060571,gpcid:6137589845227933387,mid:576462917341532393,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 899.0,
+      "original_price": null,
+      "price": 899.0,
+      "store": "Trendyol",
+      "title": "James Donkey JDK99 Kablosuz RGB Mekanik Hisli Membran Türkçe Q Full Size Gaming Klavye"
+    },
+    "9d00e8e00b80d3c115b37636": {
+      "category": "mouse",
+      "connectivity": "wireless",
+      "first_seen": 1795301734,
+      "highest_price": 4399.0,
+      "history": [
+        [
+          1795301734,
+          4399.0
+        ]
+      ],
+      "id": "9d00e8e00b80d3c115b37636",
+      "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcROU-I772sYF3iETnjg8b_3hBIk3b43tgngi0Ym5XVMtrMa7ZM1I6NAZ4RIVzAqFPAmeuBLJCBCAs8jMkyopMVaZ-Gmq-5R_M92wZXlV5kEbea2mtcFgC8f9g",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablosuz gaming mouse&prds=catalogid:16380185567463457808,productid:12210848502358014797,headlineOfferDocid:13931620130902922112,imageDocid:11391470629691595117,rds:PC_4879054095152447314|PROD_PC_4879054095152447314,gpcid:4879054095152447314,mid:576462912635731340,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 4399.0,
+      "original_price": null,
+      "price": 4399.0,
+      "store": "Meyer Bilişim",
+      "title": "VGN Dragonfly F1 V5 8K Kablosuz Oyuncu Mouse"
+    },
+    "9ded6200f07b5495af74f340": {
+      "category": "mouse",
+      "connectivity": "wireless",
+      "first_seen": 1795301734,
+      "highest_price": 999.0,
+      "history": [
+        [
+          1795301734,
+          999.0
+        ]
+      ],
+      "id": "9ded6200f07b5495af74f340",
+      "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQPQ--L1233i_L0NTc78ukpickWrSDn03CZE9bPhPW4Iuyy7UU8E8YB0MaOvlCcU25ZcoVOvXt7k_ppO8RpkTi1TTIsq0yy",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablosuz gaming mouse&prds=catalogid:578943677413955338,productid:15743267937880607343,headlineOfferDocid:15844058444197683088,imageDocid:8128187153874410176,rds:PC_1950520707774233225|PROD_PC_1950520707774233225,gpcid:1950520707774233225,mid:576462865174933945,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 999.0,
+      "original_price": null,
+      "price": 999.0,
+      "store": "Hepsiburada",
+      "title": "Havit Gamenote MS966SE Kablosuz Gaming Mouse 3 Mod Bağlantı"
+    },
+    "a29402d9955c00f21d5c0def": {
+      "category": "keyboard",
+      "connectivity": "unknown",
+      "first_seen": 1795301734,
+      "highest_price": 3673.35,
+      "history": [
+        [
+          1795301734,
+          3673.35
+        ]
+      ],
+      "id": "a29402d9955c00f21d5c0def",
+      "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQz0u4l0jYazFlwZV050mKjFPaYUZPcwKMdqNNhpD99szbqDq1-K-SGxaHbQhjL3NkcR_IJHp36PKFrHQjMzAtP012_V3jTqw",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablolu gaming klavye&prds=productid:3089801305044160171,headlineOfferDocid:3089801305044160171,imageDocid:16512045223449283153,rds:PC_13222865309149292414|PROD_PC_13222865309149292414,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 3673.35,
+      "original_price": null,
+      "price": 3673.35,
+      "store": "Hepsiburada",
+      "title": "Rampage KB-R77 Palm USB Rainbow Backlight Outemu Blue Switch Mekanik 36 Tuşlu Mini Gaming Oyuncu Klavyesi"
+    },
+    "a3d84adf5ff64cf6a21aacc1": {
+      "category": "mouse",
+      "connectivity": "wired",
+      "first_seen": 1795301734,
+      "highest_price": 4299.0,
+      "history": [
+        [
+          1795301734,
+          4299.0
+        ]
+      ],
+      "id": "a3d84adf5ff64cf6a21aacc1",
+      "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQOrCa3kSicY4OWXJ9GVwKqJK11AcoTmkP0QeOXE2d-NixhJfRpsG1RJfNfNDl5eGxEcZqeJJRaLRWMwQlqwF0l2vFhx7fzirJLAnjcIO0uxWCoMxudN6pkSg",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablolu gaming mouse&prds=catalogid:8562363231196708186,productid:6634613810809976526,headlineOfferDocid:16643829579223101161,imageDocid:6239114325130774859,rds:PC_16917901885659549878|PROD_PC_16917901885659549878,gpcid:16917901885659549878,mid:576462576352678639,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 4299.0,
+      "original_price": null,
+      "price": 4299.0,
+      "store": "idefix",
+      "title": "LOGITECH 910-006139 G G502 X Kablolu Oyuncu Mouse"
+    },
+    "a856eb42783e1d5ecc6fe527": {
+      "category": "mouse",
+      "connectivity": "wireless",
+      "first_seen": 1795301734,
+      "highest_price": 2199.0,
+      "history": [
+        [
+          1795301734,
+          2199.0
+        ]
+      ],
+      "id": "a856eb42783e1d5ecc6fe527",
+      "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRH38PbfAosRvL0X42JCr3VrLu7dK1ytASHvn3gAsexcNKi-lJxUrpMKjbHB5MH0pdFn_dumWlIA7p_zCVlDZDQKe55uW_wRPkSxM7zojHBFFpdeDYfn1u2kw",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablosuz gaming mouse&prds=catalogid:341350704730660244,productid:12826019127478985678,headlineOfferDocid:971013612086229588,imageDocid:4323200771662900220,rds:PC_5361423757003999893|PROD_PC_5361423757003999893,gpcid:5361423757003999893,mid:576462492613138639,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 2199.0,
+      "original_price": 2699.0,
+      "price": 2199.0,
+      "store": "Monster Notebook TR",
+      "title": "Pusat Ghost Pro 54GR 26000 dpi 650 IPS Kablosuz Rgb Oyuncu Mouse"
+    },
+    "a9f186e3a05c4e5ce35b6abd": {
+      "category": "mouse",
+      "connectivity": "wired",
+      "first_seen": 1795301734,
+      "highest_price": 455.05,
+      "history": [
+        [
+          1795301734,
+          455.05
+        ]
+      ],
+      "id": "a9f186e3a05c4e5ce35b6abd",
+      "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSEgF9RwopmJshzwiWVSShRmlW4fB_2N6_--GbvXhZ80yhe3ej64i6CzzRxEBawwoXg5ZxfgbzMjkZ4J5PUxqGGgK9tro_i",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablolu gaming mouse&prds=productid:4738726005528342383,headlineOfferDocid:4738726005528342383,imageDocid:9151596538341121346,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 455.05,
+      "original_price": null,
+      "price": 455.05,
+      "store": "Amazon",
+      "title": "Kablolu RGB Gaming Mouse, 7200 DPI, Instant 725 Sensör, 5M Tıklama Ömürlü, Örgü Kablo, Makrolu Ergonomik Tasarım, Siyah Kablolu Oyuncu Mouse MO-02"
+    },
+    "aaf0fd8658e83464d110ac26": {
+      "category": "mouse",
+      "connectivity": "wired",
+      "first_seen": 1795301734,
+      "highest_price": 385.0,
+      "history": [
+        [
+          1795301734,
+          385.0
+        ]
+      ],
+      "id": "aaf0fd8658e83464d110ac26",
+      "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQeU7scpl91qUFKaSz8ZxlowzNvqgxbQyI2przQPIoqRVwdmrkRrXibjVLLEv1SVC-vohO00FmdlqMUQ8EXmz9fJpK_nMaM",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablolu gaming mouse&prds=productid:11322674052099775777,headlineOfferDocid:11322674052099775777,imageDocid:7355598324256654917,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 385.0,
+      "original_price": null,
+      "price": 385.0,
+      "store": "Hepsiburada",
+      "title": "Leader LD-450 Rgb Işıklı Kablolu Oyuncu Mouse - Siyah"
+    },
+    "ae74c68de4d2ffb0919fddca": {
+      "category": "keyboard",
+      "connectivity": "unknown",
+      "first_seen": 1795301734,
+      "highest_price": 920.56,
+      "history": [
+        [
+          1795301734,
+          920.56
+        ]
+      ],
+      "id": "ae74c68de4d2ffb0919fddca",
+      "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcS6veNy0NqMsPyyXZnwik5AxHU44fua0ktq5jIvT52iaG7MYKW_NBBT9edowSXocK06anseenwLqh4cSJ0OgSUSKK3dS6ydmoxNZUfmzJvPoCc56dU9mKoU",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablolu gaming klavye&prds=catalogid:6860013996937663013,productid:7496351049503515206,headlineOfferDocid:7960023412400985565,imageDocid:9122561244830633034,gpcid:8054915482995415215,mid:576462447247316695,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 920.56,
+      "original_price": null,
+      "price": 920.56,
+      "store": "MAY Boğaziçi Bilgisayar",
+      "title": "Inca IKG-449 Rainbow Mekanik Hisli Gaming Klavye"
+    },
+    "b68e146a6b5c99d5eb26c88b": {
+      "category": "keyboard",
+      "connectivity": "unknown",
+      "first_seen": 1795301734,
+      "highest_price": 799.0,
+      "history": [
+        [
+          1795301734,
+          799.0
+        ]
+      ],
+      "id": "b68e146a6b5c99d5eb26c88b",
+      "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQAcbcfiNTvhFojbKw4K2hvPw-vK5esm6tDsRcNgB7A1M75AUPZC1uSJ7i8Hr5GfohDvqPXdsxkIX8FLt641Xk5Fmp3Dm3-fg",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablolu gaming klavye&prds=catalogid:5353397918851030003,productid:15711274989597897510,headlineOfferDocid:4510541562991121528,imageDocid:18383617122495902257,rds:PC_13885810034955621890|PROD_PC_13885810034955621890,gpcid:13885810034955621890,mid:576462830224753817,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 799.0,
+      "original_price": null,
+      "price": 799.0,
+      "store": "Hepsiburada",
+      "title": "Havit Kb883l Rgb Mekanik Oyuncu Klavyesi"
+    },
+    "b78005cd3ffdcb9a3207c6a5": {
+      "category": "mouse",
+      "connectivity": "wireless",
+      "first_seen": 1795301734,
+      "highest_price": 1044.05,
+      "history": [
+        [
+          1795301734,
+          1044.05
+        ]
+      ],
+      "id": "b78005cd3ffdcb9a3207c6a5",
+      "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRONnuq0Yu2viIQEusDuaXLJa1Ko8XmakmTiOpFoeC3xLGa346yxZ0FobyG0RrvkyE_rB6xSXwjNzlOvktRpegZUrKNd3j-ovhIwurXpAIAhVJOucjbzWrUZA",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablosuz gaming mouse&prds=catalogid:10312590514063006212,productid:17135476109964109740,headlineOfferDocid:3987789537632501556,imageDocid:412800171696931405,gpcid:9130431753889083172,mid:576462900400223904,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 1044.05,
+      "original_price": 1187.0,
+      "price": 1044.05,
+      "store": "hawkchair.com",
+      "title": "Hawk Gaming HM220 1K Hz 12000 dpi Tri-Mode Kablosuz/Bluetooth Gaming Mouse"
+    },
+    "ba3dce620302675e01047214": {
+      "category": "mouse",
+      "connectivity": "wired",
+      "first_seen": 1795301734,
+      "highest_price": 1799.0,
+      "history": [
+        [
+          1795301734,
+          1799.0
+        ]
+      ],
+      "id": "ba3dce620302675e01047214",
+      "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcR2ZBmHtKtE7ymjFD-oBXz5B0DeNktCLasokE5gNJXcv99OsC8VJpNNara93tvlNGOloHS8aH8z0JxbWPHCe7fRUsQtnG9-TBzB3bP8ukBhIeCdvvEuD_ZdCg",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablolu gaming mouse&prds=catalogid:7820816562760960813,productid:11796493733321058956,headlineOfferDocid:3060719932606655443,imageDocid:12752692868967600569,rds:PC_4684309399275087251|PROD_PC_4684309399275087251,gpcid:3278293556713680147,mid:576462576363483571,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 1799.0,
+      "original_price": 2899.0,
+      "price": 1799.0,
+      "store": "itopya.com",
+      "title": "SteelSeries Aerox 5 RGB Kablolu Gaming Mouse"
+    },
+    "ba60fcb3b6d3f9f1520fbfed": {
+      "category": "keyboard",
+      "connectivity": "wireless",
+      "first_seen": 1795301734,
+      "highest_price": 2379.0,
+      "history": [
+        [
+          1795301734,
+          2379.0
+        ]
+      ],
+      "id": "ba60fcb3b6d3f9f1520fbfed",
+      "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQejOLNyob6-LLtT3rLr0P6NkBBvujRww_wH6d-yqIxWecnB2d8Jwp5Y-vKe3M-zF-wvIZDpeEyAI66GMDIYp5fxrmGpQ9ZVSEZM_uIgnOswQTMu7GwASEwUQ",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablosuz gaming klavye&prds=catalogid:12725691826916764948,productid:12885707356317192038,headlineOfferDocid:3881146159676465390,imageDocid:7197501664517877049,rds:PC_351026380105798304|PROD_PC_351026380105798304,gpcid:8883791707669816033,mid:576462916510883760,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 2379.0,
+      "original_price": null,
+      "price": 2379.0,
+      "store": "Trendyol",
+      "title": "Akko 3108RF Black Gold Frost Pink Switch Kablosuz İngilizce Mekanik Gaming Klavye"
+    },
+    "baa0130b23b5224aead3e7fa": {
+      "category": "keyboard",
+      "connectivity": "unknown",
+      "first_seen": 1795301734,
+      "highest_price": 4059.0,
+      "history": [
+        [
+          1795301734,
+          4059.0
+        ]
+      ],
+      "id": "baa0130b23b5224aead3e7fa",
+      "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSK5R8C2q_bIt-gBl9qr1J9Xxd7W-o-aaShZTyP4sViLdQ7gG2MuQj6RnboLmfoy3PCEUFn3KGq1tmXz8KRuu3kjg9f5BiZ35AV3el8P-03NNkpGzqqnxT6Lw",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablosuz gaming klavye&prds=catalogid:12202382395218926827,productid:1611853160299484024,headlineOfferDocid:9206685373941447786,imageDocid:7940612626707362038,rds:PC_2995860317541910172|PROD_PC_2995860317541910172,gpcid:2995860317541910172,mid:576462815084961929,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 4059.0,
+      "original_price": null,
+      "price": 4059.0,
+      "store": "incehesap.com",
+      "title": "Msi Forge GK600 Tkl Mekanik Gaming Klavye"
+    },
+    "bacd8c477682bdf6c357527e": {
+      "category": "keyboard",
+      "connectivity": "wireless",
+      "first_seen": 1795301734,
+      "highest_price": 1044.05,
+      "history": [
+        [
+          1795301734,
+          1044.05
+        ]
+      ],
+      "id": "bacd8c477682bdf6c357527e",
+      "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcStUYrYnyAEQIXnqI23NqcZrctDT9ptXyqEXRiuIWYEhNt69O_BDUkWaxbWKqrn1gckMx2UKl4ycHWfwKzJA0lJsuTjQGyFMfz8OAJ5kpVq4TgTvifvC4b4pw",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablosuz gaming klavye&prds=catalogid:12815736053585391490,productid:1196188254964560029,headlineOfferDocid:8720024458019579155,imageDocid:1567966083002150171,rds:PC_4439182397459534536|PROD_PC_4439182397459534536,gpcid:4439182397459534536,mid:576462899653454074,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 1044.05,
+      "original_price": null,
+      "price": 1044.05,
+      "store": "hawkchair.com",
+      "title": "Hawk Gaming HK251 Membrane RGB Kablosuz/Bluetooth %65 Türkçe Gaming Klavye"
+    },
+    "bc12f201c10f7b660ca52376": {
+      "category": "keyboard",
+      "connectivity": "unknown",
+      "first_seen": 1795301734,
+      "highest_price": 2992.28,
+      "history": [
+        [
+          1795301734,
+          2992.28
+        ]
+      ],
+      "id": "bc12f201c10f7b660ca52376",
+      "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRxFvQNfTNyFc6eOXCMp3SuezJcYCeZNR9-eFBmlIZxiZ5oy9ofhGlIyBXYypQ0COho6AtFqAepdF6OEZCyEubfth4P0lrbXEDie9WA5z0Mq2xswP-XqVZO9A",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablolu gaming klavye&prds=catalogid:1130314401127681361,productid:8294782247518177356,headlineOfferDocid:1188049813442843792,imageDocid:863528503435541888,gpcid:1925028050095226226,mid:576462382134246458,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 2992.28,
+      "original_price": null,
+      "price": 2992.28,
+      "store": "n11",
+      "title": "Inca Phaldor IKG-445 RGB Mekanik Oyuncu Klavye"
+    },
+    "c8c33bec4cd35e068528766a": {
+      "category": "mouse",
+      "connectivity": "unknown",
+      "first_seen": 1795301734,
+      "highest_price": 2599.0,
+      "history": [
+        [
+          1795301734,
+          2599.0
+        ]
+      ],
+      "id": "c8c33bec4cd35e068528766a",
+      "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQ6QOQ3CwKhIC53ML2-kLKUUoqjOOiSBxkEL8oho9xX2Y0PQMpbIndMantzaSxZf6V3RNxaGDJ55ALIYC4iLbPB02b2W8UjolQX6a0tCHBy_-mW0LhXR1vqww",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablolu gaming mouse&prds=catalogid:17580812136598665460,productid:8183140107619968801,headlineOfferDocid:281959524163726345,imageDocid:2780332028788888892,rds:PC_2367198758432492942|PROD_PC_2367198758432492942,gpcid:14755072577569517426,mid:576462896618269515,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 2599.0,
+      "original_price": null,
+      "price": 2599.0,
+      "store": "Hepsiburada",
+      "title": "SteelSeries Aerox 3 Mouse"
+    },
+    "cb8db1e256767a24ffe5d538": {
+      "category": "keyboard",
+      "connectivity": "unknown",
+      "first_seen": 1795301734,
+      "highest_price": 903.57,
+      "history": [
+        [
+          1795301734,
+          903.57
+        ]
+      ],
+      "id": "cb8db1e256767a24ffe5d538",
+      "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQATItKFiWrljuBCq6lluL-Zz3Z4JC5gqr1WB50p7fjfKeBW2VCZQEnixzvqmvONyA7xApDxV5BNosOHZn32lpt71QIW0GHCU9_KWR7ZD1WcqViS9IFdvvw",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablolu gaming klavye&prds=productid:5128620614681881995,headlineOfferDocid:5128620614681881995,imageDocid:10455272856341889041,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 903.57,
+      "original_price": null,
+      "price": 903.57,
+      "store": "Nexpay360 | AGT Bilgi Sistemleri",
+      "title": "İnca Ikg-449 Raınbow Efect Mekanik Hisli Gamıng Klavye"
+    },
+    "cb965f4f7c0e0d613075cd49": {
+      "category": "keyboard",
+      "connectivity": "unknown",
+      "first_seen": 1795301734,
+      "highest_price": 3848.11,
+      "history": [
+        [
+          1795301734,
+          3848.11
+        ]
+      ],
+      "id": "cb965f4f7c0e0d613075cd49",
+      "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTLgXCzJpmo8H1fOKoTn5nYIDcrxZdVYIQE7ob0TF_3GIE7xzRm4uy-j7F5koInyCNxMFxAY4Z5CJrXTQlsgebH3iTAwB6P",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablolu gaming klavye&prds=productid:9938440604329123960,headlineOfferDocid:9938440604329123960,imageDocid:3670576394811832703,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 3848.11,
+      "original_price": null,
+      "price": 3848.11,
+      "store": "Hepsiburada",
+      "title": "Rampage KB-277 Omnı Siyah Örgülü Type C Rgb 6 Farklı Aydınlatma Modu Q Mini Gaming Oyuncu Klavyesi"
+    },
+    "cbdeb400a4b373dc73e110d4": {
+      "category": "keyboard",
+      "connectivity": "wireless",
+      "first_seen": 1795301734,
+      "highest_price": 1499.0,
+      "history": [
+        [
+          1795301734,
+          1499.0
+        ]
+      ],
+      "id": "cbdeb400a4b373dc73e110d4",
+      "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSL6CFflNEwFAcAlBgdIIbYxePN57gWveCjnRVDS1Emi1neB-yPODy_KmE5vVA2_eTR4wNibAzvNBk8-ZCQ2Sb1pxlQtJ0H_j48IM20wHcxNTmiq35FdADzlbY",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablosuz gaming klavye&prds=catalogid:17758670663272304925,productid:2815546529084112719,headlineOfferDocid:18325815240656671224,imageDocid:12976101414667696577,gpcid:12193785548480078329,mid:576462575675851178,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 1499.0,
+      "original_price": 2599.0,
+      "price": 1499.0,
+      "store": "MediaMarkt Türkiye",
+      "title": "Ugreen Fun+ Renkli Tuşlu Aydınlatmalı Brown Switch Mekanik Bluetooth Kablosuz Türkçe Q Klavye"
+    },
+    "d206ad34116ee5198bdd1f1a": {
+      "category": "mouse",
+      "connectivity": "wireless",
+      "first_seen": 1795301734,
+      "highest_price": 1774.0,
+      "history": [
+        [
+          1795301734,
+          1774.0
+        ]
+      ],
+      "id": "d206ad34116ee5198bdd1f1a",
+      "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSUjgEvetO9h7Fp99XLoT89vqTvrxyaHsjQbyKP75GFR9AxU9VNPCWjnxh5X-oh__mj5Phgz0Vh1Ba-8EWM0OKjMS0rbzEN",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablosuz gaming mouse&prds=catalogid:12437522231070371691,productid:894412118589852801,headlineOfferDocid:17012265621096920890,imageDocid:10273184248718411676,rds:PC_11117356889057328191|PROD_PC_11117356889057328191,gpcid:11117356889057328191,mid:576462882318091436,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 1774.0,
+      "original_price": null,
+      "price": 1774.0,
+      "store": "Hepsiburada",
+      "title": "Havit Gamenote MS955WB Pro Rgb Wireless Gaming Mouse 3 Modlu + Şarj İstasyonu - Beyaz"
+    },
+    "d32012dba3690bc800d2bd31": {
+      "category": "keyboard",
+      "connectivity": "unknown",
+      "first_seen": 1795301734,
+      "highest_price": 2133.22,
+      "history": [
+        [
+          1795301734,
+          2133.22
+        ]
+      ],
+      "id": "d32012dba3690bc800d2bd31",
+      "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQv9JP61aTaCwxwZUj-z-KnvHbRGsVMy3DeWt8XxSVc1vb8oLx-gEickZbI5CGJAR63qIJYHRAoB7C_L9NlNbb9uj_Fx9qzk2ZIRVwxpWK3zoVuJ4BQsVsK",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablolu gaming klavye&prds=productid:8760642612189600734,headlineOfferDocid:8760642612189600734,imageDocid:1491516662153877147,rds:PC_10873119469371923081|PROD_PC_10873119469371923081,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 2133.22,
+      "original_price": 2282.0,
+      "price": 2133.22,
+      "store": "PttAVM.com",
+      "title": "Steelseries Apex 3 Tkl Rgb Suya Ve Toza Dayanıklı Türkçe Gaming Klavye Amethyst"
+    },
+    "d4177af51b10f1aa0a42910c": {
+      "category": "mouse",
+      "connectivity": "wireless",
+      "first_seen": 1795301734,
+      "highest_price": 1299.0,
+      "history": [
+        [
+          1795301734,
+          1299.0
+        ]
+      ],
+      "id": "d4177af51b10f1aa0a42910c",
+      "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRupi2WOdoWOxzw-YxqxEUr-o14PZvOZ7bS8ESo1Jwe3E1C3npyEjP9frHfgq-NhjLFALpOZZzxuxEWQHIoVJmxWfTQwnoFLA",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablosuz gaming mouse&prds=catalogid:6109518620594984499,productid:15588473584806027997,headlineOfferDocid:7924414236566729289,imageDocid:4870812011552454124,gpcid:14261954586681426080,mid:576462575785814804,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 1299.0,
+      "original_price": null,
+      "price": 1299.0,
+      "store": "Hepsiburada",
+      "title": "Havit Gamenote Houyi-M4 Pro X Standlı Kablosuz Gaming Mouse"
+    },
+    "d5ee3f215f5d33e63595b42b": {
+      "category": "mouse",
+      "connectivity": "wired",
+      "first_seen": 1795301734,
+      "highest_price": 200.0,
+      "history": [
+        [
+          1795301734,
+          200.0
+        ]
+      ],
+      "id": "d5ee3f215f5d33e63595b42b",
+      "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcR7PoseZc6gW-2FdLyAiuyK-tv1ZXPhoKmEFuX-K9tVy98nFkjzU-FHU__bkTc6AQPAc6Heeo7Z4VWii4YhF-XUQt__VQkSDwy1xu6JL2z55VwyApvAJ6yisdE",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablolu gaming mouse&prds=productid:4593164668650474134,headlineOfferDocid:4593164668650474134,imageDocid:12395376508650963799,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 200.0,
+      "original_price": null,
+      "price": 200.0,
+      "store": "Trendyol",
+      "title": "HOBIPIX Rgb Isikli Kablolu Gamer Oyuncu Mouse"
+    },
+    "d6365b3c2ca03d2bf6b977cd": {
+      "category": "keyboard",
+      "connectivity": "unknown",
+      "first_seen": 1795301734,
+      "highest_price": 905.09,
+      "history": [
+        [
+          1795301734,
+          905.09
+        ]
+      ],
+      "id": "d6365b3c2ca03d2bf6b977cd",
+      "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQhfUId59B3EtDGBEA2smOTezz0aDpT5ED7eWK9489LrvJGvicq7mtTffMIJ69pQBSZvg6_Ih8pPSihuLdrlfY5vyM8impxh7Aori3o6wA9XJ5gVeKP378Jeg",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablolu gaming klavye&prds=productid:5927207903651475979,headlineOfferDocid:5927207903651475979,imageDocid:13476275042507191957,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 905.09,
+      "original_price": null,
+      "price": 905.09,
+      "store": "Vonkapos",
+      "title": "İnca Ikg-449 Raınbow Efect Mekanik Hisli Gamıng Klavye"
+    },
+    "d8a5d617cdcaa344ce9f7298": {
+      "category": "mouse",
+      "connectivity": "wireless",
+      "first_seen": 1795301734,
+      "highest_price": 849.0,
+      "history": [
+        [
+          1795301734,
+          849.0
+        ]
+      ],
+      "id": "d8a5d617cdcaa344ce9f7298",
+      "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRnwsWBKfN66lWXEoY54ONYz1RmKQ-Fw_AEuBL1lGSKwcHWVULyLBv4qWVztA1wVdwTpJ-M1BVTakmdaLhMXlOVZXBuMVw2zVS_qd5S1g8M5VD2Npe77gg1Aw",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablosuz gaming mouse&prds=catalogid:339987587363046817,productid:5846380149185204586,headlineOfferDocid:16008326335901937867,imageDocid:15796988491348312604,rds:PC_9728752481609476327|PROD_PC_9728752481609476327,gpcid:9728752481609476327,mid:576462737602590343,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 849.0,
+      "original_price": 899.0,
+      "price": 849.0,
+      "store": "Trendyol",
+      "title": "Havit Gamenote MS966WB Profesyonel RGB Wireless Gaming Oyuncu Mouse 4 Modlu"
+    },
+    "d94d8065e6518ebbd85218ed": {
+      "category": "keyboard",
+      "connectivity": "unknown",
+      "first_seen": 1795301734,
+      "highest_price": 720.0,
+      "history": [
+        [
+          1795301734,
+          720.0
+        ]
+      ],
+      "id": "d94d8065e6518ebbd85218ed",
+      "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTLeHqRXg3qD65n2Qx-K5Px0cAABHCrfEXzzFnoeAmBFKiGbN1UKOX8DLM_WI6_gfry1myb9DNraYAyX2A8DmqYZe0ZrWRbHv_wANMkU63-r0tr96mIc8s5",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablolu gaming klavye&prds=catalogid:9956285126603276799,productid:14902853970085033413,headlineOfferDocid:17494735994508202812,imageDocid:4872840804152141517,gpcid:15167008308836719736,mid:576462855302520866,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 720.0,
+      "original_price": null,
+      "price": 720.0,
+      "store": "PttAVM.com",
+      "title": "Claw's Nova K1 360° Özelleştirilebilir Rgb & Yazılımlı Full Membran 104+7 Tuşlu Ekstra Multimedya/Rollover Ses Kontrol Mekanizmalı Gaming Klavye"
+    },
+    "d9996f36b08aeb425fc24009": {
+      "category": "keyboard",
+      "connectivity": "wireless",
+      "first_seen": 1795301734,
+      "highest_price": 1049.0,
+      "history": [
+        [
+          1795301734,
+          1049.0
+        ]
+      ],
+      "id": "d9996f36b08aeb425fc24009",
+      "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRTEenqElC-HridNy5l5lH7aOY8BprEFVXzgjaMbHIdLF8_Wkr-kIuNwmxy17m5kELfUuMpsO5V18Ut8AdRq_KoCK11ptH1sdRFe-oXKtuyccTaYnUAHC5B",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablosuz gaming klavye&prds=catalogid:6567527449636045487,productid:16207113610092941139,headlineOfferDocid:3238132399208862266,imageDocid:2120016764024137458,rds:PC_1157482666402641812|PROD_PC_1157482666402641812,gpcid:1157482666402641812,mid:576462849383793500,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 1049.0,
+      "original_price": null,
+      "price": 1049.0,
+      "store": "Amazon.com.tr - Amazon.com.tr – pazaryeri",
+      "title": "Hawk Gaming HK255 Membrane LCD RGB Kablosuz/Bluetooth %75 Türkçe Gaming Klavye"
+    },
+    "dccf8dc7f252e77e5239456c": {
+      "category": "keyboard",
+      "connectivity": "wireless",
+      "first_seen": 1795301734,
+      "highest_price": 2717.51,
+      "history": [
+        [
+          1795301734,
+          2717.51
+        ]
+      ],
+      "id": "dccf8dc7f252e77e5239456c",
+      "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQ4BM45u1EESLVXNBb74eLfC3ttzMp0EYvoiPzpgmtdHf5Tb__6X0sPDE9PnBOpMrAX2IJkDhHD5k6CtwV7zBUG81F0_8jpuQ",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablosuz gaming klavye&prds=catalogid:9600634883059194383,productid:8045340854223332967,headlineOfferDocid:6452970328279075830,imageDocid:1433718800707207155,rds:PC_18301282138907119359|PROD_PC_18301282138907119359,gpcid:18301282138907119359,mid:576462916007699901,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 2717.51,
+      "original_price": null,
+      "price": 2717.51,
+      "store": "Hepsiburada",
+      "title": "Redragon Ucal Pro K673WB-RGB-Pro Siyah Kablosuz Klavye"
+    },
+    "dcd280f951413386ac85f81f": {
+      "category": "mouse",
+      "connectivity": "wired",
+      "first_seen": 1795301734,
+      "highest_price": 1290.0,
+      "history": [
+        [
+          1795301734,
+          1290.0
+        ]
+      ],
+      "id": "dcd280f951413386ac85f81f",
+      "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSGOQPlmptpwinHbbR3xylsyPbA2r6B4Mwz5lAkW73u52ssXWrgpyLrn8mEiUtdmMuk-zpFBPqV92CSvRRtvmvCtRo_dZ3cJszI4cJQFOo",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablolu gaming mouse&prds=catalogid:9647020987931071371,productid:1472807015840873780,headlineOfferDocid:7651061100096872860,imageDocid:14390561954139143374,rds:PC_4012595580558867715|PROD_PC_4012595580558867715,gpcid:4012595580558867715,mid:576462828915581165,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 1290.0,
+      "original_price": null,
+      "price": 1290.0,
+      "store": "Net House Yeni",
+      "title": "GLORIOUS Model O Eternal Kablolu Gaming Mouse"
+    },
+    "dd4fa8d9a312c4ac19f06acc": {
+      "category": "mouse",
+      "connectivity": "wireless",
+      "first_seen": 1795301734,
+      "highest_price": 3999.0,
+      "history": [
+        [
+          1795301734,
+          3999.0
+        ]
+      ],
+      "id": "dd4fa8d9a312c4ac19f06acc",
+      "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcR_9J-jKaNuroyK9Cy52snPhE37eswoQsQXqlZXVQ8OljAB_vNAQJiORG86On-q8EmeWJqmCD82l3cajvoRXEoyVCo_WnRP5x0Z1iqwL4U",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablosuz gaming mouse&prds=catalogid:16656212751840888217,productid:3093663750805922095,headlineOfferDocid:970605984020150965,imageDocid:9650609146812653405,rds:PC_17592546682853403837|PROD_PC_17592546682853403837,gpcid:17592546682853403837,mid:576462916031478769,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 3999.0,
+      "original_price": null,
+      "price": 3999.0,
+      "store": "Amazon.com.tr",
+      "title": "STEELSERIES Aerox 5 RGB Kablosuz Gaming Mouse"
+    },
+    "e168da86cc09a7a0e708a161": {
+      "category": "mouse",
+      "connectivity": "unknown",
+      "first_seen": 1795301734,
+      "highest_price": 2990.0,
+      "history": [
+        [
+          1795301734,
+          2990.0
+        ]
+      ],
+      "id": "e168da86cc09a7a0e708a161",
+      "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQOtIs5Q-lmHcUo9J7ehFQTTwDh9zsw_FUsSid0NOKEKLCmZ9orjc-HPzQ5hJIzs6Jbae21wLDnp8xu8F3jUgCC7CcXalzjWwTxmTIBTLjcfj6-d1KxP_L0",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablosuz gaming mouse&prds=catalogid:10200072022116589634,productid:4190597181465289934,headlineOfferDocid:4570400693719557806,imageDocid:13660683790372377807,rds:PC_10282782539608240909|PROD_PC_10282782539608240909,gpcid:2256841323533015940,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 2990.0,
+      "original_price": null,
+      "price": 2990.0,
+      "store": "Hepsiburada",
+      "title": "Logitech G305 Optik fare"
+    },
+    "ec88fdb7219bf7e968ac16f0": {
+      "category": "keyboard",
+      "connectivity": "wireless",
+      "first_seen": 1795301734,
+      "highest_price": 1199.0,
+      "history": [
+        [
+          1795301734,
+          1199.0
+        ]
+      ],
+      "id": "ec88fdb7219bf7e968ac16f0",
+      "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTRk56o41AlHuxpJdp17Zryb89QdUCGrosPYS5tI1JBDUROQhWMm0nAO400ZCSr-91QKaDfP0DlDijfK8S9-HiooI0Wipwfh9KwEVc3nSxFnwZSydJHdFQbuQ",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablosuz gaming klavye&prds=catalogid:8122361585439054340,productid:15380281648406422587,headlineOfferDocid:6678350589308012656,imageDocid:10583702928046498574,rds:PC_1415497469624075590|PROD_PC_1415497469624075590,gpcid:1415497469624075590,mid:576462848193603061,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 1199.0,
+      "original_price": null,
+      "price": 1199.0,
+      "store": "Trendyol",
+      "title": "Hawk Hk258 Membrane LCD RGB Kablosuz Bluetooth Full Türkçe Gaming Klavye"
+    },
+    "ed6ebe4356417fc431534c7b": {
+      "category": "keyboard",
+      "connectivity": "wireless",
+      "first_seen": 1795301734,
+      "highest_price": 3013.54,
+      "history": [
+        [
+          1795301734,
+          3013.54
+        ]
+      ],
+      "id": "ed6ebe4356417fc431534c7b",
+      "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTIax7DUONmYpsksPFAEjDoex9DVhmxa2TcHV-bETkmlYyD1iOXuyyvXEKePZgW_7G76Za4-HmYg07M4gp_H30PJOkmGQwRdL9kOeSg0qJDC019OKkAWtVWAw",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablosuz gaming klavye&prds=catalogid:1894042631513016901,productid:8596793013833284061,headlineOfferDocid:15526377516585229738,imageDocid:14649499183863640725,gpcid:13818452209205019191,mid:576462896362801154,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 3013.54,
+      "original_price": 3388.0,
+      "price": 3013.54,
+      "store": "Trendyol",
+      "title": "MOFAN MF1705M Kablosuz Mekanik Gaming Klavye RGB Blue Switch 95 Tuş"
+    },
+    "ededec670438df2c7cb4992d": {
+      "category": "mouse",
+      "connectivity": "wireless",
+      "first_seen": 1795301734,
+      "highest_price": 3899.0,
+      "history": [
+        [
+          1795301734,
+          3899.0
+        ]
+      ],
+      "id": "ededec670438df2c7cb4992d",
+      "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTgSFyw3KDka352PTzdrhabSCn8slL1PVqA6CFQPmCJEfF8IWddAwkWTZdTF5VmDC8-G60XsV1PIb9vjOo1vO0hQetJRCaSAp1zYEpE_vOjYgjrqDHZ_q_I",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablosuz gaming mouse&prds=catalogid:13783847307642913516,productid:7090506123772022940,headlineOfferDocid:9143567485615700570,imageDocid:1215298439460171604,rds:PC_10216701601759322501|PROD_PC_10216701601759322501,gpcid:10216701601759322501,mid:576462871739359803,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 3899.0,
+      "original_price": 4499.0,
+      "price": 3899.0,
+      "store": "Meyer Bilişim",
+      "title": "ATTACK SHARK R5 Ultra Carbon Fiber 8K Kablosuz Gaming Mouse"
+    },
+    "f10a6fad5fc6b060cb268481": {
+      "category": "mouse",
+      "connectivity": "wired",
+      "first_seen": 1795301734,
+      "highest_price": 909.0,
+      "history": [
+        [
+          1795301734,
+          909.0
+        ]
+      ],
+      "id": "f10a6fad5fc6b060cb268481",
+      "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQhWe98jMGEx6MAh0nzUpfrI8-4Kw4IGgxU93n2r3BSQiZMi3HYUICa38nMVjOTblh0O8IiV0hz-_5-9Pym674Rw9janeQkzRdgscuOWDYSVZrzLstuPuYUtA",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablolu gaming mouse&prds=catalogid:6536408932153247974,productid:1442460201357383226,headlineOfferDocid:1787338091330077704,imageDocid:15424842540916043882,rds:PC_10683739841836725499|PROD_PC_10683739841836725499,gpcid:10683739841836725499,mid:576462886410402646,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 909.0,
+      "original_price": null,
+      "price": 909.0,
+      "store": "Teknosa",
+      "title": "XPG Slingshot RGB Kablolu Gaming Mouse"
+    },
+    "f1a2e206d1c11de809f43b47": {
+      "category": "keyboard",
+      "connectivity": "wireless",
+      "first_seen": 1795301734,
+      "highest_price": 3480.47,
+      "history": [
+        [
+          1795301734,
+          3480.47
+        ]
+      ],
+      "id": "f1a2e206d1c11de809f43b47",
+      "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRdFWRmd6g_1hebMWZvge5dh2zeAOHInn54X-S14KR_23Ou5HdBKFFiR4SpBZgZCTOujFZyEJY5KRALC1HaArTwVjnikZ97y7PfL9IjRp-QIiRsLbpk3DPv",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablosuz gaming klavye&prds=catalogid:15314323549089873354,productid:5996605594817511923,headlineOfferDocid:4252061569416795995,imageDocid:14329643335416585429,gpcid:6107518126495184973,mid:576462897962343399,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 3480.47,
+      "original_price": null,
+      "price": 3480.47,
+      "store": "Trendyol",
+      "title": "mofan Mf1705r Kablosuz Mekanik Gaming Klavye Blue Switch RGB 95 Tuş Kırmızı Beyaz"
+    },
+    "f44409c75138d6cd5737161e": {
+      "category": "mouse",
+      "connectivity": "wireless",
+      "first_seen": 1795301734,
+      "highest_price": 655.5,
+      "history": [
+        [
+          1795301734,
+          655.5
+        ]
+      ],
+      "id": "f44409c75138d6cd5737161e",
+      "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQood9ui7GigG6Sfi1fTMoIVN_OLJ-8pOnYjrPH6kGP6xx7wBIFG-_Tzg1WF68Try6XygRMJmN1gzyEMb699Sg_K1JmxN5IH9mmLlG3PXsVKwZDwJhOa2Ul",
+      "last_change": 1795301734,
+      "last_drop": null,
+      "last_drop_from": null,
+      "last_seen": 1795301734,
+      "link": "https://www.google.com.tr/search?ibp=oshop&q=kablosuz gaming mouse&prds=catalogid:14510788180005919367,productid:15489684205895116870,headlineOfferDocid:2377212810278343676,imageDocid:15406282247809148976,gpcid:11176221736690785740,mid:576462913457249134,pvt:hg&hl=tr&gl=tr&udm=28",
+      "lowest_price": 655.5,
+      "original_price": null,
+      "price": 655.5,
+      "store": "Amazon.com.tr - Amazon.com.tr – pazaryeri",
+      "title": "Coverzone Kablosuz Oyuncu Mouse 3200 Dpı Ayarlanabilir Hassasiyet Rgb 7 Renk LED Aydınlatma"
+    }
+  },
   "schema": 1
 }
