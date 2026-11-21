@@ -3,8 +3,8 @@
     "keyboard": [],
     "mouse": []
   },
-  "last_attempt": null,
-  "last_error": "",
+  "last_attempt": 1795301224,
+  "last_error": "Canlı tarama için GitHub Actions API anahtarı henüz eklenmedi.",
   "last_success": null,
   "last_warning": "",
   "products": {},

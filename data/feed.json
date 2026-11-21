@@ -1,5 +1,5 @@
 {
-  "generated_at": 1795291387,
+  "generated_at": 1795301224,
   "products": [],
   "schema": 1,
   "status": {
@@ -7,8 +7,8 @@
     "configured": false,
     "demo": false,
     "keyboard_max_price": 1100,
-    "last_attempt": null,
-    "last_error": "",
+    "last_attempt": 1795301224,
+    "last_error": "Canlı tarama için GitHub Actions API anahtarı henüz eklenmedi.",
     "last_success": null,
     "mouse_max_price": 1000,
     "product_count": 0,
