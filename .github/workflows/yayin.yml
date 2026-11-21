@@ -1,0 +1,70 @@
+name: Fiyat Avcısı - Otomatik Tara ve Yayınla
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    # Türkiye saatiyle her akşam 21:23, hafta içi sabah 09:23 (UTC+3).
+    # 4 sorgu x en fazla 54 tarama/ay = 216 arama; ücretsiz kotada pay bırakır.
+    - cron: '23 18 * * *'
+    - cron: '23 6 * * 1-5'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: fiyat-avcisi-pages
+  cancel-in-progress: false
+
+jobs:
+  tara-ve-yayinla:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Kodları al
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: true
+
+      - name: Python kur
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Testleri çalıştır
+        run: python -m unittest discover -s tests -v
+
+      - name: Ürünleri tara ve JSON verisini oluştur
+        env:
+          SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
+        run: python cloud_publish.py
+
+      - name: Sonuç ve fiyat geçmişini depoya kaydet
+        run: |
+          git config user.name 'fiyat-avcisi-bot'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/state.json data/feed.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Otomatik fiyat taraması'
+            git push origin HEAD:main
+          fi
+
+      - name: Yayına hazırlan
+        run: python build_site.py
+
+      - name: GitHub Pages'i yapılandır
+        uses: actions/configure-pages@v5
+
+      - name: Site dosyalarını yükle
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: public
+
+      - name: Siteyi yayınla
+        id: deployment
+        uses: actions/deploy-pages@v4
