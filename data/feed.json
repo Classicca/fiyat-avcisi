@@ -1,66 +1,16 @@
 {
-  "generated_at": 1795347005,
-  "products": [
-    {
-      "category": "keyboard",
-      "connectivity": "unknown",
-      "drop_amount": 0,
-      "first_seen": 1795342690,
-      "id": "3342175c18b5c9cda1cb4008",
-      "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQYs0FS6cfxF3rgU8T5IZefnsaYxu5EcyBFIm7G42EpxgJRl6jcSz8vqsOFIS06FFnJ8Il2ZPWFmPcL6KREsWgoO7l6AoVGSFLnYPh9-cxXjO2vJdkQ5bbl",
-      "is_new": true,
-      "last_seen": 1795342690,
-      "link": "https://www.incehesap.com/james-donkey-jdk104-rainbow-membran-turkce-q-gaming-104-tus-siyah-klavye-fiyati-86372/?srsltid=AYCX9vJv_rujgiPT76g3TtYWsm2prznV_8ftpUZkHEU7UBahyhxdBRfa_UM",
-      "lowest_price": 449.0,
-      "offer_count": 2,
-      "offers": [
-        {
-          "last_seen": 1795342690,
-          "link": "https://www.incehesap.com/james-donkey-jdk104-rainbow-membran-turkce-q-gaming-104-tus-siyah-klavye-fiyati-86372/?srsltid=AYCX9vJv_rujgiPT76g3TtYWsm2prznV_8ftpUZkHEU7UBahyhxdBRfa_UM",
-          "price": 449.0,
-          "store": "İncehesap"
-        },
-        {
-          "last_seen": 1795342690,
-          "link": "https://www.hepsiburada.com/james-donkey-jdk104-rainbow-mekanik-hisli-membran-turkce-q-gaming-105-tus-siyah-klavye-p-HBCV0000D6MYNE?magaza=%C4%B0ncehesap",
-          "price": 939.06,
-          "store": "Hepsiburada"
-        }
-      ],
-      "original_price": null,
-      "price": 449.0,
-      "price_checked_at": 1795342690,
-      "sensor": "",
-      "store": "İncehesap",
-      "title": "James Donkey JDK104 Rainbow Membran Türkçe Q Gaming 104 Tuş Siyah Klavye"
-    }
-  ],
-  "schema": 1,
+  "generated_at": 1795366827,
+  "products": [],
+  "schema": 3,
   "status": {
-    "app": "Fiyat Avcısı",
-    "approved_retailers": [
-      "Amazon Türkiye",
-      "Trendyol",
-      "Hepsiburada",
-      "n11",
-      "Pazarama",
-      "idefix",
-      "İncehesap",
-      "İtopya",
-      "Gaming.Gen.TR"
-    ],
-    "configured": true,
+    "configured": false,
     "demo": false,
-    "keyboard_max_price": 1100,
-    "last_attempt": 1795347005,
-    "last_error": "",
+    "disclaimer": "Amazon fiyatları değişebilir; son fiyat Amazon ürün sayfasında geçerlidir.",
+    "last_attempt": 1795366827,
+    "last_error": "Amazon Creators API anahtarları GitHub Secrets bölümüne henüz eklenmedi.",
     "last_success": 1795347005,
-    "mouse_max_price": 1000,
-    "product_count": 1,
-    "public_site": true,
-    "scan_interval_minutes": null,
-    "scanning": false,
-    "stale": false,
-    "warning": "Bazı mağaza fiyatları doğrulanamadı"
+    "products": 0,
+    "source": "Amazon Türkiye · Creators API",
+    "warning": ""
   }
 }
