@@ -145,6 +145,59 @@ def sensor_is_eligible(sensor: str) -> bool:
     return re.sub(r"[^A-Z0-9]", "", (sensor or "").upper()) in ELIGIBLE_SENSORS
 
 
+def model_sensor_from_verified_catalog(title: str) -> str:
+    """Only exact previously verified model names, never marketing DPI or number heuristics.
+
+    Model catalog is deliberately small; other models need an explicit sensor
+    in the provider metadata to meet the user's PAW3311+ condition.
+    """
+    t = clean_text(title)
+    if re.search(r"\bjames[ -]?donkey\s+jdm11\b", t):
+        return "PAW3311"
+    if re.search(r"\bmagegee\s+scout\b", t):
+        return "PAW3311"
+    return ""
+
+
+def validated_sensor(title: str, details: str = "") -> str:
+    return detect_mouse_sensor(f"{title} {details}") or model_sensor_from_verified_catalog(title)
+
+
+def candidate_from_shopping_row(row: dict, category: str) -> Offer | None:
+    """Unverified private candidate for Google Product detail lookup.
+
+    The Shopping result may point to Google instead of a seller. Such a row
+    must NEVER be placed in the public feed; only a seller detail with an
+    approved direct HTTPS merchant URL can become a real Offer.
+    """
+    if not isinstance(row, dict) or category not in QUERY_BY_CATEGORY:
+        return None
+    title = str(row.get("title") or "").strip()[:220]
+    if not (is_keyboard(title) if category == "keyboard" else is_mouse(title)):
+        return None
+    product_id = str(row.get("product_id") or "").strip()
+    if not re.fullmatch(r"\d{8,22}", product_id):
+        return None
+    price_raw = row.get("price")
+    if isinstance(price_raw, str) and re.search(r"(?:\$|€|£|\b(?:USD|EUR|GBP)\b)", price_raw, re.I) and not re.search(r"(?:₺|\b(?:TL|TRY)\b)", price_raw, re.I):
+        return None
+    price = parse_price(row.get("extracted_price")) or parse_price(price_raw)
+    if price is None or price > 5000:
+        return None
+    if row.get("extracted_price") is not None and price_raw is not None:
+        displayed = parse_price(price_raw)
+        if displayed is not None and abs(displayed-price) > max(2, price * 0.03):
+            return None
+    if isinstance(price_raw, str) and re.search(r"\b(taksit|ayda|aylik|monthly|installment)\b", clean_text(price_raw)):
+        return None
+    title_info = str(row.get("snippet") or row.get("description") or "")
+    sensor = validated_sensor(title, title_info) if category == "mouse" else ""
+    image = safe_https(row.get("thumbnail")) or safe_https(row.get("serpapi_thumbnail"))
+    return Offer(f"private:{product_id}", title, str(row.get("source") or ""), price,
+                 None, "", image, category, detect_connectivity(title), sensor,
+                 product_id, product_model_key(title, category, product_id))
+
+
 def product_model_key(title: str, category: str, product_id: str = "") -> str:
     """Conservative model-identity matcher. Same brand+model, not just 'gaming mouse'.
 
@@ -206,6 +259,15 @@ def parse_product_stores(payload: dict, original: Offer) -> list[Offer]:
     result = payload.get("product_results") if isinstance(payload, dict) else None
     if not isinstance(result, dict):
         return []
+    # A product's canonical Google detail title may state the sensor even when
+    # the Shopping search card / seller title does not. Require same model key.
+    if original.category == "mouse" and not sensor_is_eligible(original.sensor):
+        product_title = str(result.get("title") or "")
+        if product_title and product_model_key(product_title, "mouse") == original.model_key:
+            canonical_sensor = validated_sensor(product_title)
+            if sensor_is_eligible(canonical_sensor):
+                from dataclasses import replace
+                original = replace(original, sensor=canonical_sensor)
     store_rows = result.get("stores", [])
     if not isinstance(store_rows, list):
         return []
@@ -223,7 +285,15 @@ def parse_product_stores(payload: dict, original: Offer) -> list[Offer]:
         if product_model_key(title, original.category) != product_model_key(original.title, original.category):
             # Google can group variants; do not merge different product models.
             continue
-        row = dict(title=title, source=store, price=item.get("price"),
+        # Store titles sometimes omit "gaming" or "mouse" even when brand+model
+        # match the validated Shopping product. Reuse the complete parent title
+        # ONLY after confirming identical brand+model key.
+        parsed_title = title
+        if original.category == "mouse" and not is_mouse(title):
+            parsed_title = original.title
+        if original.category == "keyboard" and not is_keyboard(title):
+            parsed_title = original.title
+        row = dict(title=parsed_title, source=store, price=item.get("price"),
                    extracted_price=item.get("extracted_price"),
                    product_link=item.get("link"), link=item.get("link"),
                    thumbnail=original.image, description=original.sensor)
@@ -371,7 +441,7 @@ def parse_offer(row: dict, tracking_limit: float = 999999, category: str = "keyb
     details = row.get('description') or row.get('snippet') or ''
     if not isinstance(details, str):
         details = ''
-    sensor = detect_mouse_sensor(title + ' ' + details) if category == 'mouse' else ''
+    sensor = validated_sensor(title, details) if category == 'mouse' else ''
     if category == "mouse" and not sensor_is_eligible(sensor):
         return None
     return Offer(offer_id, title, store, price, original_price, url, image, category,

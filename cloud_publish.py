@@ -18,7 +18,8 @@ from discovery import choose_discovery_queries
 from merchants import trusted_retailer, APPROVED_RETAILERS
 from scanner import (QUERY_BY_CATEGORY, ScanError, fetch_query, parse_offer,
                      fetch_product_stores, fetch_remaining_quota, parse_product_stores,
-                     product_model_key, sensor_is_eligible, is_google_comparison_url)
+                     product_model_key, sensor_is_eligible, is_google_comparison_url,
+                     candidate_from_shopping_row)
 
 ROOT = Path(__file__).resolve().parent
 STATE_PATH = ROOT / "data" / "state.json"
@@ -122,6 +123,9 @@ def scan_queries(key: str, fetcher=fetch_query, *, focus_query=None, focus_queri
             plan[entry[0]].append(entry[1])
     candidates = {}
     focused_product_ids = set()
+    diagnostics = {"raw": 0, "direct_approved": 0,
+                   "detail_candidates": 0, "indirect_candidates": 0,
+                   "details_checked": 0, "details_verified_offers": 0}
     focused_terms = {(category, query) for category, query in ([focus_query] if focus_query else []) + list(focus_queries or ())}
     for category, queries in plan.items():
         matches = {}
@@ -133,30 +137,47 @@ def scan_queries(key: str, fetcher=fetch_query, *, focus_query=None, focus_queri
                 successful_queries += 1
                 raw_count += len(rows)
                 for row in rows:
+                    diagnostics["raw"] += 1
                     offer = parse_offer(row, category=category)
                     if offer:
+                        diagnostics["direct_approved"] += 1
                         if offer.id not in matches or offer.price < matches[offer.id].price:
                             matches[offer.id] = offer
-                        if offer.product_id.isdigit() and len(offer.product_id) >= 8:
-                            candidates[offer.product_id] = offer
-                            if (category, query) in focused_terms:
-                                focused_product_ids.add(offer.product_id)
+                    # Crucial: Google Shopping `product_link` is often a Google
+                    # page rather than a direct merchant offer. Still investigate
+                    # that result using the verified Google product ID.
+                    candidate = candidate_from_shopping_row(row, category)
+                    if candidate:
+                        if candidate.product_id not in candidates or (offer and candidates[candidate.product_id].url == ""):
+                            candidates[candidate.product_id] = offer or candidate
+                        if not offer:
+                            diagnostics["indirect_candidates"] += 1
+                        if (category, query) in focused_terms:
+                            focused_product_ids.add(candidate.product_id)
             except ScanError:
                 warnings.append(f"{category}: bir arama tamamlanamadı")
         outcome[category] = {"successes": succeeded, "total_queries": len(queries), "offers": list(matches.values())}
         if succeeded == 0:
             warnings.append(f"{category}: bu kategorideki sonuçlar güncellenemedi")
+    diagnostics["detail_candidates"] = len(candidates)
     checked = checked_product_ids if checked_product_ids is not None else {}
     if max_product_details:
         # Rotation checks products with the oldest last seller comparison first.
         ordered = sorted(candidates.items(), key=lambda pair: (
-            int(checked.get(pair[0], 0)),
+            # Never investigate already checked results before unseen results.
+            bool(checked.get(pair[0], 0)),
+            # Rejected Google-only links are the highest-value enrichment.
+            bool(pair[1].url),
             0 if pair[0] in focused_product_ids else 1,
+            # An eligible PAW sensor mouse gets precedence over generic listings.
+            0 if pair[1].category == "mouse" and sensor_is_eligible(pair[1].sensor) else 1,
             pair[1].price, pair[0]))
         for product_id, original in ordered[:max_product_details]:
             try:
                 detailed = product_fetcher(key, product_id)
+                diagnostics["details_checked"] += 1
                 seller_offers = parse_product_stores(detailed, original)
+                diagnostics["details_verified_offers"] += len(seller_offers)
                 if seller_offers:
                     by_id = {offer.id: offer for offer in outcome[original.category]["offers"]}
                     for offer in seller_offers:
@@ -166,6 +187,8 @@ def scan_queries(key: str, fetcher=fetch_query, *, focus_query=None, focus_queri
                 checked[product_id] = now
             except ScanError:
                 warnings.append("Bazı mağaza fiyatları doğrulanamadı")
+    # Diagnostics are useful in the Actions log; public feed stays uncluttered.
+    scan_queries.last_diagnostics = diagnostics
     return outcome, "; ".join(warnings), raw_count, successful_queries
 
 
@@ -314,6 +337,7 @@ def run(state_path: Path = STATE_PATH, feed_path: Path = FEED_PATH,
                 state["last_warning"] = warning
                 state["last_raw_count"] = total
                 state["last_completed_queries"] = completed
+                state["last_scan_diagnostics"] = getattr(scan_queries, "last_diagnostics", {})
             except (ScanError, OSError, ValueError):
                 state["last_error"] = "Ürün taraması başarısız oldu; önceki sonuçlar korunuyor. API anahtarını ve kotayı kontrol et."
     save_json(state_path, state)
@@ -331,9 +355,11 @@ def main():
     key = os.getenv("SERPAPI_KEY", "")
     # Account API uses zero search credits. Only enrich when enough spare credits.
     remaining = fetch_remaining_quota(key) if key and not args.no_scan else None
-    # When account quota cannot be queried, allow just one rotating discovery
-    # search; the 5-call/night fallback remains below 250/month on a normal schedule.
-    extra = min(3, max(0, remaining - MIN_EXTRA_CREDIT_RESERVE - 4)) if remaining is not None else 1
+    # The account endpoint can be unavailable even with a healthy API key.
+    # Keep 4 general + 2 focused + 1 seller-detail request per scheduled night
+    # (<=217 in 31 days) rather than silently turning off seller verification.
+    # Manual runs can consume more quota; check SerpApi usage if scans stop.
+    extra = min(3, max(0, remaining - MIN_EXTRA_CREDIT_RESERVE - 4)) if remaining is not None else 3
     feed = run(state_path=args.state, feed_path=args.feed, key=key,
                do_scan=not args.no_scan, extra_searches=extra)
     status = feed["status"]
@@ -342,6 +368,12 @@ def main():
         print(f"UYARI: {status['last_error']}")
     if status["warning"]:
         print(f"UYARI: {status['warning']}")
+    if not args.no_scan:
+        saved = read_json(args.state, {})
+        diagnostic = saved.get("last_scan_diagnostics", {})
+        if diagnostic:
+            print("Tarama tanisi (magaza harici urunler halka acik listelenmez): " +
+                  ", ".join(f"{key}={value}" for key, value in diagnostic.items()))
 
 
 if __name__ == "__main__":
