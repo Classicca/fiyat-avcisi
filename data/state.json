@@ -177,12 +177,12 @@
   "checked_products": {
     "6450661956941441171": 1795342690
   },
-  "discovery_cursor": 1,
-  "last_attempt": 1795342690,
+  "discovery_cursor": 2,
+  "last_attempt": 1795346212,
   "last_completed_queries": 6,
   "last_error": "",
-  "last_raw_count": 180,
-  "last_success": 1795342690,
+  "last_raw_count": 240,
+  "last_success": 1795346212,
   "last_warning": "",
   "products": {
     "01b38d3f38dc78837e32e16e": {
