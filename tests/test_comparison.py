@@ -15,7 +15,7 @@ class PriceComparisonTests(unittest.TestCase):
         for sensor in ('PAW3327','PMW3325','PAW3310','HERO 25K','', 'PWN3395'):
             self.assertFalse(sensor_is_eligible(sensor))
         sample = dict(title='MageGee Scout Wireless Gaming Mouse PAW3327',
-                      source='Pazar', price='799 TL', link='https://example.com/m')
+                      source='Pazar', price='799 TL', link='https://www.trendyol.com/m')
         self.assertIsNone(parse_offer(sample, category='mouse'))
         sample['title']='MageGee Scout Wireless Gaming Mouse PAW3311'
         self.assertIsNotNone(parse_offer(sample, category='mouse'))
@@ -32,16 +32,16 @@ class PriceComparisonTests(unittest.TestCase):
 
     def test_google_product_seller_results(self):
         parent = parse_offer({'title': JDK99,'source':'Mağaza A','extracted_price':990,
-                              'product_id':'1234567890123456789','link':'https://shop-a.example/p'},
+                              'product_id':'1234567890123456789','link':'https://www.trendyol.com/p'},
                              category='keyboard')
         data = {'product_results':{'stores':[
             {'name':'İncehesap', 'title':JDK99,'extracted_price':809,
              'link':'https://www.incehesap.com/james-donkey-jdk99-klavye/'},
-            {'name':'Diğer', 'title':JDK99,'price':'999,00 TL', 'link':'https://shop-b.example/p'},
+            {'name':'Diğer', 'title':JDK99,'price':'999,00 TL', 'link':'https://www.hepsiburada.com/p'},
             {'name':'Yanlış Model', 'title':JDK99.replace('JDK99','JDK87'),
-             'price':'499 TL','link':'https://shop-c.example/p'},
+             'price':'499 TL','link':'https://www.n11.com/p'},
             {'name':'İkinci el', 'title':JDK99,'condition':'Used','price':'250 TL',
-             'link':'https://shop-d.example/p'},
+             'link':'https://www.idefix.com/p'},
         ]}}
         merchants = parse_product_stores(data, parent)
         self.assertEqual([offer.price for offer in merchants],[809,999])
@@ -55,7 +55,7 @@ class PriceComparisonTests(unittest.TestCase):
             def fetch(_key, query):
                 if 'JDK99' in query:
                     return [{'title':JDK99,'source':'Mağaza A','extracted_price':990,
-                             'product_id':google_id,'link':'https://shop-a.example/p'}]
+                             'product_id':google_id,'link':'https://www.trendyol.com/p'}]
                 return []
             def detail(_key, pid):
                 self.assertEqual(pid,google_id)
@@ -63,7 +63,7 @@ class PriceComparisonTests(unittest.TestCase):
                     {'name':'İncehesap','title':JDK99,'extracted_price':809,
                      'link':'https://www.incehesap.com/jdk99/'},
                     {'name':'Mağaza A','title':JDK99,'extracted_price':990,
-                     'link':'https://shop-a.example/p'}]}}
+                     'link':'https://www.trendyol.com/p'}]}}
             result = run(state,feed,'key',now=1795290000,fetcher=fetch,
                          extra_searches=3,product_fetcher=detail)
             self.assertEqual(len(result['products']),1)
@@ -80,7 +80,7 @@ class PriceComparisonTests(unittest.TestCase):
             from cloud_publish import public_feed, empty_state
             state=empty_state()
             state['products']['a']={'id':'a','category':'mouse','title':'Cheap Gaming Mouse PAW3327',
-              'store':'Old Store','price':500,'link':'https://shop.example','image':'',
+              'store':'Old Store','price':500,'link':'https://www.pazarama.com','image':'',
               'first_seen':1,'last_seen':1,'sensor':'PAW3327','connectivity':'wired'}
             state['active']['mouse']=['a']
             self.assertEqual(public_feed(state,True,200)['products'],[])

@@ -14,6 +14,8 @@ from urllib.error import HTTPError, URLError
 from urllib.parse import urlencode, urlsplit
 from urllib.request import Request, urlopen
 
+from merchants import trusted_retailer
+
 QUERY_BY_CATEGORY = {
     "keyboard": (
         "kablosuz gaming klavye",
@@ -179,11 +181,16 @@ def is_comparison_only(store: str, url: str) -> bool:
 
 def direct_merchant_link(row: dict) -> str:
     """Prefer merchant link, not Google's generic product page."""
+    first_https = ""
     for field in ("link", "product_link"):
         url = safe_https(row.get(field))
-        if url:
+        if not url:
+            continue
+        if trusted_retailer(url):
             return url
-    return ""
+        if not first_https:
+            first_https = url
+    return first_https
 
 
 def is_google_comparison_url(url: str) -> bool:
@@ -337,9 +344,20 @@ def parse_offer(row: dict, tracking_limit: float = 999999, category: str = "keyb
     price = parse_price(row.get("extracted_price")) or parse_price(price_raw)
     if price is None or price > tracking_limit:
         return None
-    store = str(row.get("source") or "Bilinmeyen mağaza").strip()[:100]
     url = direct_merchant_link(row)
-    if not url or is_comparison_only(store, url):
+    store = trusted_retailer(url)
+    # Price and merchant must refer to the approved store's real HTTPS domain.
+    # Source text (e.g. a Google Shopping merchant display name) is not proof.
+    if not store or is_comparison_only(str(row.get("source") or ""), url):
+        return None
+    # SerpApi may occasionally mix a summary price with another price field.
+    # Reject contradictory prices rather than falsely advertising a discount.
+    if row.get("price") is not None and row.get("extracted_price") is not None:
+        displayed = parse_price(row.get("price"))
+        extracted = parse_price(row.get("extracted_price"))
+        if displayed is not None and extracted is not None and abs(displayed-extracted) > max(2, extracted*0.03):
+            return None
+    if isinstance(price_raw, str) and re.search(r"\b(?:taksit|ayda|aylik|monthly|installment)\b", clean_text(price_raw)):
         return None
     original_price = parse_price(row.get("extracted_old_price")) or parse_price(row.get("old_price"))
     if original_price is not None and original_price <= price:

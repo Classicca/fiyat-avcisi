@@ -1,6 +1,16 @@
-# Fiyat Avcısı v2.5 — Genişletilmiş Ürün Keşfi ve Mağaza Karşılaştırması
+# Fiyat Avcısı v2.6 — Onaylı Mağaza Listesi ve Temiz Arayüz
 
 Kullanıcı **arama yapmaz**. Site, Google Shopping/SerpApi ile otomatik ürün keşfeder ve **erişebildiği mağaza teklifleri arasında** en düşük fiyatlı olanı öne çıkarır. Aynı ürün modeli birden çok mağazada bulunduysa tek kart ve isteğe bağlı mağaza karşılaştırma listesi çıkar. **Tüm internet sitelerini tarama veya mutlak en ucuz fiyatı bulma garantisi yoktur.** Veriler güncellik, kapsam, mağaza katılımı ve kargo ücretine bağlıdır.
+
+## Sadece seçilen 9 alışveriş platformu
+
+**Amazon Türkiye, Trendyol, Hepsiburada, n11, Pazarama, idefix, İncehesap, İtopya, Gaming.Gen.TR.**
+
+Tarayıcı, ancak ürün bağlantısının gerçek HTTPS alan adı bu dokuz platformdan birine aitse teklifi kabul eder. Google Shopping'in `source` alanına veya bir arama sonucunda yazan mağaza adına tek başına güvenmez. Fiyat karşılaştırma siteleri, yönlendirme linkleri ve taklit alan adları reddedilir. Eski kayıtlardaki izinsiz mağaza teklifleri de yayın akışında otomatik gizlenir.
+
+**Bu dokuz mağazanın tamamını ayrı ayrı ve eksiksiz taramıyoruz.** Mevcut SerpApi/Google Shopping kaynağı yalnızca erişebildiği ürün ve mağaza tekliflerini döndürür; bu yüzden yeni sürüm daha güvenilir mağazalar gösterebilir ama ürün sayısı azalabilir. Pazaryerlerinin (Trendyol, n11 vb.) üçüncü taraf satıcılarını platformun kendisi gibi garantili saymayın; satıcının puanını ayrıca kontrol edin. Çok düşük/çelişkili fiyat alanları filtrelenir; gerçek mağaza fiyatı son kontrolde değişebilir.
+
+**Arayüz:** Sol menü kaldırıldı; logo üst çubukta. Hepsi / Klavyeler / Mouse'lar, bağlantı türü, sensör ve fiyat ayarları sayfada kalır.
 
 ## Başlangıç ayarları
 
@@ -20,9 +30,9 @@ SerpApi ücretsiz paketi şu an **250 arama/ay**. Bir gece taraması 4 genel sor
 
 ## GitHub'da zaten yayınlanan siteyi güncelleme
 
-**`Fiyat-Avcisi-v2.5-Guncelleme.zip`** dosyasını kullan; içindeki klasörleri ve dosyaları **mevcut depo kök dizinine** doğru yolları koruyarak kopyala. Özellikle `.github/workflows/yayin.yml`, `static/`, `scanner.py`, `cloud_publish.py`, **`discovery.py`** güncellenecek. `data/state.json` ve `data/feed.json` ZIP'e konulmadı; mevcut fiyat geçmişini silme.
+**`Fiyat-Avcisi-v2.6-Magaza-Dogrulama-Guncelleme.zip`** dosyasını kullan; içindeki klasörleri ve dosyaları **mevcut depo kök dizinine** doğru yolları koruyarak kopyala. Özellikle `.github/workflows/yayin.yml`, `static/`, `scanner.py`, `cloud_publish.py`, **`discovery.py` ve yeni `merchants.py`** güncellenecek. `data/state.json` ve `data/feed.json` ZIP'e konulmadı; mevcut fiyat geçmişini silme.
 
-En güvenilir yöntem: **GitHub Desktop** → File → Clone repository (mevcut fiyat-avcisi) → güncelleme ZIP'inin içindeki dosyaları bu yerel klonun üzerine kopyala → Commit to main → Push origin. Ardından GitHub Actions sonucuna bak. İnternet sayfası yayımlandığı anda ilk geçerli taramada değişiklikler yansır. Adımlar `GITHUB-GUNCELLEME-v2.5.md` içinde.
+En güvenilir yöntem: **GitHub Desktop** → File → Clone repository (mevcut fiyat-avcisi) → güncelleme ZIP'inin içindeki dosyaları bu yerel klonun üzerine kopyala → Commit to main → Push origin. Ardından GitHub Actions sonucuna bak. İnternet sayfası yayımlandığı anda ilk geçerli taramada değişiklikler yansır. Adımlar `GITHUB-GUNCELLEME-v2.6.md` içinde.
 
 Mevcut SerpApi Secret `SERPAPI_KEY` aynen kalır. Fiyat geçmişini korumak için önceki `data/` içeriğini silme ve ZIP'teki herhangi bir örnek/önizleme verisini yükleme.
 

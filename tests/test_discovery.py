@@ -69,9 +69,9 @@ class DiscoveryTests(unittest.TestCase):
 
     def test_id_groups_same_model_across_shops(self):
         one = parse_offer({'title': self.JDM11, 'source': 'Shop A', 'price': 899,
-                          'link':'https://shop-a.example/jdm11'}, category='mouse')
+                          'link':'https://www.trendyol.com/jdm11'}, category='mouse')
         two = parse_offer({'title': self.JDM11.replace('Beyaz', 'Siyah'), 'source': 'Shop B', 'price':699,
-                          'link':'https://shop-b.example/jdm11'}, category='mouse')
+                          'link':'https://www.hepsiburada.com/jdm11'}, category='mouse')
         self.assertIsNotNone(one)
         self.assertEqual(one.model_key, two.model_key)
         self.assertNotEqual(one.id, two.id)

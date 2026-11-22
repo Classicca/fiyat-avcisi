@@ -18,6 +18,7 @@ from pathlib import Path
 from urllib.parse import parse_qs, urlsplit
 
 from db import Store
+from merchants import trusted_retailer
 from scanner import ScanError, collect_offers, detect_connectivity
 
 BASE = Path(__file__).resolve().parent
@@ -148,7 +149,15 @@ class App:
         return True, "Tarama başlatılıyor."
 
     def products(self):
-        return demo_products() if self.demo else self.db.products(999999, 999999)
+        if self.demo:
+            return demo_products()
+        # Filter historic local SQLite entries just like GitHub Pages JSON.
+        visible = []
+        for row in self.db.products(999999, 999999):
+            retailer = trusted_retailer(row.get('link', ''))
+            if retailer:
+                visible.append({**row, 'store': retailer})
+        return visible
 
     def status(self):
         meta = {} if self.demo else self.db.meta()

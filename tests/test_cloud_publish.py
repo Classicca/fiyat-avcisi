@@ -20,19 +20,19 @@ class CloudPublishTests(unittest.TestCase):
         self.assertEqual(key, 'test-key-do-not-publish')
         if 'klavye' in query and 'kablosuz' in query:
             return [dict(title='Nova Wireless Gaming Klavye', source='Mağaza A',
-                         price='1.100,00 TL', link='https://example.com/a', product_id='kb-1'),
+                         price='1.100,00 TL', link='https://www.trendyol.com/a', product_id='kb-1'),
                     dict(title='Aşırı Pahalı Kablosuz Gaming Klavye', source='Mağaza B',
-                         extracted_price=1100.01, link='https://example.com/expensive',product_id='kb-2')]
+                         extracted_price=1100.01, link='https://www.trendyol.com/expensive',product_id='kb-2')]
         if 'klavye' in query:
             return [dict(title='Vector Kablolu Mekanik Gaming Klavye', source='Mağaza C',
-                         extracted_price=750, link='https://example.com/b',product_id='kb-3')]
+                         extracted_price=750, link='https://www.trendyol.com/b',product_id='kb-3')]
         if 'kablosuz gaming mouse' in query:
             return [dict(title='Falcon Wireless Gaming Mouse 16000 DPI PAW3311', source='Mağaza D',
-                         extracted_price=999.99, link='https://example.com/c',product_id='mouse-1')]
+                         extracted_price=999.99, link='https://www.trendyol.com/c',product_id='mouse-1')]
         return [dict(title='Duo Kablolu Gaming Mouse PAW3395', source='Mağaza E',
-                     extracted_price=1000, link='https://example.com/d',product_id='mouse-2'),
+                     extracted_price=1000, link='https://www.trendyol.com/d',product_id='mouse-2'),
                 dict(title='Çok Pahalı Kablolu Gaming Mouse PAW3370', source='Mağaza F',
-                     extracted_price=1001, link='https://example.com/e',product_id='mouse-3')]
+                     extracted_price=1001, link='https://www.trendyol.com/e',product_id='mouse-3')]
 
     def test_first_run_keeps_products_above_default_ui_prices(self):
         data = run(self.state, self.feed, key='test-key-do-not-publish', now=self.now,
@@ -55,12 +55,12 @@ class CloudPublishTests(unittest.TestCase):
         def cheaper(key, query):
             if 'kablosuz gaming mouse' in query:
                 return [dict(title='Falcon Wireless Gaming Mouse 16000 DPI PAW3311', source='Mağaza D',
-                             extracted_price=799, link='https://example.com/c', product_id='mouse-1')]
+                             extracted_price=799, link='https://www.trendyol.com/c', product_id='mouse-1')]
             return self.fake_fetcher(key,query)
 
         data = run(self.state, self.feed, key='test-key-do-not-publish', now=self.now+3600,
                    fetcher=cheaper)
-        mouse = [p for p in data['products'] if p['store']=='Mağaza D'][0]
+        mouse = [p for p in data['products'] if p['category']=='mouse' and 'Falcon' in p['title']][0]
         self.assertEqual(mouse['drop_amount'], 200.99)
         self.assertFalse(mouse['is_new'] is False)  # Seen less than 48 hours ago
         state = json.loads(self.state.read_text())

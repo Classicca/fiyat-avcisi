@@ -21,13 +21,13 @@ class ScannerTests(unittest.TestCase):
 
     def test_parse_offer(self):
         offer = parse_offer(dict(title='Kablosuz RGB Gaming Klavye', source='Örnek',
-                                 extracted_price=1099.95, product_link='https://example.com/p',
-                                 product_id='abc', thumbnail='https://example.com/img.png'))
+                                 extracted_price=1099.95, product_link='https://www.trendyol.com/p',
+                                 product_id='abc', thumbnail='https://www.trendyol.com/img.png'))
         self.assertIsNotNone(offer)
         self.assertEqual(offer.price, 1099.95)
         self.assertEqual(offer.connectivity, 'wireless')
-        self.assertEqual(parse_offer(dict(title='Gaming Klavye', extracted_price=999, product_link='https://example.com')).connectivity, 'unknown')
-        self.assertIsNone(parse_offer(dict(title='Wireless RGB Gaming Keyboard', price='$5.99', product_link='https://example.com')))
+        self.assertEqual(parse_offer(dict(title='Gaming Klavye', extracted_price=999, product_link='https://www.trendyol.com')).connectivity, 'unknown')
+        self.assertIsNone(parse_offer(dict(title='Wireless RGB Gaming Keyboard', price='$5.99', product_link='https://www.trendyol.com')))
         self.assertIsNone(parse_offer(dict(title='Wireless RGB Gaming Keyboard', price='999 TL', product_link='javascript:alert(1)')))
 
     def test_mouse_filter(self):
@@ -43,7 +43,7 @@ class ScannerTests(unittest.TestCase):
 
     def test_mouse_parser_and_search_categories(self):
         mouse = dict(title='Kablolu Oyuncu Gaming Mouse 16000 DPI PAW3311', source='Mağaza',
-                     extracted_price=1000, product_link='https://example.com/mouse')
+                     extracted_price=1000, product_link='https://www.trendyol.com/mouse')
         item = parse_offer(mouse, category='mouse')
         self.assertIsNotNone(item)
         self.assertEqual(item.category, 'mouse')
@@ -55,7 +55,7 @@ class ScannerTests(unittest.TestCase):
             if 'mouse' in query:
                 return [mouse]
             return [dict(title='Wireless RGB Gaming Klavye', source='Mağaza',
-                         extracted_price=1099, product_link='https://example.com/keyboard')]
+                         extracted_price=1099, product_link='https://www.trendyol.com/keyboard')]
         offers, total, warning = collect_offers('mock', fetcher=fetch)
         self.assertEqual({o.category for o in offers}, {'keyboard', 'mouse'})
         self.assertEqual((total, warning), (4, ''))
@@ -66,11 +66,11 @@ class ScannerTests(unittest.TestCase):
         self.assertEqual(detect_mouse_sensor('Logitech HERO 25K'), 'HERO 25K')
         self.assertEqual(detect_mouse_sensor('Gaming Mouse DPI 16000'), '')
         offer = parse_offer(dict(title='Gaming Mouse Kablosuz', description='Optik sensor PAW3311', source='Store',
-            extracted_price=2499, link='https://example.com/p'), category='mouse')
+            extracted_price=2499, link='https://www.trendyol.com/p'), category='mouse')
         self.assertIsNotNone(offer)
         self.assertEqual(offer.sensor, 'PAW3311')
         self.assertIsNone(parse_offer(dict(title='Gaming Mouse Kablolu', extracted_price=1000000,
-            link='https://example.com/p'), category='mouse'))
+            link='https://www.trendyol.com/p'), category='mouse'))
 
     def test_connection_classification(self):
         samples = {
@@ -90,7 +90,7 @@ class ScannerTests(unittest.TestCase):
         self.assertIn(('mouse', 'kablosuz gaming mouse'), SEARCH_QUERIES)
 
     def test_dedup_and_errors(self):
-        sample = dict(title='Kablosuz RGB Gaming Klavye', source='Mağaza', extracted_price=999, product_link='https://example.com', product_id='xy')
+        sample = dict(title='Kablosuz RGB Gaming Klavye', source='Mağaza', extracted_price=999, product_link='https://www.trendyol.com', product_id='xy')
         def mock(key, q):
             return [sample] if q == 'first' else [dict(sample, extracted_price=899)]
         offers, count, warning = collect_offers('key', ('first','second'), mock)

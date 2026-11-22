@@ -12,21 +12,12 @@
 </head>
 <body>
   <div class="layout">
-    <aside class="sidebar" aria-label="Fiyat Avcısı">
-      <a class="brand" href="./" aria-label="Fiyat Avcısı ana sayfa">
-        <div class="brand-mark"><span class="mark-slash"></span><span class="mark-dot"></span></div>
-        <div><strong>fiyat<span>avcısı</span></strong><small>AKILLI FIRSAT RADARI</small></div>
-      </a>
-      <div class="sidebar-section-label">TAKİP EDİLEN</div>
-      <div class="category-active"><span class="category-emoji">⌨</span><span>Gaming klavyeler</span><span class="category-dot"></span></div>
-      <div class="category-active"><span class="category-emoji">🖱</span><span>Gaming mouse</span><span class="category-dot"></span></div>
-      <div class="sidebar-spacer"></div>
-      <div class="sidebar-foot"><span class="dot-lime"></span> FİYAT AVCISI <span>V2.4</span></div>
-    </aside>
-
     <main class="main">
       <header class="topbar">
-        <div class="breadcrumbs"><span>FIRSAT RADARI</span><span class="breadcrumb-sep">/</span><strong>KLAVYE + MOUSE</strong></div>
+        <a class="brand topbar-brand" href="./" aria-label="Fiyat Avcısı ana sayfa">
+          <div class="brand-mark"><span class="mark-slash"></span><span class="mark-dot"></span></div>
+          <div><strong>fiyat<span>avcısı</span></strong><small>AKILLI FIRSAT RADARI</small></div>
+        </a>
         <div class="topbar-right">
           <div class="status-pill" id="livePill"><span class="pulse"></span><span id="liveLabel">VERİLER YÜKLENİYOR</span></div>
           <button id="refreshButton" class="refresh-button" type="button" aria-label="Listeyi yenile" title="Listeyi yenile"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7v5h-5M4 17v-5h5"/><path d="M5.7 9a7 7 0 0 1 12.1-2L20 12M4 12l2.2 5A7 7 0 0 0 18.3 15"/></svg></button>
@@ -102,7 +93,7 @@
             <div class="category-heading"><h3 id="mouseHeading"><span class="category-head-icon">🖱</span> Gaming mouse <span class="category-count" id="mouseCount">0</span></h3><span id="mouseLimitLabel">En fazla 1.000 TL</span></div>
             <div id="mouseProducts" class="product-grid" aria-live="polite"><div class="loading"><div class="loading-spinner"></div>Ürünler kontrol ediliyor...</div></div>
           </section>
-          <div class="results-footer"><span class="foot-asterisk">*</span> Fiyatlar yalnızca ulaşılabilen mağaza teklifleriyle karşılaştırılır; her mağazanın tarandığı garanti edilmez. Satın almadan önce kargo, stok ve güncel fiyatı kontrol et.</div>
+          <div class="results-footer"><span class="foot-asterisk">*</span> Yalnızca Amazon Türkiye, Trendyol, Hepsiburada, n11, Pazarama, idefix, İncehesap, İtopya ve Gaming.Gen.TR bağlantıları listelenir. Tüm mağazalarda tüm ürünlerin tarandığı garanti edilmez. Pazaryeri satıcısını, kargoyu, stoğu ve güncel fiyatı kontrol et.</div>
         </section>
       </div>
       <footer class="footer"><span>© <span id="year"></span> Fiyat Avcısı</span></footer>

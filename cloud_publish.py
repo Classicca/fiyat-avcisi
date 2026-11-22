@@ -15,6 +15,7 @@ import time
 from pathlib import Path
 
 from discovery import choose_discovery_queries
+from merchants import trusted_retailer, APPROVED_RETAILERS
 from scanner import (QUERY_BY_CATEGORY, ScanError, fetch_query, parse_offer,
                      fetch_product_stores, fetch_remaining_quota, parse_product_stores,
                      product_model_key, sensor_is_eligible, is_google_comparison_url)
@@ -209,6 +210,10 @@ def public_feed(state: dict, configured: bool, now: int):
             row = products.get(identifier)
             if not row or row.get("category") != category:
                 continue
+            # Historical state may contain obsolete/unknown retailers. Exclude
+            # them even before the next scheduled scan rewrites the state.
+            if not trusted_retailer(row.get("link", "")):
+                continue
             price = float(row.get("price") or 0)
             if price <= 0 or price >= 1000000:
                 continue
@@ -225,7 +230,7 @@ def public_feed(state: dict, configured: bool, now: int):
         # Keep one least-price offer per seller. Do not claim we surveyed all shops.
         sellers = {}
         for row in variants:
-            store_key = str(row.get("store", "")).casefold().strip()
+            store_key = trusted_retailer(row.get("link", "")).casefold().strip()
             if not store_key:
                 continue
             if store_key not in sellers or float(row["price"]) < float(sellers[store_key]["price"]):
@@ -241,7 +246,7 @@ def public_feed(state: dict, configured: bool, now: int):
                        if last_drop and now - int(last_drop) <= FRESH_FOR_SECONDS else 0)
         items.append({
             "id": best["id"], "category": category, "title": best["title"],
-            "store": best["store"], "price": price,
+            "store": trusted_retailer(best.get("link", "")), "price": price,
             "original_price": best.get("original_price"), "link": best.get("link", ""),
             "image": best.get("image", ""), "connectivity": best.get("connectivity", "unknown"),
             "sensor": best.get("sensor", ""),
@@ -251,7 +256,7 @@ def public_feed(state: dict, configured: bool, now: int):
             "drop_amount": drop_amount,
             "price_checked_at": int(best["last_seen"]),
             "offer_count": len(offers),
-            "offers": [{"store": o["store"], "price": float(o["price"]),
+            "offers": [{"store": trusted_retailer(o.get("link", "")), "price": float(o["price"]),
                         "link": o.get("link", ""), "last_seen": int(o["last_seen"])}
                        for o in offers[:10]],
         })
@@ -266,6 +271,7 @@ def public_feed(state: dict, configured: bool, now: int):
         "product_count": len(items),
         "stale": bool(last_success and now - int(last_success) > 36 * 3600),
         "scan_interval_minutes": None,
+        "approved_retailers": [label for _, label in APPROVED_RETAILERS],
     }
     return {"schema": 1, "generated_at": now, "status": status, "products": items}
 
