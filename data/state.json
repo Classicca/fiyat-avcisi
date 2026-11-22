@@ -177,13 +177,21 @@
   "checked_products": {
     "6450661956941441171": 1795342690
   },
-  "discovery_cursor": 2,
-  "last_attempt": 1795346212,
+  "discovery_cursor": 3,
+  "last_attempt": 1795347005,
   "last_completed_queries": 6,
   "last_error": "",
   "last_raw_count": 240,
-  "last_success": 1795346212,
-  "last_warning": "",
+  "last_scan_diagnostics": {
+    "detail_candidates": 174,
+    "details_checked": 0,
+    "details_verified_offers": 0,
+    "direct_approved": 0,
+    "indirect_candidates": 181,
+    "raw": 240
+  },
+  "last_success": 1795347005,
+  "last_warning": "Bazı mağaza fiyatları doğrulanamadı",
   "products": {
     "01b38d3f38dc78837e32e16e": {
       "category": "keyboard",

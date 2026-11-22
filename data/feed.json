@@ -1,5 +1,5 @@
 {
-  "generated_at": 1795346212,
+  "generated_at": 1795347005,
   "products": [
     {
       "category": "keyboard",
@@ -52,15 +52,15 @@
     "configured": true,
     "demo": false,
     "keyboard_max_price": 1100,
-    "last_attempt": 1795346212,
+    "last_attempt": 1795347005,
     "last_error": "",
-    "last_success": 1795346212,
+    "last_success": 1795347005,
     "mouse_max_price": 1000,
     "product_count": 1,
     "public_site": true,
     "scan_interval_minutes": null,
     "scanning": false,
     "stale": false,
-    "warning": ""
+    "warning": "Bazı mağaza fiyatları doğrulanamadı"
   }
 }
