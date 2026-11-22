@@ -79,4 +79,13 @@ class StorageTests(unittest.TestCase):
             store.apply_scan([],now=4000)
             self.assertEqual(store.products(1100),[])
 
+    def test_sensor_persistence_in_existing_database(self):
+        with tempfile.TemporaryDirectory() as directory:
+            from pathlib import Path
+            db = Store(Path(directory) / 'sensors.db')
+            db.apply_scan([Offer('paw', 'Gaming Mouse PAW3311', 'Store', 1499, None,
+                                 'https://example.com/m', '', 'mouse', 'wireless', 'PAW3311')], now=1795290000)
+            rows = db.products(3000, 3000)
+            self.assertEqual(rows[0]['sensor'], 'PAW3311')
+
 if __name__ == '__main__': unittest.main()

@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+settings.local.json
+settings.tmp
+fiyat-avcisi.db
+fiyat-avcisi.db-shm
+fiyat-avcisi.db-wal
+public/
+*.tmp

@@ -27,23 +27,23 @@ class CloudPublishTests(unittest.TestCase):
             return [dict(title='Vector Kablolu Mekanik Gaming Klavye', source='Mağaza C',
                          extracted_price=750, link='https://example.com/b',product_id='kb-3')]
         if 'kablosuz gaming mouse' in query:
-            return [dict(title='Falcon Wireless Gaming Mouse 16000 DPI', source='Mağaza D',
+            return [dict(title='Falcon Wireless Gaming Mouse 16000 DPI PAW3311', source='Mağaza D',
                          extracted_price=999.99, link='https://example.com/c',product_id='mouse-1')]
-        return [dict(title='Duo Kablolu Gaming Mouse', source='Mağaza E',
+        return [dict(title='Duo Kablolu Gaming Mouse PAW3395', source='Mağaza E',
                      extracted_price=1000, link='https://example.com/d',product_id='mouse-2'),
-                dict(title='Çok Pahalı Kablolu Gaming Mouse', source='Mağaza F',
+                dict(title='Çok Pahalı Kablolu Gaming Mouse PAW3370', source='Mağaza F',
                      extracted_price=1001, link='https://example.com/e',product_id='mouse-3')]
 
-    def test_first_run_creates_live_feed_and_applies_limits(self):
+    def test_first_run_keeps_products_above_default_ui_prices(self):
         data = run(self.state, self.feed, key='test-key-do-not-publish', now=self.now,
                    fetcher=self.fake_fetcher)
-        self.assertEqual(len(data['products']), 4)
+        self.assertEqual(len(data['products']), 6)
         self.assertTrue(data['status']['public_site'])
         self.assertEqual(data['status']['last_success'], self.now)
         self.assertFalse(data['status']['demo'])
         self.assertEqual({p['connectivity'] for p in data['products']}, {'wired', 'wireless'})
-        self.assertTrue(all(p['price'] <= (1100 if p['category'] == 'keyboard' else 1000)
-                            for p in data['products']))
+        self.assertTrue(any(p['category'] == 'keyboard' and p['price'] > 1100 for p in data['products']))
+        self.assertTrue(any(p['category'] == 'mouse' and p['price'] > 1000 for p in data['products']))
         self.assertEqual(json.loads(self.feed.read_text())['products'], data['products'])
         self.assertEqual(data['status']['last_error'], '')
         self.assertNotIn('test-key', self.feed.read_text())
@@ -54,7 +54,7 @@ class CloudPublishTests(unittest.TestCase):
 
         def cheaper(key, query):
             if 'kablosuz gaming mouse' in query:
-                return [dict(title='Falcon Wireless Gaming Mouse 16000 DPI', source='Mağaza D',
+                return [dict(title='Falcon Wireless Gaming Mouse 16000 DPI PAW3311', source='Mağaza D',
                              extracted_price=799, link='https://example.com/c', product_id='mouse-1')]
             return self.fake_fetcher(key,query)
 
@@ -71,7 +71,7 @@ class CloudPublishTests(unittest.TestCase):
         failed = run(self.state, self.feed, key='test-key-do-not-publish', now=self.now+7200,
                      fetcher=failing)
         self.assertEqual(failed['status']['last_success'], self.now+3600)
-        self.assertEqual(len(failed['products']), 4)
+        self.assertEqual(len(failed['products']), 6)
         self.assertTrue(failed['status']['last_error'])
 
     def test_partial_query_failure_preserves_other_products(self):

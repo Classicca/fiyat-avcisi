@@ -1,5 +1,5 @@
 import unittest
-from scanner import parse_price, is_keyboard, is_mouse, parse_offer, collect_offers, ScanError, SEARCH_QUERIES, detect_connectivity
+from scanner import parse_price, is_keyboard, is_mouse, parse_offer, collect_offers, ScanError, SEARCH_QUERIES, detect_connectivity, detect_mouse_sensor
 
 class ScannerTests(unittest.TestCase):
     def test_price_tr(self):
@@ -34,6 +34,7 @@ class ScannerTests(unittest.TestCase):
         self.assertTrue(is_mouse('Logitech G102 Lightsync Gaming Mouse 8000 DPI'))
         self.assertTrue(is_mouse('Razer DeathAdder Essential Oyuncu Fare Kablolu'))
         self.assertTrue(is_mouse('RGB Wireless Gaming Mouse 2.4GHz'))
+        self.assertTrue(is_mouse('Gaming Mouse Kablosuz PAW3311'))
         self.assertFalse(is_mouse('Kablosuz Ofis Mouse'))
         self.assertFalse(is_mouse('Gaming Mouse Pad XL'))
         self.assertFalse(is_mouse('Gaming Mousepad RGB'))
@@ -41,7 +42,7 @@ class ScannerTests(unittest.TestCase):
         self.assertFalse(is_mouse('Gaming Mouse ve Klavye Seti'))
 
     def test_mouse_parser_and_search_categories(self):
-        mouse = dict(title='Kablolu Oyuncu Gaming Mouse 16000 DPI', source='Mağaza',
+        mouse = dict(title='Kablolu Oyuncu Gaming Mouse 16000 DPI PAW3311', source='Mağaza',
                      extracted_price=1000, product_link='https://example.com/mouse')
         item = parse_offer(mouse, category='mouse')
         self.assertIsNotNone(item)
@@ -58,6 +59,18 @@ class ScannerTests(unittest.TestCase):
         offers, total, warning = collect_offers('mock', fetcher=fetch)
         self.assertEqual({o.category for o in offers}, {'keyboard', 'mouse'})
         self.assertEqual((total, warning), (4, ''))
+
+    def test_optional_sensor_extraction_only_when_explicit(self):
+        self.assertEqual(detect_mouse_sensor('PixArt PAW3311 gaming mouse'), 'PAW3311')
+        self.assertEqual(detect_mouse_sensor('Sensor PMW 3389'), 'PMW3389')
+        self.assertEqual(detect_mouse_sensor('Logitech HERO 25K'), 'HERO 25K')
+        self.assertEqual(detect_mouse_sensor('Gaming Mouse DPI 16000'), '')
+        offer = parse_offer(dict(title='Gaming Mouse Kablosuz', description='Optik sensor PAW3311', source='Store',
+            extracted_price=2499, link='https://example.com/p'), category='mouse')
+        self.assertIsNotNone(offer)
+        self.assertEqual(offer.sensor, 'PAW3311')
+        self.assertIsNone(parse_offer(dict(title='Gaming Mouse Kablolu', extracted_price=1000000,
+            link='https://example.com/p'), category='mouse'))
 
     def test_connection_classification(self):
         samples = {

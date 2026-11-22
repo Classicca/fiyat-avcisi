@@ -4,10 +4,11 @@ on:
   push:
     branches: [main]
   schedule:
-    # Türkiye saatiyle her akşam 21:23, hafta içi sabah 09:23 (UTC+3).
-    # 4 sorgu x en fazla 54 tarama/ay = 216 arama; ücretsiz kotada pay bırakır.
+    # Türkiye saatiyle her akşam 21:23 (UTC+3).
+    # 4 genel + 2 dönen marka/sensör/model keşfi + 1 mağaza karşılaştırması.
+    # 31 günde en fazla 217 sorgu; manuel çalışmalar ayrıca kota tüketir.
     - cron: '23 18 * * *'
-    - cron: '23 6 * * 1-5'
+
   workflow_dispatch:
 
 permissions:

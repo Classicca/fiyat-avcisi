@@ -1,6 +1,7 @@
-"""Google Shopping discovery through SerpApi. No direct store scraping.
+"""Google Shopping and Google Product offers via SerpApi.
 
-The API can return irrelevant/non-TRY results, so all offers are verified locally.
+Compare *observed* seller offers for the same model. Never claim every retailer
+was checked. Unknown sensors and unsupported currencies are not guessed.
 """
 from __future__ import annotations
 
@@ -39,6 +40,9 @@ class Offer:
     image: str
     category: str = "keyboard"
     connectivity: str = "unknown"
+    sensor: str = ""
+    product_id: str = ""
+    model_key: str = ""
 
 
 def clean_text(text: str) -> str:
@@ -92,6 +96,173 @@ def detect_connectivity(title: str) -> str:
     return "unknown"
 
 
+def detect_mouse_sensor(text: str) -> str:
+    """Accept only a sensor designation explicitly stated in supplier text.
+
+    Never infer a sensor merely from a mouse brand/model or DPI rating.
+    """
+    text = clean_text(text)
+    patterns = (
+        (r"\b(?:pixart\s*)?(paw|pmw|adns|a3090)[\s-]*(\d{3,5}[a-z]?)\b", 'pixart'),
+        (r"\b(hero)[\s-]*(\d{1,2}k)\b", 'hero'),
+        (r"\b(truemove)[\s-]*(air|pro|3|3\+|core)\b", 'truemove'),
+    )
+    for pattern, kind in patterns:
+        match = re.search(pattern, text)
+        if not match:
+            continue
+        if kind == 'pixart':
+            return (match.group(1) + match.group(2)).upper()
+        if kind == 'hero':
+            return (match.group(1) + ' ' + match.group(2)).upper()
+        return 'TRUEMOVE ' + match.group(2).upper()
+    if re.search(r"\bfocus[ -]?pro[ -]?(?:30k|35k)?\b", text):
+        match = re.search(r"\bfocus[ -]?pro[ -]?(30k|35k)?\b", text)
+        return 'FOCUS PRO' + (' ' + match.group(1).upper() if match.group(1) else '')
+    return ''
+
+
+# A whitelist by measured sensor family rather than a numerical comparison:
+# PAW3327 (220 IPS) is not above PAW3311 (300 IPS), despite the larger number.
+# Unlisted/unknown models remain hidden, to avoid misleading shoppers.
+ELIGIBLE_SENSORS = frozenset({
+    "PAW3311", "PAW3315", "PAW3333", "PAW3335", "PAW3370", "PAW3395",
+    "PAW3399", "PAW3950", "PAW3955", "PMW3360", "PMW3366", "PMW3389",
+    "PMW3391", "PMW3399",
+})
+BRANDS = (
+    "james donkey", "logitech", "steelseries", "gamepower", "magegee", "redragon",
+    "hyperx", "razer", "ajazz", "aula", "fantech", "attack shark", "delux",
+    "pulsar", "asus", "msi", "inca", "rampage", "hawkgaming", "hawk gaming",
+    "claw's", "claws", "keychron", "monster", "lenovo", "hp",
+)
+MODEL_SKIP_PREFIXES = {"paw", "pmw", "adns", "rgb", "dpi", "usb", "bt", "ghz", "mah", "hz"}
+
+
+def sensor_is_eligible(sensor: str) -> bool:
+    return re.sub(r"[^A-Z0-9]", "", (sensor or "").upper()) in ELIGIBLE_SENSORS
+
+
+def product_model_key(title: str, category: str, product_id: str = "") -> str:
+    """Conservative model-identity matcher. Same brand+model, not just 'gaming mouse'.
+
+    Prevents JDK87 being merged with JDK99 and different brands' G102-like
+    model codes being merged. Products with no reliable code need exact titles.
+    """
+    t = clean_text(title)
+    brand = next((b for b in BRANDS if re.search(r"(?<![a-z])" + re.escape(b) + r"(?![a-z])", t)), "")
+    codes = re.findall(r"(?<![a-z0-9])([a-z]{1,10}[ -]?\d{1,5}[a-z0-9]{0,3})(?![a-z0-9])", t)
+    codes = [re.sub(r"[ -]", "", c) for c in codes if re.match(r"[a-z]+", c).group() not in MODEL_SKIP_PREFIXES]
+    # Brand must be known to avoid grouping unrelated generic listings.
+    if brand and codes:
+        return f"{category}|{brand}|{codes[0]}"
+    # If a Google product_id is shared across listings it is a safer fallback.
+    if product_id and re.fullmatch(r"\d{8,22}", product_id):
+        return f"{category}|google|{product_id}"
+    normalized = re.sub(r"[^a-z0-9]+", " ", t).strip()
+    return f"{category}|exact|{normalized}"
+
+
+PRICE_COMPARISON_SOURCES = (
+    "akakce", "epey", "cimri", "enucuzsistem", "eniyipc", "bozukluk", "secmatik"
+)
+
+
+def is_comparison_only(store: str, url: str) -> bool:
+    """Don't mistake a price-comparison page for an actual store offer."""
+    name = re.sub(r"[^a-z0-9]+", "", clean_text(store))
+    host = (urlsplit(url).hostname or "").lower().removeprefix("www.")
+    return any(source in name or host == source + ".com" or host.endswith("." + source + ".com")
+               or host == source + ".com.tr" or host.endswith("." + source + ".com.tr")
+               for source in PRICE_COMPARISON_SOURCES)
+
+
+def direct_merchant_link(row: dict) -> str:
+    """Prefer merchant link, not Google's generic product page."""
+    for field in ("link", "product_link"):
+        url = safe_https(row.get(field))
+        if url:
+            return url
+    return ""
+
+
+def is_google_comparison_url(url: str) -> bool:
+    host = (urlsplit(url).hostname or "").lower()
+    return host == "google.com" or host.endswith(".google.com") or host == "google.com.tr" or host.endswith(".google.com.tr")
+
+
+def parse_product_stores(payload: dict, original: Offer) -> list[Offer]:
+    """Extract matching merchant offers from SerpApi Google Product API data.
+
+    Do not merge unrelated variants or secondhand/refurbished offers.
+    """
+    result = payload.get("product_results") if isinstance(payload, dict) else None
+    if not isinstance(result, dict):
+        return []
+    store_rows = result.get("stores", [])
+    if not isinstance(store_rows, list):
+        return []
+    offers = []
+    for item in store_rows:
+        if not isinstance(item, dict):
+            continue
+        condition = clean_text(item.get("condition", ""))
+        if any(x in condition for x in ("used", "refurbished", "second hand", "yenilenmis", "ikinci el")):
+            continue
+        title = str(item.get("title") or original.title)
+        store = str(item.get("name") or "").strip()
+        if not store or not direct_merchant_link(item):
+            continue
+        if product_model_key(title, original.category) != product_model_key(original.title, original.category):
+            # Google can group variants; do not merge different product models.
+            continue
+        row = dict(title=title, source=store, price=item.get("price"),
+                   extracted_price=item.get("extracted_price"),
+                   product_link=item.get("link"), link=item.get("link"),
+                   thumbnail=original.image, description=original.sensor)
+        offer = parse_offer(row, category=original.category)
+        if offer and not is_google_comparison_url(offer.url):
+            if original.category == 'mouse' and not sensor_is_eligible(offer.sensor):
+                # Product-details store titles often omit sensor; verified original sensor.
+                if sensor_is_eligible(original.sensor):
+                    from dataclasses import replace
+                    offer = replace(offer, sensor=original.sensor)
+                else:
+                    continue
+            offers.append(offer)
+    return offers
+
+
+def fetch_product_stores(api_key: str, product_id: str, timeout: int = 22) -> dict:
+    """One quota-consuming SerpApi lookup; never call directly from the browser."""
+    if not re.fullmatch(r"\d{8,22}", str(product_id)):
+        return {}
+    params = urlencode({"engine": "google_product", "product_id": product_id,
+                        "gl": "tr", "hl": "tr", "api_key": api_key})
+    request = Request(f"{API_URL}?{params}", headers={"Accept": "application/json", "User-Agent": "FiyatAvcisi/2.5"})
+    try:
+        with urlopen(request, timeout=timeout) as response:
+            payload = json.load(response)
+    except (HTTPError, URLError, TimeoutError, OSError, ValueError) as exc:
+        raise ScanError(f"Ürün mağazaları alınamadı ({type(exc).__name__}).") from exc
+    if not isinstance(payload, dict) or payload.get("error"):
+        raise ScanError("Ürün mağaza sorgusu reddedildi.")
+    return payload
+
+
+def fetch_remaining_quota(api_key: str, timeout: int = 15) -> int | None:
+    """Free account endpoint; fail closed for extra lookups when unreachable."""
+    request = Request("https://serpapi.com/account.json?" + urlencode({"api_key": api_key}),
+                      headers={"Accept": "application/json"})
+    try:
+        with urlopen(request, timeout=timeout) as response:
+            data = json.load(response)
+        amount = data.get("total_searches_left", data.get("plan_searches_left"))
+        return int(amount) if isinstance(amount, (int, float)) and amount >= 0 else None
+    except (HTTPError, URLError, TimeoutError, OSError, ValueError, TypeError):
+        return None
+
+
 def is_keyboard(title: str) -> bool:
     t = clean_text(title)
     has_keyboard = any(word in t for word in ("klavye", "keyboard"))
@@ -134,7 +305,7 @@ def is_mouse(title: str) -> bool:
         "mouse dongle", "mouse adaptoru", "mouse receiver", "mouse alici",
         "fare alici", "mouse sticker", "fare sticker",
     )
-    return has_mouse and gaming and not any(x in t for x in excluded)
+    return has_mouse and gaming and not (any(x in t for x in excluded if x not in ('mouse kablosu', 'fare kablosu')) or bool(re.search(r'\b(?:mouse|fare) kablosu\b', t)))
 
 
 def safe_https(url) -> str:
@@ -149,7 +320,7 @@ def safe_https(url) -> str:
     return url
 
 
-def parse_offer(row: dict, tracking_limit: float = 5000, category: str = "keyboard") -> Offer | None:
+def parse_offer(row: dict, tracking_limit: float = 999999, category: str = "keyboard") -> Offer | None:
     if not isinstance(row, dict):
         return None
     title = str(row.get("title") or "").strip()[:220]
@@ -167,8 +338,8 @@ def parse_offer(row: dict, tracking_limit: float = 5000, category: str = "keyboa
     if price is None or price > tracking_limit:
         return None
     store = str(row.get("source") or "Bilinmeyen mağaza").strip()[:100]
-    url = safe_https(row.get("product_link")) or safe_https(row.get("link"))
-    if not url:
+    url = direct_merchant_link(row)
+    if not url or is_comparison_only(store, url):
         return None
     original_price = parse_price(row.get("extracted_old_price")) or parse_price(row.get("old_price"))
     if original_price is not None and original_price <= price:
@@ -179,7 +350,15 @@ def parse_offer(row: dict, tracking_limit: float = 5000, category: str = "keyboa
     # Product ID (when available) lets title changes keep the same price history.
     identity = f"{category}|{clean_text(store)}|{product_id or normalized_title}"
     offer_id = hashlib.sha256(identity.encode("utf-8")).hexdigest()[:24]
-    return Offer(offer_id, title, store, price, original_price, url, image, category, detect_connectivity(title))
+    details = row.get('description') or row.get('snippet') or ''
+    if not isinstance(details, str):
+        details = ''
+    sensor = detect_mouse_sensor(title + ' ' + details) if category == 'mouse' else ''
+    if category == "mouse" and not sensor_is_eligible(sensor):
+        return None
+    return Offer(offer_id, title, store, price, original_price, url, image, category,
+                 detect_connectivity(title), sensor, product_id,
+                 product_model_key(title, category, product_id))
 
 
 class ScanError(Exception):
@@ -193,6 +372,9 @@ def fetch_query(api_key: str, query: str, timeout: int = 22) -> list[dict]:
         "gl": "tr",
         "hl": "tr",
         "google_domain": "google.com.tr",
+        # Sorting in the provider helps surface low-priced models that are
+        # otherwise buried under sponsored/popular shopping results.
+        "sort_by": "1",
         "api_key": api_key,
     })
     req = Request(f"{API_URL}?{params}", headers={"Accept": "application/json", "User-Agent": "FiyatAvcisi/1.0"})

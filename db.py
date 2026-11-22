@@ -39,7 +39,8 @@ class Store:
                     last_price_change INTEGER,
                     last_drop INTEGER,
                     category TEXT NOT NULL DEFAULT 'keyboard',
-                    connectivity TEXT NOT NULL DEFAULT 'unknown'
+                    connectivity TEXT NOT NULL DEFAULT 'unknown',
+                    sensor TEXT NOT NULL DEFAULT ''
                 );
                 CREATE TABLE IF NOT EXISTS prices (
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -54,6 +55,8 @@ class Store:
             columns = {r["name"] for r in conn.execute("PRAGMA table_info(products)")}
             if "category" not in columns:
                 conn.execute("ALTER TABLE products ADD COLUMN category TEXT NOT NULL DEFAULT 'keyboard'")
+            if "sensor" not in columns:
+                conn.execute("ALTER TABLE products ADD COLUMN sensor TEXT NOT NULL DEFAULT ''")
             if "connectivity" not in columns:
                 conn.execute("ALTER TABLE products ADD COLUMN connectivity TEXT NOT NULL DEFAULT 'unknown'")
                 # Backfill old records from their names without discarding price history.
@@ -75,18 +78,18 @@ class Store:
                     previous = float(current["price"])
                     changed = abs(previous - offer.price) >= 0.005
                     conn.execute("""UPDATE products SET title=?,store=?,price=?,previous_price=?,original_price=?,
-                        lowest_price=?,highest_price=?,link=?,image=?,last_seen=?,last_price_change=?,last_drop=?,category=?,connectivity=? WHERE id=?""",
+                        lowest_price=?,highest_price=?,link=?,image=?,last_seen=?,last_price_change=?,last_drop=?,category=?,connectivity=?,sensor=? WHERE id=?""",
                         (offer.title,offer.store,offer.price,previous,offer.original_price,
                          min(current["lowest_price"],offer.price),max(current["highest_price"],offer.price),
                          offer.url,offer.image,now,now if changed else current["last_price_change"],
-                         now if changed and offer.price < previous else current["last_drop"],offer.category,offer.connectivity,offer.id))
+                         now if changed and offer.price < previous else current["last_drop"],offer.category,offer.connectivity,offer.sensor,offer.id))
                 else:
                     changed = True
                     conn.execute("""INSERT INTO products (id,title,store,price,previous_price,original_price,
-                        lowest_price,highest_price,link,image,first_seen,last_seen,last_price_change,last_drop,category,connectivity)
-                        VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
+                        lowest_price,highest_price,link,image,first_seen,last_seen,last_price_change,last_drop,category,connectivity,sensor)
+                        VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
                         (offer.id,offer.title,offer.store,offer.price,None,offer.original_price,
-                         offer.price,offer.price,offer.url,offer.image,now,now,now,None,offer.category,offer.connectivity))
+                         offer.price,offer.price,offer.url,offer.image,now,now,now,None,offer.category,offer.connectivity,offer.sensor))
                 if changed:
                     conn.execute("INSERT INTO prices (product_id,observed_at,price) VALUES (?,?,?)",
                                  (offer.id, now, offer.price))

@@ -148,7 +148,7 @@ class App:
         return True, "Tarama başlatılıyor."
 
     def products(self):
-        return demo_products() if self.demo else self.db.products(KEYBOARD_BUDGET, MOUSE_BUDGET)
+        return demo_products() if self.demo else self.db.products(999999, 999999)
 
     def status(self):
         meta = {} if self.demo else self.db.meta()

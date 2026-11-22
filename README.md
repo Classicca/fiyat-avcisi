@@ -1,62 +1,44 @@
-# Fiyat Avcısı v2.0 — Tam Web Sitesi
+# Fiyat Avcısı v2.5 — Genişletilmiş Ürün Keşfi ve Mağaza Karşılaştırması
 
-**Amaç:** Siteye gir, uygun gaming klavye veya mouse var mı gör. Kullanıcı arama yapmaz.
+Kullanıcı **arama yapmaz**. Site, Google Shopping/SerpApi ile otomatik ürün keşfeder ve **erişebildiği mağaza teklifleri arasında** en düşük fiyatlı olanı öne çıkarır. Aynı ürün modeli birden çok mağazada bulunduysa tek kart ve isteğe bağlı mağaza karşılaştırma listesi çıkar. **Tüm internet sitelerini tarama veya mutlak en ucuz fiyatı bulma garantisi yoktur.** Veriler güncellik, kapsam, mağaza katılımı ve kargo ücretine bağlıdır.
 
-**Görünüm:** Koyu arayüz, açık yeşil vurgular, iki ürün kategorisi ve üç bağlantı filtresi (**Tümü · Kablolu · Kablosuz**). Ürün kartında fotoğraf, fiyat, mağaza ve ürün bağlantısı bulunur. En ucuz ürünler önce gelir. Yeni ürün ve son 48 saatte doğrulanan fiyat düşüşü işaretlenir.
+## Başlangıç ayarları
 
-| Kategori | Maksimum fiyat | Kapsam |
-|---|---:|---|
-| Gaming klavyeler | **1.100 TL dahil** | Kablolu ve kablosuz |
-| Gaming mouse | **1.000 TL dahil** | Kablolu ve kablosuz |
+- Gaming klavye: **1.100 TL**; gaming mouse: **1.000 TL** (site üzerinde ayrı ayrı değiştirilebilir).
+- Kategori: **Hepsi / Klavyeler / Mouse’lar**.
+- Bağlantı: **Tümü / Kablolu / Kablosuz**.
+- Mouse sensörü: **PAW3311 ve benzer veya üst sınıfı önceden doğrulanmış PixArt sensörleri**. Başlık/açıklamada sensör açıkça belirtilmiyorsa mouse sonuçlardan çıkarılır. Farklı sensör adlarını sadece numaraya bakarak sıralamıyoruz. İsteğe bağlı sensör seçimi de korunur.
+- Aynı marka/modelin farklı mağazalardaki fiyatları (Google Product API `stores`) tek kartta ve ucuzdan pahalıya sunulur. Ayrıntı API çağrıları yalnızca **belirli sayıda ürün** için yapılır; eksiksiz mağaza kapsamı yoktur.
+- Fiyat karşılaştırma siteleri birer satıcı olarak gösterilmez. Model kodları farklı ürünler birleştirilmez.
+- Sonuçlar kategori içinde artan fiyata göre; ana veri kaynağı 24 saatte bir yenilenir.
+- Dört genel aramaya ek olarak **her gece bir mouse ve bir klavye için marka/sensör/model araması** yapılarak önceki sürümlerde hiç görünmeyen ürünler de keşfedilmeye çalışılır. İlk aramada **James Donkey JDM11 PAW3311** ve **JDK99** özellikle kontrol edilir.
+- Geçmişte keşfedilen ürünler, başka bir sorguda tekrar çıkmadı diye anında silinmez; ancak **10 günden eski mağaza fiyatları gizlenir**. İki günden eski fiyatlar kartta "son görülen fiyat" olarak belirtilir.
 
-## En kısa yol: internette sürekli açık site
+## Neden tüm mağazaları her an kontrol etmiyor?
 
-Tam kurulum adımları **`GITHUB-KURULUM.md`** dosyasında. Özet:
+SerpApi ücretsiz paketi şu an **250 arama/ay**. Bir gece taraması 4 genel sorgu, 2 dönüşümlü model/sensör/marka sorgusu, 1 mağaza karşılaştırma sorgusu kullanabilir. 31 günde teorik azami **217** arama (ek/manuel ve yeniden başlatmalar hariç). Kullanılabilir kota azsa ek sorgular atlanır. API anahtarı olmadan güncel fiyat doğrulanamaz. Mağazaların Google Shopping verisine katılması, model ayrıştırma doğruluğu ve sağlayıcı fiyatlarının tazeliği sonucu belirler.
 
-1. Proje dosyalarını GitHub'da **herkese açık** `fiyat-avcisi` adlı depoya yükle.
-2. SerpApi hesabından aldığın API anahtarını GitHub **Actions secret** olarak `SERPAPI_KEY` adıyla ekle.
-3. GitHub Pages kaynağını **GitHub Actions** seç.
-4. **Actions → Fiyat Avcısı - Otomatik Tara ve Yayınla → Run workflow** ile ilk taramayı çalıştır.
+## GitHub'da zaten yayınlanan siteyi güncelleme
 
-Böylece site bilgisayar kapalıyken de 7/24 ziyaret edilebilir. Otomatik tarama **her akşam 21.23**, hafta içi ayrıca **sabah 09.23** (Türkiye saati) planlanmıştır. GitHub Actions görevleri bazen gecikebilir. Her tarama 4 Google Shopping sorgusu kullanır; bu takvim ayda en fazla yaklaşık 216 sorgu harcar. SerpApi ücretsiz planının Kasım 2026 itibarıyla aylık 250 sorgu limiti vardır; manuel taramalar ve push ile tetiklenen ilk kurulum taramaları da kotayı tüketir. Limit değişebilir.
+**`Fiyat-Avcisi-v2.5-Guncelleme.zip`** dosyasını kullan; içindeki klasörleri ve dosyaları **mevcut depo kök dizinine** doğru yolları koruyarak kopyala. Özellikle `.github/workflows/yayin.yml`, `static/`, `scanner.py`, `cloud_publish.py`, **`discovery.py`** güncellenecek. `data/state.json` ve `data/feed.json` ZIP'e konulmadı; mevcut fiyat geçmişini silme.
 
-**Tek seferlik dış hizmet kurulumu şarttır:** Github hesabı, herkese açık depo, Pages ayarı ve SerpApi anahtarı olmadan gerçek ürünler otomatik toplanamaz. Bunlar tamamlanmadan site örnek/uydurma fiyat göstermeyecektir.
+En güvenilir yöntem: **GitHub Desktop** → File → Clone repository (mevcut fiyat-avcisi) → güncelleme ZIP'inin içindeki dosyaları bu yerel klonun üzerine kopyala → Commit to main → Push origin. Ardından GitHub Actions sonucuna bak. İnternet sayfası yayımlandığı anda ilk geçerli taramada değişiklikler yansır. Adımlar `GITHUB-GUNCELLEME-v2.5.md` içinde.
 
-## Bilgisayarda önizleme
+Mevcut SerpApi Secret `SERPAPI_KEY` aynen kalır. Fiyat geçmişini korumak için önceki `data/` içeriğini silme ve ZIP'teki herhangi bir örnek/önizleme verisini yükleme.
 
-- Python 3.10 veya üstünü yükle. `ORNEK_GORUNUM.bat` dosyasını çalıştır. Sadece tasarımı gösteren, açıkça **ÖRNEK** etiketli kurgu ürünler listelenir.
-- Yerel gerçek tarama için `BASLAT.bat` dosyasını çalıştır, `http://127.0.0.1:8000` adresini aç ve SerpApi anahtarını gir. Yerel uygulama açıkken varsayılan tarama aralığı **24 saat**. Aynı anahtarla GitHub'da da tarama çalışıyorsa toplam kullanım ücretsiz kotayı aşabilir.
-- Komut satırı: `python server.py --demo` veya `python server.py`.
+## Test/yerel görüntüleme
 
-## Dosyalar
-
-- `.github/workflows/yayin.yml`: zamanlanan GitHub Actions taraması ve Pages yayını
-- `cloud_publish.py`: gerçek fiyatları SerpApi'den çeker, önceki fiyat geçmişini korur, statik site için `feed.json` oluşturur
-- `build_site.py`: yalnızca kamuya açık dosyaları `public/` klasörüne koyar
-- `data/state.json`: fiyatların ve önceki taramaların kalıcı geçmişi; GitHub deposuna commit edilir; **API anahtarı içermez**
-- `data/feed.json`: kullanıcı arayüzünün okuduğu, güncel ürün listesi
-- `static/`: sade tasarım, mobil görünüm, Tümü/Kablolu/Kablosuz filtreleri
-- `server.py`, `scanner.py`, `db.py`: Windows yerel çalışma seçeneği ve ürün tarayıcı
-- `tests/`: internet bağlantısı ve API anahtarı gerektirmeyen testler
-
-### Geliştirme/test
-
-```shell
+```bash
 python -m unittest discover -s tests -v
 python cloud_publish.py --no-scan
 python build_site.py
 python -m http.server 8080 --directory public
 ```
 
-`--no-scan` canlı ürün üretmez. Gerçek veri almak için `SERPAPI_KEY` ortam değişkeni gereklidir ve `python cloud_publish.py` çalıştırılmalıdır. API anahtarını koda ya da GitHub depoya yazma.
+Gerçek tarama için `SERPAPI_KEY` ortam değişkeni ve `python cloud_publish.py` gerekir. Windows'ta `ORNEK_GORUNUM.bat` tasarım önizlemesi (kurgu veri), `BASLAT.bat` yerel gerçek tarama içindir.
 
-## Bilinmesi gereken sınırlar
+**Sınırlamalar:** Fiyatlar kargo/üyelik/kupon dahil nihai kasa fiyatı olmak zorunda değildir. Alışveriş yapmadan önce mağazadaki stok, kargo ve toplam tutarı doğrula. Bulunamayan satıcılar, tutarsız ürün isimleri veya eksik sensör bilgisi nedeniyle sonuçlar eksik kalabilir. PAW3311 ve üzeri filtresi kapsamı daraltır. İş akışının yeşil olması, tüm mağazalarda en ucuz fiyatın bulunduğunu kanıtlamaz.
 
-- Ürünler **Google Shopping (SerpApi)** sonuçlarından derlenir, mağazaların tamamı doğrudan taranmaz. Her mağaza, her fırsat, stok durumu veya kargo dahil nihai fiyat garanti edilemez.
-- Bağlantı türü başlıktaki kablolu/kablosuz ifadelerinden sınıflandırılır. Emin olunamayan ürünler yalnızca **Tümü** sekmesinde görünür. Hem kablolu hem kablosuz olan cihazlar her ikisine de girer.
-- Fiyat düşüşü etiketi, sitemizin **önceki kendi gözlemi** ile karşılaştırılır. İlk taramada geçmiş fiyat veya indirim kanıtı yoktur.
-- Tarama başarısız olursa sitedeki önceki sonuçlar korunur ve hata/eski veri bildirimi görünür. Eski fiyatı güncelmiş gibi satın alma fiyatı sayma.
-- Tasarım önizlemesindeki örnek ürünlerin tümü kurgusaldır. Gerçek API anahtarıyla yapılmış canlı tarama bu geliştirme ortamında doğrulanmadı.
-- GitHub Pages statik bir sitedir. **Sitenin erişilebilir kalması, fiyatların sürekli gerçek zamanlı güncellendiği anlamına gelmez.** GitHub zamanlayıcısı gecikebilir; zamanlanmış görevler uzun süre hareketsiz kalan genel depolarda durdurulabilir.
+## Doğruluk sınırları
 
-Bu dosya ticari kullanıma açık fiyat veri erişimi veya üçüncü taraf mağazalara doğrudan scraping hakkı vermez. Kullanılan servislerin kullanım şartlarına dikkat et.
+Her internet mağazasını listeleyen ücretsiz ve eksiksiz bir API yok. Google Shopping'in kapsamı sınırlıdır, mevcut Google Shopping API sayfalaması da ilk sonuç penceresi ötesine geçemeyebilir. Bu yüzden "piyasadaki mutlak en ucuz fiyat" iddiası yerine **"bulunan mağazalar arasında en ucuz fiyat"** gösterilir. Kargo, kupon, stok durumu ve fiyat değişikliği için alışveriş sayfasını kontrol etmek gerekir. Bu sürüm çevrimiçi API anahtarıyla canlı test edilmedi; yerel testler sentetik verilerdir.

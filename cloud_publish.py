@@ -14,7 +14,10 @@ import os
 import time
 from pathlib import Path
 
-from scanner import QUERY_BY_CATEGORY, ScanError, fetch_query, parse_offer
+from discovery import choose_discovery_queries
+from scanner import (QUERY_BY_CATEGORY, ScanError, fetch_query, parse_offer,
+                     fetch_product_stores, fetch_remaining_quota, parse_product_stores,
+                     product_model_key, sensor_is_eligible, is_google_comparison_url)
 
 ROOT = Path(__file__).resolve().parent
 STATE_PATH = ROOT / "data" / "state.json"
@@ -26,8 +29,13 @@ CATEGORIES = tuple(QUERY_BY_CATEGORY)
 STATE_SCHEMA = 1
 FRESH_FOR_SECONDS = 48 * 3600
 STALE_ENTRY_SECONDS = 120 * 86400
+VISIBLE_OFFER_SECONDS = 10 * 86400  # Recently discovered offers; old ones are removed.
 MAX_TRACKED_PRODUCTS = 900
 MAX_HISTORY_POINTS = 36
+# Free SerpApi plan: 250 calls/month. One nightly run: 4 discovery + 1 focused
+# search + at most 2 product seller lookups = up to 217 calls in a 31-day month.
+MIN_EXTRA_CREDIT_RESERVE = 30
+MAX_STORE_LOOKUPS = 1
 
 
 def read_json(path: Path, fallback):
@@ -93,21 +101,28 @@ def update_record(prior: dict | None, offer, now: int):
                   "history": [[now, offer.price]]}
     record.update(id=offer.id, title=offer.title, store=offer.store, price=offer.price,
                   original_price=offer.original_price, link=offer.url, image=offer.image,
-                  category=offer.category, connectivity=offer.connectivity, last_seen=now)
+                  category=offer.category, connectivity=offer.connectivity, sensor=offer.sensor,
+                  product_id=offer.product_id, model_key=offer.model_key, last_seen=now)
     return record
 
 
-def scan_queries(key: str, fetcher=fetch_query):
-    """Return successful category results, warning, total count and success count.
+def scan_queries(key: str, fetcher=fetch_query, *, focus_query=None, focus_queries=None,
+                 product_fetcher=fetch_product_stores, max_product_details=0,
+                 checked_product_ids=None, now=0):
+    """Collect matched offers from broad and focused searches plus seller pages.
 
-    Failed categories remain on their previous published snapshot. Partial search
-    failures never falsely turn the whole site into '0 results'.
+    A seller detail request is performed for at most max_product_details Google
+    product IDs; it is quota-limited at the caller. Failures preserve previous data.
     """
-    outcome = {}
-    warnings = []
-    raw_count = 0
-    successful_queries = 0
-    for category, queries in QUERY_BY_CATEGORY.items():
+    outcome, warnings, raw_count, successful_queries = {}, [], 0, 0
+    plan = {category: list(queries) for category, queries in QUERY_BY_CATEGORY.items()}
+    for entry in ([focus_query] if focus_query else []) + list(focus_queries or ()):
+        if entry[0] in plan and entry[1] not in plan[entry[0]]:
+            plan[entry[0]].append(entry[1])
+    candidates = {}
+    focused_product_ids = set()
+    focused_terms = {(category, query) for category, query in ([focus_query] if focus_query else []) + list(focus_queries or ())}
+    for category, queries in plan.items():
         matches = {}
         succeeded = 0
         for query in queries:
@@ -118,15 +133,38 @@ def scan_queries(key: str, fetcher=fetch_query):
                 raw_count += len(rows)
                 for row in rows:
                     offer = parse_offer(row, category=category)
-                    if offer and (offer.id not in matches or offer.price < matches[offer.id].price):
-                        matches[offer.id] = offer
+                    if offer:
+                        if offer.id not in matches or offer.price < matches[offer.id].price:
+                            matches[offer.id] = offer
+                        if offer.product_id.isdigit() and len(offer.product_id) >= 8:
+                            candidates[offer.product_id] = offer
+                            if (category, query) in focused_terms:
+                                focused_product_ids.add(offer.product_id)
             except ScanError:
-                warnings.append(f"{category}: bir kaynak sorgusu yanıt vermedi")
-        # Even a single successful query may yield an incomplete category. Keep a
-        # union with last known active items in merge_scan when partial=True.
+                warnings.append(f"{category}: bir arama tamamlanamadı")
         outcome[category] = {"successes": succeeded, "total_queries": len(queries), "offers": list(matches.values())}
         if succeeded == 0:
             warnings.append(f"{category}: bu kategorideki sonuçlar güncellenemedi")
+    checked = checked_product_ids if checked_product_ids is not None else {}
+    if max_product_details:
+        # Rotation checks products with the oldest last seller comparison first.
+        ordered = sorted(candidates.items(), key=lambda pair: (
+            int(checked.get(pair[0], 0)),
+            0 if pair[0] in focused_product_ids else 1,
+            pair[1].price, pair[0]))
+        for product_id, original in ordered[:max_product_details]:
+            try:
+                detailed = product_fetcher(key, product_id)
+                seller_offers = parse_product_stores(detailed, original)
+                if seller_offers:
+                    by_id = {offer.id: offer for offer in outcome[original.category]["offers"]}
+                    for offer in seller_offers:
+                        if offer.id not in by_id or offer.price < by_id[offer.id].price:
+                            by_id[offer.id] = offer
+                    outcome[original.category]["offers"] = list(by_id.values())
+                checked[product_id] = now
+            except ScanError:
+                warnings.append("Bazı mağaza fiyatları doğrulanamadı")
     return outcome, "; ".join(warnings), raw_count, successful_queries
 
 
@@ -143,12 +181,12 @@ def merge_scan(state: dict, result: dict, now: int):
             if offer.id not in new_ids:
                 new_ids.append(offer.id)
             products[offer.id] = update_record(products.get(offer.id), offer, now)
-        if successes == detail["total_queries"]:
-            active[category] = new_ids
-        else:
-            # Partial category refresh: don't falsely remove products only seen
-            # in the failed query. Old items are clearly timestamped as such.
-            active[category] = list(dict.fromkeys(new_ids + active.get(category, [])))
+        # Different models rotate across many queries/days. A successful
+        # narrow search must not erase yesterday's findings from other queries.
+        # Keep only recently observed offers; old/stale shop prices expire.
+        recent_old = [identifier for identifier in active.get(category, [])
+                      if identifier in products and now - int(products[identifier].get("last_seen", 0)) <= VISIBLE_OFFER_SECONDS]
+        active[category] = list(dict.fromkeys(new_ids + recent_old))
     state["last_success"] = now
     # Do not unboundedly grow state.json. Active entries are always retained.
     all_active = {product_id for ids in active.values() for product_id in ids}
@@ -164,7 +202,7 @@ def merge_scan(state: dict, result: dict, now: int):
 
 
 def public_feed(state: dict, configured: bool, now: int):
-    items = []
+    buckets = {}
     products = state.get("products", {})
     for category in CATEGORIES:
         for identifier in state.get("active", {}).get(category, []):
@@ -172,22 +210,52 @@ def public_feed(state: dict, configured: bool, now: int):
             if not row or row.get("category") != category:
                 continue
             price = float(row.get("price") or 0)
-            if price <= 0 or price > LIMITS[category]:
+            if price <= 0 or price >= 1000000:
                 continue
-            last_drop = row.get("last_drop")
-            drop_amount = (round(max(0.0, float(row.get("last_drop_from") or price) - price), 2)
-                           if last_drop and now - int(last_drop) <= FRESH_FOR_SECONDS else 0)
-            items.append({
-                "id": identifier, "category": category, "title": row["title"],
-                "store": row["store"], "price": price,
-                "original_price": row.get("original_price"), "link": row.get("link", ""),
-                "image": row.get("image", ""), "connectivity": row.get("connectivity", "unknown"),
-                "first_seen": row["first_seen"], "last_seen": row["last_seen"],
-                "lowest_price": row.get("lowest_price", price),
-                "is_new": now - int(row["first_seen"]) <= FRESH_FOR_SECONDS,
-                "drop_amount": drop_amount,
-            })
-    items.sort(key=lambda row: (row["category"] != "keyboard", row["price"], row["title"].casefold()))
+            # Old offers are NOT evidence that the shop still sells at that price.
+            if now - int(row.get("last_seen", 0)) > VISIBLE_OFFER_SECONDS:
+                continue
+            if category == "mouse" and not sensor_is_eligible(row.get("sensor", "")):
+                continue
+            key = row.get("model_key") or product_model_key(row["title"], category,
+                                                              str(row.get("product_id", "")))
+            buckets.setdefault((category, key), []).append(row)
+    items = []
+    for (category, model_key), variants in buckets.items():
+        # Keep one least-price offer per seller. Do not claim we surveyed all shops.
+        sellers = {}
+        for row in variants:
+            store_key = str(row.get("store", "")).casefold().strip()
+            if not store_key:
+                continue
+            if store_key not in sellers or float(row["price"]) < float(sellers[store_key]["price"]):
+                sellers[store_key] = row
+        offers = sorted(sellers.values(), key=lambda x: (float(x["price"]),
+                        is_google_comparison_url(x.get("link", "")), x["store"].casefold()))
+        if not offers:
+            continue
+        best = offers[0]
+        last_drop = best.get("last_drop")
+        price = float(best["price"])
+        drop_amount = (round(max(0.0, float(best.get("last_drop_from") or price) - price), 2)
+                       if last_drop and now - int(last_drop) <= FRESH_FOR_SECONDS else 0)
+        items.append({
+            "id": best["id"], "category": category, "title": best["title"],
+            "store": best["store"], "price": price,
+            "original_price": best.get("original_price"), "link": best.get("link", ""),
+            "image": best.get("image", ""), "connectivity": best.get("connectivity", "unknown"),
+            "sensor": best.get("sensor", ""),
+            "first_seen": min(int(x.get("first_seen", now)) for x in offers),
+            "last_seen": int(best["last_seen"]), "lowest_price": best.get("lowest_price", price),
+            "is_new": now - min(int(x.get("first_seen", now)) for x in offers) <= FRESH_FOR_SECONDS,
+            "drop_amount": drop_amount,
+            "price_checked_at": int(best["last_seen"]),
+            "offer_count": len(offers),
+            "offers": [{"store": o["store"], "price": float(o["price"]),
+                        "link": o.get("link", ""), "last_seen": int(o["last_seen"])}
+                       for o in offers[:10]],
+        })
+    items.sort(key=lambda row: (row["price"], row["category"], row["title"].casefold()))
     last_success = state.get("last_success")
     status = {
         "app": "Fiyat Avcısı", "public_site": True, "demo": False,
@@ -203,7 +271,8 @@ def public_feed(state: dict, configured: bool, now: int):
 
 
 def run(state_path: Path = STATE_PATH, feed_path: Path = FEED_PATH,
-        key: str = "", do_scan: bool = True, now: int | None = None, fetcher=fetch_query):
+        key: str = "", do_scan: bool = True, now: int | None = None, fetcher=fetch_query,
+        *, extra_searches: int = 0, product_fetcher=fetch_product_stores):
     now = int(now if now is not None else time.time())
     state = load_state(state_path)
     key = key.strip()
@@ -213,7 +282,25 @@ def run(state_path: Path = STATE_PATH, feed_path: Path = FEED_PATH,
             state["last_error"] = "Canlı tarama için GitHub Actions API anahtarı henüz eklenmedi."
         else:
             try:
-                result, warning, total, completed = scan_queries(key, fetcher)
+                extra_searches = min(max(0, int(extra_searches)), 3)
+                checked = state.setdefault("checked_products", {})
+                if not isinstance(checked, dict):
+                    checked = state["checked_products"] = {}
+                # 4 broad + 0..2 focused discoveries + at most 1 shop lookup.
+                # At the free tier, a full nightly run is ~7 calls (217/31 days).
+                cursor = int(state.get("discovery_cursor", 0))
+                discoveries = choose_discovery_queries(cursor, min(2, extra_searches))
+                result, warning, total, completed = scan_queries(
+                    key, fetcher, focus_queries=discoveries,
+                    product_fetcher=product_fetcher,
+                    max_product_details=1 if extra_searches >= 3 else 0,
+                    checked_product_ids=checked, now=now)
+                if discoveries and completed >= 4:
+                    state["discovery_cursor"] = cursor + 1
+                if len(checked) > 250:
+                    oldest = sorted(checked, key=lambda x: checked[x])[:len(checked)-250]
+                    for item in oldest:
+                        del checked[item]
                 if completed == 0:
                     raise ScanError("Ürün sağlayıcısından veri alınamadı; önceki sonuçlar korundu.")
                 merge_scan(state, result, now)
@@ -236,7 +323,13 @@ def main():
     parser.add_argument("--feed", type=Path, default=FEED_PATH)
     args = parser.parse_args()
     key = os.getenv("SERPAPI_KEY", "")
-    feed = run(state_path=args.state, feed_path=args.feed, key=key, do_scan=not args.no_scan)
+    # Account API uses zero search credits. Only enrich when enough spare credits.
+    remaining = fetch_remaining_quota(key) if key and not args.no_scan else None
+    # When account quota cannot be queried, allow just one rotating discovery
+    # search; the 5-call/night fallback remains below 250/month on a normal schedule.
+    extra = min(3, max(0, remaining - MIN_EXTRA_CREDIT_RESERVE - 4)) if remaining is not None else 1
+    feed = run(state_path=args.state, feed_path=args.feed, key=key,
+               do_scan=not args.no_scan, extra_searches=extra)
     status = feed["status"]
     print(f"Fiyat Avcısı: {len(feed['products'])} uygun ürün; son başarılı tarama: {status['last_success'] or 'yok'}")
     if status["last_error"]:

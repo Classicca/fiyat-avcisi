@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0b1114">
-  <meta name="description" content="Fiyat Avcısı: 1.100 TL altı gaming klavyeler ve 1.000 TL altı gaming mouse fırsatları. Otomatik güncellenir, arama yapman gerekmez.">
+  <meta name="description" content="Fiyat Avcısı: gaming klavye ve mouse fırsatlarını otomatik takip et, kategori, sensör, bağlantı ve fiyat filtrelerini kendine göre ayarla.">
   <title>Fiyat Avcısı · Uygun Gaming Klavye ve Mouse</title>
   <link rel="icon" type="image/svg+xml" href="./favicon.svg">
   <link rel="stylesheet" href="./styles.css">
@@ -21,7 +21,7 @@
       <div class="category-active"><span class="category-emoji">⌨</span><span>Gaming klavyeler</span><span class="category-dot"></span></div>
       <div class="category-active"><span class="category-emoji">🖱</span><span>Gaming mouse</span><span class="category-dot"></span></div>
       <div class="sidebar-spacer"></div>
-      <div class="sidebar-foot"><span class="dot-lime"></span> FİYAT AVCISI <span>V2.0</span></div>
+      <div class="sidebar-foot"><span class="dot-lime"></span> FİYAT AVCISI <span>V2.4</span></div>
     </aside>
 
     <main class="main">
@@ -42,11 +42,11 @@
             <p id="heroSubtitle">Gaming klavye ve mouse fırsatları tek ekranda.</p>
             <div class="scan-time" id="lastScan">Henüz kontrol edilmedi</div>
           </div>
-          <div class="budget-card budget-limits" aria-label="Klavye üst sınırı 1.100 Türk lirası, mouse üst sınırı 1.000 Türk lirası">
-            <span class="budget-label">FİYAT SINIRLARI</span>
-            <div class="budget-line"><span>⌨ Klavye</span><strong>1.100 <small>TL</small></strong></div>
-            <div class="budget-line"><span>🖱 Gaming mouse</span><strong>1.000 <small>TL</small></strong></div>
-            <div class="budget-desc"><span class="limit-dot"></span><span>Daha pahalı ürünler görünmez.</span></div>
+          <div class="budget-card budget-limits" aria-label="Fiyat üst sınırlarını düzenle">
+            <span class="budget-label">FİYAT SINIRLARIM</span>
+            <label class="budget-line" for="keyboardLimit"><span>⌨ Klavye</span><span class="budget-input"><input id="keyboardLimit" type="number" min="1" max="999999" step="1" value="1100" inputmode="numeric" aria-label="Klavye için en fazla TL"><small>TL</small></span></label>
+            <label class="budget-line" for="mouseLimit"><span>🖱 Gaming mouse</span><span class="budget-input"><input id="mouseLimit" type="number" min="1" max="999999" step="1" value="1000" inputmode="numeric" aria-label="Mouse için en fazla TL"><small>TL</small></span></label>
+            <div class="budget-desc"><span class="limit-dot"></span><span>Fiyatları değiştirmek için rakama tıkla.</span></div>
           </div>
         </section>
 
@@ -74,23 +74,35 @@
         <section class="results" aria-labelledby="resultsTitle">
           <div class="results-header">
             <div><div class="section-kicker">ÜRÜN RADARI <span class="line-small"></span></div><h2 id="resultsTitle">Uygun ürünler <span class="result-count" id="resultCount">0</span></h2></div>
-            <div class="connectivity-tabs" role="group" aria-label="Kablolu veya kablosuz ürün filtresi" id="connectivityFilter">
+          </div>
+          <div class="filter-controls">
+            <div class="connectivity-tabs" role="group" aria-label="Ürün kategorisi" id="categoryFilter">
+              <button type="button" data-category="all" class="connection-btn selected" aria-pressed="true">Hepsi</button>
+              <button type="button" data-category="keyboard" class="connection-btn" aria-pressed="false">Klavyeler</button>
+              <button type="button" data-category="mouse" class="connection-btn" aria-pressed="false">Mouse'lar</button>
+            </div>
+            <div class="connectivity-tabs" role="group" aria-label="Bağlantı türü" id="connectivityFilter">
               <button type="button" data-connection="all" class="connection-btn selected" aria-pressed="true">Tümü</button>
               <button type="button" data-connection="wired" class="connection-btn" aria-pressed="false">Kablolu</button>
               <button type="button" data-connection="wireless" class="connection-btn" aria-pressed="false">Kablosuz</button>
             </div>
+            <div id="sensorFilterBox" class="sensor-filter">
+              <label for="sensorInput">Mouse sensörü · PAW3311 ve üzeri</label>
+              <div class="sensor-add"><input id="sensorInput" type="text" maxlength="35" placeholder="Örn. PAW3395" autocomplete="off" aria-label="Eklenecek mouse sensörü"><button id="addSensorButton" type="button">+ Ekle</button></div>
+              <div id="sensorChips" class="sensor-chips" aria-live="polite"></div>
+            </div>
           </div>
 
-          <section class="category-results" aria-labelledby="keyboardHeading">
-            <div class="category-heading"><h3 id="keyboardHeading"><span class="category-head-icon">⌨</span> Gaming klavyeler <span class="category-count" id="keyboardCount">0</span></h3><span>En fazla 1.100 TL</span></div>
+          <section class="category-results" id="keyboardSection" aria-labelledby="keyboardHeading">
+            <div class="category-heading"><h3 id="keyboardHeading"><span class="category-head-icon">⌨</span> Gaming klavyeler <span class="category-count" id="keyboardCount">0</span></h3><span id="keyboardLimitLabel">En fazla 1.100 TL</span></div>
             <div id="keyboardProducts" class="product-grid" aria-live="polite"><div class="loading"><div class="loading-spinner"></div>Ürünler kontrol ediliyor...</div></div>
           </section>
 
-          <section class="category-results" aria-labelledby="mouseHeading">
-            <div class="category-heading"><h3 id="mouseHeading"><span class="category-head-icon">🖱</span> Gaming mouse <span class="category-count" id="mouseCount">0</span></h3><span>En fazla 1.000 TL</span></div>
+          <section class="category-results" id="mouseSection" aria-labelledby="mouseHeading">
+            <div class="category-heading"><h3 id="mouseHeading"><span class="category-head-icon">🖱</span> Gaming mouse <span class="category-count" id="mouseCount">0</span></h3><span id="mouseLimitLabel">En fazla 1.000 TL</span></div>
             <div id="mouseProducts" class="product-grid" aria-live="polite"><div class="loading"><div class="loading-spinner"></div>Ürünler kontrol ediliyor...</div></div>
           </section>
-          <div class="results-footer"><span class="foot-asterisk">*</span> Satın almadan önce ürünün özelliklerini ve mağazadaki güncel fiyatı kontrol et.</div>
+          <div class="results-footer"><span class="foot-asterisk">*</span> Fiyatlar yalnızca ulaşılabilen mağaza teklifleriyle karşılaştırılır; her mağazanın tarandığı garanti edilmez. Satın almadan önce kargo, stok ve güncel fiyatı kontrol et.</div>
         </section>
       </div>
       <footer class="footer"><span>© <span id="year"></span> Fiyat Avcısı</span></footer>
