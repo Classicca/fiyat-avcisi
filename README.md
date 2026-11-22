@@ -1,54 +1,61 @@
-# Fiyat Avcısı v2.6 — Onaylı Mağaza Listesi ve Temiz Arayüz
+# Fiyat Avcısı v3.0 — Amazon Türkiye
 
-Kullanıcı **arama yapmaz**. Site, Google Shopping/SerpApi ile otomatik ürün keşfeder ve **erişebildiği mağaza teklifleri arasında** en düşük fiyatlı olanı öne çıkarır. Aynı ürün modeli birden çok mağazada bulunduysa tek kart ve isteğe bağlı mağaza karşılaştırma listesi çıkar. **Tüm internet sitelerini tarama veya mutlak en ucuz fiyatı bulma garantisi yoktur.** Veriler güncellik, kapsam, mağaza katılımı ve kargo ücretine bağlıdır.
+Sadece **Amazon.com.tr** ürünlerini gösteren koyu/yeşil tasarımlı bir GitHub Pages sitesi. Başka mağaza ve SerpApi kullanılmaz. Ürünler otomatik arka plan taramalarıyla bulunur; ziyaretçi önceden toplanmış katalogu anında filtreler. Site **tüm Amazon kataloğunu eksiksiz dökemez**: Creators API arama başına en fazla 10 ürün döndürür ve API erişimi şarttır.
 
-## Sadece seçilen 9 alışveriş platformu
+## Filtreler
 
-**Amazon Türkiye, Trendyol, Hepsiburada, n11, Pazarama, idefix, İncehesap, İtopya, Gaming.Gen.TR.**
+- Tümü / Klavyeler / Mouse'lar
+- Tümü / Kablolu / Kablosuz
+- Klavye ve mouse için **ayrı, isteğe bağlı fiyat üst limitleri**. İlk açılışta tüm fiyatlar görünür; hızlı bütçe düğmesi 1.100 TL ve 1.000 TL sınırlarını uygular.
+- Mouse sensörü: Tümü, **PAW3311 ve üstü olarak önceden tanımlanmış doğrulanabilir sensör grubu**, eldeki katalogda bulunan tekil sensör modelleri
+- Klavye: Mekanik / Membran / Hall Effect / Bilinmiyor
+- Renk, marka, Amazon satıcısı / pazaryeri satıcısı, ürün adında arama
+- Ürünler artan fiyata göre sıralanır; filtreler tarayıcıda saklanır.
 
-Tarayıcı, ancak ürün bağlantısının gerçek HTTPS alan adı bu dokuz platformdan birine aitse teklifi kabul eder. Google Shopping'in `source` alanına veya bir arama sonucunda yazan mağaza adına tek başına güvenmez. Fiyat karşılaştırma siteleri, yönlendirme linkleri ve taklit alan adları reddedilir. Eski kayıtlardaki izinsiz mağaza teklifleri de yayın akışında otomatik gizlenir.
+Sensör ve bağlantı bilgisi Amazon API başlığı/özelliklerinden açıkça çıkarılabildiğinde gösterilir. Bilinmeyenleri yanlışlıkla belirli bir sensör veya bağlantı türüne atamayız. **PAW3311 ve üzeri**, model numarasından matematiksel üstünlük hesaplamak değil, seçilmiş uygun sensör aileleri listesidir; bütün sensörlerin kesin performans sıralaması değildir.
 
-**Bu dokuz mağazanın tamamını ayrı ayrı ve eksiksiz taramıyoruz.** Mevcut SerpApi/Google Shopping kaynağı yalnızca erişebildiği ürün ve mağaza tekliflerini döndürür; bu yüzden yeni sürüm daha güvenilir mağazalar gösterebilir ama ürün sayısı azalabilir. Pazaryerlerinin (Trendyol, n11 vb.) üçüncü taraf satıcılarını platformun kendisi gibi garantili saymayın; satıcının puanını ayrıca kontrol edin. Çok düşük/çelişkili fiyat alanları filtrelenir; gerçek mağaza fiyatı son kontrolde değişebilir.
+## Amazon Creators API kurulumu
 
-**Arayüz:** Sol menü kaldırıldı; logo üst çubukta. Hepsi / Klavyeler / Mouse'lar, bağlantı türü, sensör ve fiyat ayarları sayfada kalır.
+Eski `SERPAPI_KEY` bu sürümde kullanılmaz. Amazon Associates/Creators API hesabı ve Türkiye için geçerli bir Partner Tag gerekir. Amazon Creators API erişimi onaylanmadıkça siteye gerçek ürün akmaz.
 
-## Başlangıç ayarları
+1. Amazon [Creators API kayıt adımları](https://affiliate-program.amazon.com/creatorsapi/docs/en-us/onboarding) ile erişim edin.
+2. GitHub deposunda **Settings → Secrets and variables → Actions → New repository secret** bölümüne girin. Üç secret tanımlayın:
+   - `AMAZON_CREATORS_CLIENT_ID`
+   - `AMAZON_CREATORS_CLIENT_SECRET`
+   - `AMAZON_ASSOCIATE_TAG` (amazon.com.tr için geçerli Associates takip kodu)
+3. Mevcut GitHub Pages ayarının **Settings → Pages → Source: GitHub Actions** olduğundan emin olun.
+4. **Actions → Fiyat Avcısı v3 - Amazon Türkiye → Run workflow** ile ilk taramayı başlatın. Tamamlanınca mevcut adresiniz `https://classicca.github.io/fiyat-avcisi/` açılır.
 
-- Gaming klavye: **1.100 TL**; gaming mouse: **1.000 TL** (site üzerinde ayrı ayrı değiştirilebilir).
-- Kategori: **Hepsi / Klavyeler / Mouse’lar**.
-- Bağlantı: **Tümü / Kablolu / Kablosuz**.
-- Mouse sensörü: **PAW3311 ve benzer veya üst sınıfı önceden doğrulanmış PixArt sensörleri**. Başlık/açıklamada sensör açıkça belirtilmiyorsa mouse sonuçlardan çıkarılır. Farklı sensör adlarını sadece numaraya bakarak sıralamıyoruz. İsteğe bağlı sensör seçimi de korunur.
-- Aynı marka/modelin farklı mağazalardaki fiyatları (Google Product API `stores`) tek kartta ve ucuzdan pahalıya sunulur. Ayrıntı API çağrıları yalnızca **belirli sayıda ürün** için yapılır; eksiksiz mağaza kapsamı yoktur.
-- Fiyat karşılaştırma siteleri birer satıcı olarak gösterilmez. Model kodları farklı ürünler birleştirilmez.
-- Sonuçlar kategori içinde artan fiyata göre; ana veri kaynağı 24 saatte bir yenilenir.
-- Dört genel aramaya ek olarak **her gece bir mouse ve bir klavye için marka/sensör/model araması** yapılarak önceki sürümlerde hiç görünmeyen ürünler de keşfedilmeye çalışılır. İlk aramada **James Donkey JDM11 PAW3311** ve **JDK99** özellikle kontrol edilir.
-- Geçmişte keşfedilen ürünler, başka bir sorguda tekrar çıkmadı diye anında silinmez; ancak **10 günden eski mağaza fiyatları gizlenir**. İki günden eski fiyatlar kartta "son görülen fiyat" olarak belirtilir.
+**Uyarı:** API anahtarını depodaki dosyalara veya ChatGPT sohbetine koymayın. Kurulum başarısız olduğunda sunucu sahte Amazon ürünü üretmez. Creators API erişimi başta ve sürekli satış uygunluk şartlarına bağlı olabilir. Ücretsiz GitHub altyapısının çalışma ve erişim limitleri bulunur.
 
-## Neden tüm mağazaları her an kontrol etmiyor?
+## Katalog, fiyat ve lisans
 
-SerpApi ücretsiz paketi şu an **250 arama/ay**. Bir gece taraması 4 genel sorgu, 2 dönüşümlü model/sensör/marka sorgusu, 1 mağaza karşılaştırma sorgusu kullanabilir. 31 günde teorik azami **217** arama (ek/manuel ve yeniden başlatmalar hariç). Kullanılabilir kota azsa ek sorgular atlanır. API anahtarı olmadan güncel fiyat doğrulanamaz. Mağazaların Google Shopping verisine katılması, model ayrıştırma doğruluğu ve sağlayıcı fiyatlarının tazeliği sonucu belirler.
+- `data/amazon_catalog.json`: sadece ASIN kimlikleri, kategori ve tarama imleçleri; yeni modeller eklendikçe büyür (en fazla 1.500 kayıt).
+- `data/feed.json`: Amazon'dan yeni çekilen başlık/fiyat/görsel/satıcı verileri. **23 saatten eski ürün içeriği hiçbir şekilde yayınlanmaz** (istemci de ayrıca süre kontrolü yapar). Eski Google/SerpApi verileri otomatik taşınmaz; `data/state.json` eski verisi değiştirilmez.
+- **Her 6 saatte bir** yeni model araması ve mevcut ürün kimliklerinden en fazla 160 tanesinin fiyat tazelemesi planlanır. Kotalar ve API yanıtlarına göre eksik ürün olabilir. 1.500 ürünün tamamının her koşulda 24 saatte yenilendiği garanti edilmez.
+- Amazon Gelir Ortaklığı politikalarındaki API veri önbellekleme ve bağlantı kullanımı kuralları gözetilmelidir. Son satış fiyatı ve stok Amazon ürün sayfasında geçerlidir. Fiyat geçmişi bu sürümde uzun süreli tutulmaz.
+- Sadece API'nin `TRY` olarak sunduğu fiyat alınır, metin içinden fiyat okunmaz. Amazon Türkiye dışında adres veya para birimi kabul edilmez.
+- Amazon'dan onaylı veri erişimi dışında otomatik Amazon HTML kazıması uygulanmaz.
 
-## GitHub'da zaten yayınlanan siteyi güncelleme
+## Mevcut Github Desktop projesini v3'e güncelleme
 
-**`Fiyat-Avcisi-v2.6-Magaza-Dogrulama-Guncelleme.zip`** dosyasını kullan; içindeki klasörleri ve dosyaları **mevcut depo kök dizinine** doğru yolları koruyarak kopyala. Özellikle `.github/workflows/yayin.yml`, `static/`, `scanner.py`, `cloud_publish.py`, **`discovery.py` ve yeni `merchants.py`** güncellenecek. `data/state.json` ve `data/feed.json` ZIP'e konulmadı; mevcut fiyat geçmişini silme.
+ZIP içindeki `.github`, `static`, `tests` klasörleri ve `amazon_api.py`, `catalog.py`, `cloud_publish.py`, `build_site.py`, `README.md`, `local_preview.py`, `ORNEK_GORUNUM.bat`, `.gitignore` dosyalarını **klonlanmış `fiyat-avcisi-github` deposunun kök dizinine** kopyala. `data/` klasörünü silme veya üzerine yazma. GitHub Desktop ile **Commit to main → Push origin** yap. Eski tarayıcı dosyaları depoda kalsa da yeni workflow bunları çalıştırmaz. İlk yeni yayında eski feed Amazon v3 verisine dönüştürülür ve eski Google verileri yeni sitede gösterilmez.
 
-En güvenilir yöntem: **GitHub Desktop** → File → Clone repository (mevcut fiyat-avcisi) → güncelleme ZIP'inin içindeki dosyaları bu yerel klonun üzerine kopyala → Commit to main → Push origin. Ardından GitHub Actions sonucuna bak. İnternet sayfası yayımlandığı anda ilk geçerli taramada değişiklikler yansır. Adımlar `GITHUB-GUNCELLEME-v2.6.md` içinde.
+GitHub Actions ilk çalıştırma sırasında secret yoksa sahte veri üretmek yerine **"API bağlantısı bekleniyor"** mesajı yayınlar. API bağlandığında gerçek veriyi listeler.
 
-Mevcut SerpApi Secret `SERPAPI_KEY` aynen kalır. Fiyat geçmişini korumak için önceki `data/` içeriğini silme ve ZIP'teki herhangi bir örnek/önizleme verisini yükleme.
+## Yerel test
 
-## Test/yerel görüntüleme
+Python 3.10+ gereklidir. Üçüncü taraf Python paketi gerekmez.
 
 ```bash
 python -m unittest discover -s tests -v
-python cloud_publish.py --no-scan
+python cloud_publish.py            # Secret yoksa boş ve dürüst feed
 python build_site.py
 python -m http.server 8080 --directory public
 ```
 
-Gerçek tarama için `SERPAPI_KEY` ortam değişkeni ve `python cloud_publish.py` gerekir. Windows'ta `ORNEK_GORUNUM.bat` tasarım önizlemesi (kurgu veri), `BASLAT.bat` yerel gerçek tarama içindir.
+Gerçek tarama için yukarıdaki üç ortam değişkenini Windows ortamında veya GitHub Secrets bölümünde tanımlayın.
 
-**Sınırlamalar:** Fiyatlar kargo/üyelik/kupon dahil nihai kasa fiyatı olmak zorunda değildir. Alışveriş yapmadan önce mağazadaki stok, kargo ve toplam tutarı doğrula. Bulunamayan satıcılar, tutarsız ürün isimleri veya eksik sensör bilgisi nedeniyle sonuçlar eksik kalabilir. PAW3311 ve üzeri filtresi kapsamı daraltır. İş akışının yeşil olması, tüm mağazalarda en ucuz fiyatın bulunduğunu kanıtlamaz.
+Tasarımı gerçek ürün olmadan görmek için `ORNEK_GORUNUM.bat` / `python local_preview.py` çalıştırılır. Bu ayrı **örnek modudur** ve GitHub Pages'e yüklenen gerçek feed dosyasına eklenmez.
 
-## Doğruluk sınırları
-
-Her internet mağazasını listeleyen ücretsiz ve eksiksiz bir API yok. Google Shopping'in kapsamı sınırlıdır, mevcut Google Shopping API sayfalaması da ilk sonuç penceresi ötesine geçemeyebilir. Bu yüzden "piyasadaki mutlak en ucuz fiyat" iddiası yerine **"bulunan mağazalar arasında en ucuz fiyat"** gösterilir. Kargo, kupon, stok durumu ve fiyat değişikliği için alışveriş sayfasını kontrol etmek gerekir. Bu sürüm çevrimiçi API anahtarıyla canlı test edilmedi; yerel testler sentetik verilerdir.
+Not: Eski v2 test dosyaları depoda kaldıysa yeni GitHub Actions yalnızca `test_amazon.py` dosyasındaki v3 testlerini çalıştırır.

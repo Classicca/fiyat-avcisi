@@ -1,104 +1,54 @@
 <!doctype html>
 <html lang="tr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0b1114">
-  <meta name="description" content="Fiyat Avcısı: gaming klavye ve mouse fırsatlarını otomatik takip et, kategori, sensör, bağlantı ve fiyat filtrelerini kendine göre ayarla.">
-  <title>Fiyat Avcısı · Uygun Gaming Klavye ve Mouse</title>
-  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
-  <link rel="stylesheet" href="./styles.css">
-  <script src="./app.js" defer></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b1114">
+<meta name="description" content="Fiyat Avcısı: Amazon Türkiye klavye ve mouse kataloğu. Ürünleri fiyat, bağlantı, sensör ve türüne göre filtrele.">
+<title>Fiyat Avcısı · Amazon Türkiye</title>
+<link rel="icon" href="./favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="./styles.css">
+<script src="./app.js" defer></script>
 </head>
 <body>
-  <div class="layout">
-    <main class="main">
-      <header class="topbar">
-        <a class="brand topbar-brand" href="./" aria-label="Fiyat Avcısı ana sayfa">
-          <div class="brand-mark"><span class="mark-slash"></span><span class="mark-dot"></span></div>
-          <div><strong>fiyat<span>avcısı</span></strong><small>AKILLI FIRSAT RADARI</small></div>
-        </a>
-        <div class="topbar-right">
-          <div class="status-pill" id="livePill"><span class="pulse"></span><span id="liveLabel">VERİLER YÜKLENİYOR</span></div>
-          <button id="refreshButton" class="refresh-button" type="button" aria-label="Listeyi yenile" title="Listeyi yenile"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7v5h-5M4 17v-5h5"/><path d="M5.7 9a7 7 0 0 1 12.1-2L20 12M4 12l2.2 5A7 7 0 0 0 18.3 15"/></svg></button>
-        </div>
-      </header>
-      <div class="content">
-        <section class="hero" aria-labelledby="heroTitle">
-          <div class="hero-grid"></div>
-          <div class="hero-glow"></div>
-          <div class="hero-copy">
-            <div class="eyebrow"><span class="eyebrow-dot"></span> OTOMATİK FIRSAT TAKİBİ</div>
-            <h1 id="heroTitle">Fırsatlar<br><em>aranıyor.</em></h1>
-            <p id="heroSubtitle">Gaming klavye ve mouse fırsatları tek ekranda.</p>
-            <div class="scan-time" id="lastScan">Henüz kontrol edilmedi</div>
-          </div>
-          <div class="budget-card budget-limits" aria-label="Fiyat üst sınırlarını düzenle">
-            <span class="budget-label">FİYAT SINIRLARIM</span>
-            <label class="budget-line" for="keyboardLimit"><span>⌨ Klavye</span><span class="budget-input"><input id="keyboardLimit" type="number" min="1" max="999999" step="1" value="1100" inputmode="numeric" aria-label="Klavye için en fazla TL"><small>TL</small></span></label>
-            <label class="budget-line" for="mouseLimit"><span>🖱 Gaming mouse</span><span class="budget-input"><input id="mouseLimit" type="number" min="1" max="999999" step="1" value="1000" inputmode="numeric" aria-label="Mouse için en fazla TL"><small>TL</small></span></label>
-            <div class="budget-desc"><span class="limit-dot"></span><span>Fiyatları değiştirmek için rakama tıkla.</span></div>
-          </div>
-        </section>
-
-        <div class="banner hidden" id="demoBanner" role="status"><span class="banner-symbol">ⓘ</span><div><strong>Örnek görünüm.</strong><span> Bu ürünler gerçek değildir; yalnızca tasarımı göstermek içindir.</span></div></div>
-
-        <section class="setup-panel hidden" id="setupPanel" aria-labelledby="setupTitle">
-          <div class="setup-icon">⌁</div>
-          <div class="setup-body">
-            <div class="setup-tag">TEK SEFERLİK KURULUM</div>
-            <h2 id="setupTitle">Otomatik taramayı başlat</h2>
-            <p>Gerçek fiyatları gösterebilmek için bir kez SerpApi anahtarını eklemen gerekiyor. Sonrasında site ürünleri kendisi takip edecek.</p>
-            <form id="setupForm" class="setup-form">
-              <label class="sr-only" for="apiKey">SerpApi API anahtarı</label>
-              <input type="password" id="apiKey" placeholder="SerpApi API anahtarı" autocomplete="off" minlength="16" required>
-              <button type="submit" id="saveKeyButton">Takibi başlat <span>↗</span></button>
-            </form>
-            <p class="setup-help"><a href="https://serpapi.com/users/sign_up" target="_blank" rel="noopener noreferrer">API anahtarı al ↗</a><span>·</span> Servisin kullanım kotası olabilir.</p>
-            <p class="setup-error hidden" id="setupError" role="alert"></p>
-          </div>
-        </section>
-
-        <div class="banner banner-error hidden" id="errorBanner" role="alert"><span class="banner-symbol">!</span><div><strong>Son taramada sorun oluştu.</strong><span id="errorText"></span><small>Varsa önceki ürünler gösteriliyor.</small></div></div>
-        <div class="banner banner-warn hidden" id="warnBanner" role="status"><span class="banner-symbol">!</span><div><strong>Bazı sonuçlar alınamadı.</strong><span id="warnText"></span></div></div>
-
-        <section class="results" aria-labelledby="resultsTitle">
-          <div class="results-header">
-            <div><div class="section-kicker">ÜRÜN RADARI <span class="line-small"></span></div><h2 id="resultsTitle">Uygun ürünler <span class="result-count" id="resultCount">0</span></h2></div>
-          </div>
-          <div class="filter-controls">
-            <div class="connectivity-tabs" role="group" aria-label="Ürün kategorisi" id="categoryFilter">
-              <button type="button" data-category="all" class="connection-btn selected" aria-pressed="true">Hepsi</button>
-              <button type="button" data-category="keyboard" class="connection-btn" aria-pressed="false">Klavyeler</button>
-              <button type="button" data-category="mouse" class="connection-btn" aria-pressed="false">Mouse'lar</button>
-            </div>
-            <div class="connectivity-tabs" role="group" aria-label="Bağlantı türü" id="connectivityFilter">
-              <button type="button" data-connection="all" class="connection-btn selected" aria-pressed="true">Tümü</button>
-              <button type="button" data-connection="wired" class="connection-btn" aria-pressed="false">Kablolu</button>
-              <button type="button" data-connection="wireless" class="connection-btn" aria-pressed="false">Kablosuz</button>
-            </div>
-            <div id="sensorFilterBox" class="sensor-filter">
-              <label for="sensorInput">Mouse sensörü · PAW3311 ve üzeri</label>
-              <div class="sensor-add"><input id="sensorInput" type="text" maxlength="35" placeholder="Örn. PAW3395" autocomplete="off" aria-label="Eklenecek mouse sensörü"><button id="addSensorButton" type="button">+ Ekle</button></div>
-              <div id="sensorChips" class="sensor-chips" aria-live="polite"></div>
-            </div>
-          </div>
-
-          <section class="category-results" id="keyboardSection" aria-labelledby="keyboardHeading">
-            <div class="category-heading"><h3 id="keyboardHeading"><span class="category-head-icon">⌨</span> Gaming klavyeler <span class="category-count" id="keyboardCount">0</span></h3><span id="keyboardLimitLabel">En fazla 1.100 TL</span></div>
-            <div id="keyboardProducts" class="product-grid" aria-live="polite"><div class="loading"><div class="loading-spinner"></div>Ürünler kontrol ediliyor...</div></div>
-          </section>
-
-          <section class="category-results" id="mouseSection" aria-labelledby="mouseHeading">
-            <div class="category-heading"><h3 id="mouseHeading"><span class="category-head-icon">🖱</span> Gaming mouse <span class="category-count" id="mouseCount">0</span></h3><span id="mouseLimitLabel">En fazla 1.000 TL</span></div>
-            <div id="mouseProducts" class="product-grid" aria-live="polite"><div class="loading"><div class="loading-spinner"></div>Ürünler kontrol ediliyor...</div></div>
-          </section>
-          <div class="results-footer"><span class="foot-asterisk">*</span> Yalnızca Amazon Türkiye, Trendyol, Hepsiburada, n11, Pazarama, idefix, İncehesap, İtopya ve Gaming.Gen.TR bağlantıları listelenir. Tüm mağazalarda tüm ürünlerin tarandığı garanti edilmez. Pazaryeri satıcısını, kargoyu, stoğu ve güncel fiyatı kontrol et.</div>
-        </section>
-      </div>
-      <footer class="footer"><span>© <span id="year"></span> Fiyat Avcısı</span></footer>
-    </main>
+<header class="topbar">
+  <div class="top-inner">
+    <a class="brand" href="./" aria-label="Fiyat Avcısı ana sayfa"><span class="brand-symbol">//<i>.</i></span><span class="brand-words"><strong>fiyat<span>avcısı</span></strong><small>AMAZON FIRSAT RADARI</small></span></a>
+    <div class="top-right"><span class="amazon-mini">amazon.com.tr</span><span id="statusPill" class="status-pill muted"><span class="dot"></span><span id="statusText">VERİLER YÜKLENİYOR</span></span><button class="refresh" id="refresh" type="button" title="Sayfadaki verileri yenile" aria-label="Yenile">↻</button></div>
   </div>
-  <div id="toast" class="toast hidden" role="status"></div>
+</header>
+<main class="container">
+<section class="hero" aria-labelledby="heroHeading">
+  <div class="hero-pattern" aria-hidden="true"></div>
+  <div class="hero-copy"><div class="eyebrow"><span class="point"></span> AMAZON TÜRKİYE · KLAVYE & MOUSE</div><h1 id="heroHeading">Fırsatları bul.<br><em>Kolayca filtrele.</em></h1><p>Ürünler arka planda keşfedilir. Sen yalnızca istediğin özellikleri seç.</p><div class="last-seen" id="lastSeen">Kontrol zamanı yükleniyor…</div></div>
+  <div class="hero-stat"><span class="stat-label">FİLTRELERE UYAN</span><div class="stat-value" id="heroCount">—</div><span class="stat-caption">ürün listeleniyor</span><span class="stat-foot">Ucuzdan pahalıya sıralı ↘</span></div>
+</section>
+<div class="notice demo hidden" id="demoBanner"><strong>Örnek görünüm</strong> — Buradaki ürün adları ve fiyatlar gerçek değildir. Yalnızca filtreleri test etmek içindir.</div>
+<div class="notice warning hidden" id="setupBanner"><strong>Amazon bağlantısı henüz kurulmadı.</strong> Ürünler ancak Creators API erişimi ve GitHub Secrets ayarları tamamlandığında otomatik görünür. <a href="https://affiliate-program.amazon.com/creatorsapi/docs/en-us/onboarding" target="_blank" rel="noopener noreferrer">Amazon API bilgileri ↗</a></div>
+<div class="notice error hidden" id="errorBanner"></div>
+<div class="notice warning hidden" id="warningBanner"></div>
+<section class="catalog" aria-label="Ürün listesi ve filtreleri">
+  <div class="heading"><div><div class="kicker">FIRSAT LİSTESİ <span></span></div><h2>Ürünler <span class="count" id="resultCount">0</span></h2></div><button type="button" class="reset" id="resetFilters">Filtreleri sıfırla ↺</button></div>
+  <div class="filter-bar">
+    <div class="control-group cat-group"><label>KATEGORİ</label><div class="segmented" id="categoryTabs"><button type="button" data-category="all" class="selected">Tümü</button><button type="button" data-category="keyboard">Klavyeler</button><button type="button" data-category="mouse">Mouse'lar</button></div></div>
+    <div class="control-group"><label>BAĞLANTI</label><div class="segmented" id="connectionTabs"><button type="button" data-connection="all" class="selected">Tümü</button><button type="button" data-connection="wired">Kablolu</button><button type="button" data-connection="wireless">Kablosuz</button></div></div>
+    <div class="control-group price-controls"><label>FİYAT ÜST SINIRI (TL)</label><div class="prices"><label><span>⌨</span><input id="keyboardMax" type="number" min="0" step="1" placeholder="Klavye: Tümü" aria-label="Klavye maksimum fiyatı"></label><label><span>🖱</span><input id="mouseMax" type="number" min="0" step="1" placeholder="Mouse: Tümü" aria-label="Mouse maksimum fiyatı"></label></div></div>
+  </div>
+  <details class="more-filters" id="moreFilters"><summary><span class="sliders">☷</span> Daha fazla filtre <span class="summary-tail">Sensör, klavye türü, renk, marka ve satıcı <b>⌄</b></span></summary>
+    <div class="advanced-grid">
+      <div class="field"><label for="sensor">MOUSE SENSÖRÜ</label><select id="sensor"><option value="all">Tüm sensörler (bilinmeyen dahil)</option><option value="quality">PAW3311 ve üzeri (doğrulanan)</option></select></div>
+      <div class="field"><label for="keyboardType">KLAVYE TÜRÜ</label><select id="keyboardType"><option value="all">Tüm türler</option><option value="mechanical">Mekanik</option><option value="membrane">Membran</option><option value="hall">Hall Effect</option><option value="unknown">Belirtilmemiş</option></select></div>
+      <div class="field"><label for="color">RENK</label><select id="color"><option value="all">Tüm renkler</option><option value="Beyaz">Beyaz</option><option value="Siyah">Siyah</option><option value="Gri">Gri</option><option value="Pembe">Pembe</option><option value="Mavi">Mavi</option><option value="Kırmızı">Kırmızı</option><option value="Bilinmiyor">Belirtilmemiş</option></select></div>
+      <div class="field"><label for="brand">MARKA</label><select id="brand"><option value="all">Tüm markalar</option></select></div>
+      <div class="field"><label for="seller">SATICI</label><select id="seller"><option value="all">Tüm satıcılar</option><option value="amazon">Amazon tarafından satılıyor</option><option value="marketplace">Pazaryeri satıcısı</option></select></div>
+      <div class="field"><label for="searchText">ÜRÜN ADINDA ARA</label><input id="searchText" placeholder="Marka veya model (isteğe bağlı)" maxlength="80" type="search" autocomplete="off"></div>
+    </div>
+  </details>
+  <div class="quick-row"><span>HIZLI BÜTÇE:</span><button data-budget="cheap" type="button">Klavye ≤1.100 / Mouse ≤1.000 TL</button><button data-budget="all" type="button">Tüm fiyatlar</button><span class="sort-note">Fiyat ↑</span></div>
+  <div class="products" id="products" aria-live="polite"><div class="empty"><strong>Ürünler yükleniyor…</strong></div></div>
+  <div class="catalog-footer">Yalnızca erişilebilen Amazon Türkiye teklifleri listelenir. Kapsam Amazon'un tamamı değildir. Fiyat, stok ve satıcı bilgilerini satın almadan önce Amazon üzerinde doğrula. Bağlantılardan yapılan uygun alışverişlerden gelir elde edilebilir.</div>
+</section>
+</main>
+<footer class="footer"><span>© <span id="year"></span> Fiyat Avcısı</span><span>Amazon Türkiye odaklı bağımsız ürün takip projesi</span></footer>
 </body>
 </html>
